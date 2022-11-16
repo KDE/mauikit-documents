@@ -6,13 +6,20 @@ cmake_minimum_required(VERSION 3.16)
 
 set(KF5_VERSION "5.70.0")
 set(REQUIRED_QT_VERSION 5.15.0)
+<<<<<<< HEAD
+=======
+set(KF5_MIN_VERSION "5.92.0")
+>>>>>>> 239e8c8 (first working version for pdf only)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+<<<<<<< HEAD
 #set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 #set(CMAKE_VISIBILITY_INLINES_HIDDEN TRUE)
 
+=======
+>>>>>>> 239e8c8 (first working version for pdf only)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -20,7 +27,11 @@ set(CMAKE_AUTORCC ON)
 
 set(AUTOMOC_MOC_OPTIONS -Muri=org.mauikit.documents)
 
+<<<<<<< HEAD
 project(Documents LANGUAGES CXX VERSION 2.2.1)
+=======
+project(Documents LANGUAGES CXX VERSION 1.0.0)
+>>>>>>> 239e8c8 (first working version for pdf only)
 
 find_package(ECM ${KF5_VERSION} NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -39,14 +50,6 @@ include(CMakePackageConfigHelpers)
 include(KDEPackageAppTemplates)
 include(KDEClangFormat)
 
-if(ANDROID OR APPLE OR WIN32)
-    set(IS_KIO_AVAILABLE OFF)
-else()
-    set(IS_KIO_AVAILABLE ON)
-endif()
-
-option (KIO_AVAILABLE "Use KIO library if it is avalibale, otherwise use default fallack implementation" ${IS_KIO_AVAILABLE})
-#option (KIO_AVAILABLE "Use KIO library if it is avalibale, otherwise use default fallack implementation" ON)
 
 option(QUICK_COMPILER "Use QtQuick compiler to improve performance" TRUE)
 
@@ -59,60 +62,56 @@ if(UNIX AND NOT ANDROID)
     find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Config)
 endif()
 
-if(${KIO_AVAILABLE})
-    find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS KIO)
-endif()
-
-find_package(Qt5 ${REQUIRED_QT_VERSION} COMPONENTS Core Quick Sql Xml Concurrent Network REQUIRED)
-find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons #[[FileMetaData]])
+find_package(Qt5 ${REQUIRED_QT_VERSION} COMPONENTS Core Quick Concurrent REQUIRED)
+find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons)
 find_package(MauiKit)
 
 if(QUICK_COMPILER)
-        find_package(Qt5QuickCompiler)
-        set_package_properties(Qt5QuickCompiler PROPERTIES
-                DESCRIPTION "Compile QML at build time"
-                TYPE OPTIONAL
+    find_package(Qt5QuickCompiler)
+    set_package_properties(Qt5QuickCompiler PROPERTIES
+        DESCRIPTION "Compile QML at build time"
+        TYPE OPTIONAL
         )
 endif()
 
-add_subdirectory(src)
-
-
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/MauiKitFileBrowsing")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/MauiKitDocuments")
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/MauiKitFileBrowsingConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/MauiKitFileBrowsingConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/MauiKitDocumentsConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/MauiKitDocumentsConfig.cmake"
+
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
     PATH_VARS KF5_INCLUDE_INSTALL_DIR CMAKE_INSTALL_PREFIX
     )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/MauiKitFileBrowsingConfigVersion.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/MauiKitFileBrowsingConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/MauiKitDocumentsConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/MauiKitDocumentsConfig.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
     )
 
-install(EXPORT MauiKitFileBrowsingTargets
+install(EXPORT MauiKitDocumentsTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    FILE MauiKitFileBrowsingTargets.cmake
+    FILE MauiKitDocumentsTargets.cmake
     NAMESPACE MauiKit::)
 
 ecm_setup_version(${PROJECT_VERSION}
-    VARIABLE_PREFIX FileBrowsing
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/filebrowsing_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/MauiKitFileBrowsingConfigVersion.cmake"
+    VARIABLE_PREFIX Documents
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/documents_version.h"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/MauiKitDocumentsConfigVersion.cmake"
     SOVERSION ${PROJECT_VERSION_MAJOR}
     )
 
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/filebrowsing_version.h"
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/MauiKit/FileBrowsing
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/documents_version.h"
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/MauiKit/Documents
     COMPONENT Devel)
-    
-  add_definitions(-DTRANSLATION_DOMAIN="mauikitfilebrowsing")
-    ki18n_install(po)
-    
-    file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+
+add_definitions(-DTRANSLATION_DOMAIN="mauikitdocuments")
+ki18n_install(po)
+
+add_subdirectory(src)
+
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
