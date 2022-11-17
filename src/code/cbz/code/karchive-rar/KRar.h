@@ -22,7 +22,7 @@
 #ifndef KRAR_H
 #define KRAR_H
 
-#include <karchive.h>
+#include <KArchive>
 
 /**
  * KRar is a class for reading archives in the rar format. Writing

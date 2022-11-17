@@ -41,10 +41,7 @@ class PeruseConfig : public QObject
      * \brief book locations is where Peruse will look for books, whether they have been removed, added, etc.
      */
     Q_PROPERTY(QStringList bookLocations READ bookLocations NOTIFY bookLocationsChanged)
-    /**
-     * \brief new stuff location is for the location of the KNewStuff config for the GHNS protocol.
-     */
-    Q_PROPERTY(QString newstuffLocation READ newstuffLocation NOTIFY newstuffLocationChanged)
+
     /**
      * \brief boolean representing whether or not we should animate jumps on the page
      */
@@ -95,17 +92,7 @@ public:
      */
     Q_SIGNAL void bookLocationsChanged();
 
-    /**
-     * \brief Holds url to the peruse's KNewStuff configuration fle, to
-     * make it easy to retrieve.
-     */
-    QString newstuffLocation() const;
-    /**
-     * \brief Fires when the location to the KNewStuff config is changed.
-     */
-    Q_SIGNAL void newstuffLocationChanged();
-
-    /**
+        /**
      * @return a boolean representing  value of animateJumpAreas property
      */
     bool animateJumpAreas() const;

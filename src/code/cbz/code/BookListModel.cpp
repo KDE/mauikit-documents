@@ -30,15 +30,17 @@
 #include "AcbfBookinfo.h"
 
 #include <kio/deletejob.h>
+
+#ifdef KFILEMETADATA_FOUND
 #include <KFileMetaData/UserMetaData>
+#endif
 
 #include <QCoreApplication>
 #include <QDir>
 #include <QMimeDatabase>
 #include <QTimer>
 #include <QUrl>
-
-#include <qtquick_debug.h>
+#include <QDebug>
 
 class BookListModel::Private {
 public:
@@ -262,10 +264,12 @@ void BookListModel::contentModelItemsInserted(QModelIndex index, int first, int 
             entry->thumbnail = QString("image://preview/").append(entry->filename);
         }
 
+#ifdef KFILEMETADATA_FOUND
         KFileMetaData::UserMetaData data(entry->filename);
         entry->rating = data.rating();
         entry->comment = data.userComment();
         entry->tags = data.tags();
+#endif
 
         QVariantHash metadata = d->contentModel->data(d->contentModel->index(first, 0, index), Qt::UserRole + 2).toHash();
         QVariantHash::const_iterator it = metadata.constBegin();

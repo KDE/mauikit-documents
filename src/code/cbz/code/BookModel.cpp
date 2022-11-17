@@ -20,11 +20,13 @@
  */
 
 #include "BookModel.h"
-#include "qtquick_debug.h"
 
+#include <QDebug>
 #include <AcbfDocument.h>
 
+#ifdef KFILEMETADATA_FOUND
 #include <KFileMetaData/UserMetaData>
+#endif
 
 struct BookPage {
     BookPage() {}
@@ -186,12 +188,15 @@ int BookModel::currentPage() const
 
 void BookModel::setCurrentPage(int newCurrentPage, bool updateFilesystem)
 {
-//     qCDebug(QTQUICK_LOG) << Q_FUNC_INFO << d->filename << newCurrentPage << updateFilesystem;
+//     qDebug()<< Q_FUNC_INFO << d->filename << newCurrentPage << updateFilesystem;
+#ifdef KFILEMETADATA_FOUND
     if(updateFilesystem)
     {
         KFileMetaData::UserMetaData data(d->filename);
         data.setAttribute("peruse.currentPage", QString::number(newCurrentPage));
     }
+#endif
+
     d->currentPage = newCurrentPage;
     emit currentPageChanged();
 }
@@ -226,7 +231,7 @@ QString BookModel::processingDescription() const
 void BookModel::setProcessingDescription ( const QString& description )
 {
     d->processingDescription = description;
-    qCDebug(QTQUICK_LOG) << description;
+    qDebug()<< description;
     Q_EMIT processingDescriptionChanged();
 }
 

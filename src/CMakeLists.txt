@@ -5,7 +5,7 @@
 
 add_subdirectory(code/poppler)
 #add_subdirectory(epub)
-#add_subdirectory(cbz)
+add_subdirectory(code/cbz)
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/code
@@ -70,6 +70,7 @@ target_link_libraries(
     MauiKitDocuments
     PRIVATE
     PopplerLib
+    CBZLib
     KF5::I18n
     Qt5::Core
     Qt5::Quick

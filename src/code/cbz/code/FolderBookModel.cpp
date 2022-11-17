@@ -22,8 +22,9 @@
 #include "FolderBookModel.h"
 #include <QMimeDatabase>
 #include <QDir>
+#ifdef KFILEMETADATA_FOUND
 #include <KFileMetaData/UserMetaData>
-
+#endif
 FolderBookModel::FolderBookModel(QObject* parent)
     : BookModel(parent)
 {
@@ -72,9 +73,11 @@ void FolderBookModel::setFilename(QString newFilename)
     // rather than the filename we tried to open. Recent File is the opened page, rather
     // than the directory (because it makes for much simpler code), so reset rather than
     // doing other magic.
+#ifdef KFILEMETADATA_FOUND
     KFileMetaData::UserMetaData data(filename());
     if(data.hasAttribute("peruse.currentPage"))
         BookModel::setCurrentPage(data.attribute("peruse.currentPage").toInt(), false);
+#endif
 
     emit loadingCompleted(true);
     setProcessing(false);

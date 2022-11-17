@@ -32,8 +32,6 @@
 #include <QMutex>
 #include <QThreadPool>
 
-#include <qtquick_debug.h>
-
 class ComicCoverImageProvider::Private {
 public:
     Private() {
@@ -167,7 +165,7 @@ void ComicCoverRunnable::run()
     }
 
     QImage img;
-    if (d->imageCache->findImage(d->id, &img)) {
+    if (!d->imageCache->findImage(d->id, &img)) {
         KArchive* archive = nullptr;
         QMimeDatabase db;
         db.mimeTypeForFile(d->id, QMimeDatabase::MatchContent);
@@ -197,7 +195,7 @@ void ComicCoverRunnable::run()
                         if(!d->isAborted() && !success) {
                             QIcon oops = QIcon::fromTheme("unknown");
                             img = oops.pixmap(oops.availableSizes().last()).toImage();
-                            qCDebug(QTQUICK_LOG) << "Failed to load image with id:" << d->id;
+                           qDebug()<< "Failed to load image with id:" << d->id;
                         }
                     }
                 }

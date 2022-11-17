@@ -41,13 +41,15 @@
 #include <QTemporaryFile>
 #include <QXmlStreamReader>
 
+#ifdef KFILEMETADATA_FOUND
 #include <KFileMetaData/UserMetaData>
+#endif
+
 #include <KLocalizedString>
 #include <karchive.h>
 #include <kzip.h>
-#include "KRar.h" // "" because it's a custom thing for now
+#include <KRar.h> // "" because it's a custom thing for now
 
-#include <qtquick_debug.h>
 #include <AcbfData.h>
 
 class ArchiveBookModel::Private
@@ -324,7 +326,7 @@ void ArchiveBookModel::setFilename(QString newFilename)
             success = true;
         }
         else {
-            qCDebug(QTQUICK_LOG) << "Failed to open archive";
+            qDebug()<< "Failed to open archive";
         }
     }
 
@@ -339,9 +341,11 @@ void ArchiveBookModel::setFilename(QString newFilename)
 //     }
     BookModel::setFilename(newFilename);
 
+#ifdef KFILEMETADATA_FOUND
     KFileMetaData::UserMetaData data(newFilename);
     if(data.hasAttribute("peruse.currentPage"))
         BookModel::setCurrentPage(data.attribute("peruse.currentPage").toInt(), false);
+#endif
 
     if(!acbfData() && d->readWrite && d->imageProvider)
     {
@@ -588,7 +592,7 @@ bool ArchiveBookModel::saveBook()
         for( const QString& file : allFiles) {
             qApp->processEvents();
             if (d->fileEntriesToDelete.contains(file)) {
-                qCDebug(QTQUICK_LOG) << "Not copying file marked for deletion:" << file;
+                qDebug()<< "Not copying file marked for deletion:" << file;
             } else {
                 setProcessingDescription(i18n("Copying over %1", file));
                 archFile = archiveFile(file);
@@ -604,7 +608,7 @@ bool ArchiveBookModel::saveBook()
         Q_EMIT fileEntriesToDeleteChanged();
 
         archive->close();
-        qCDebug(QTQUICK_LOG) << "Archive created and closed...";
+        qDebug()<< "Archive created and closed...";
 
         // swap out the two files, tell model we're about to swap things out...
         beginResetModel();
@@ -637,17 +641,17 @@ bool ArchiveBookModel::saveBook()
                 }
                 else
                 {
-                    qCWarning(QTQUICK_LOG) << "Failed to delete" << originFile.fileName();
+                    qWarning()<< "Failed to delete" << originFile.fileName();
                 }
             }
             else
             {
-                qCWarning(QTQUICK_LOG) << "Failed to open" << originFile.fileName() << "for reading";
+                qWarning()<< "Failed to open" << originFile.fileName() << "for reading";
             }
         }
         else
         {
-            qCWarning(QTQUICK_LOG) << "Failed to open" << destinationFile.fileName() << "for writing";
+            qWarning()<< "Failed to open" << destinationFile.fileName() << "for writing";
         }
     }
     endResetModel();
@@ -838,6 +842,7 @@ const KArchiveFile * ArchiveBookModel::archiveFile(const QString& filePath) cons
 
 bool ArchiveBookModel::loadComicInfoXML(QString xmlDocument, QObject *acbfData, QStringList entries, QString filename)
 {
+#ifdef KFILEMETADATA_FOUND
     KFileMetaData::UserMetaData filedata(filename);
     AdvancedComicBookFormat::Document* acbfDocument = qobject_cast<AdvancedComicBookFormat::Document*>(acbfData);
     QXmlStreamReader xmlReader(xmlDocument);
@@ -1148,7 +1153,7 @@ bool ArchiveBookModel::loadComicInfoXML(QString xmlDocument, QObject *acbfData, 
 
                 else
                 {
-                    qCWarning(QTQUICK_LOG) << Q_FUNC_INFO << "currently unsupported subsection:" << xmlReader.name();
+                    qWarning()<< Q_FUNC_INFO << "currently unsupported subsection:" << xmlReader.name();
                     xmlReader.skipCurrentElement();
                 }
             }
@@ -1182,15 +1187,19 @@ bool ArchiveBookModel::loadComicInfoXML(QString xmlDocument, QObject *acbfData, 
     }
 
     if (xmlReader.hasError()) {
-        qCWarning(QTQUICK_LOG) << Q_FUNC_INFO << "Failed to read Comic Info XML document at token" << xmlReader.name() << "(" << xmlReader.lineNumber() << ":" << xmlReader.columnNumber() << ") The reported error was:" << xmlReader.errorString();
+        qWarning()<< Q_FUNC_INFO << "Failed to read Comic Info XML document at token" << xmlReader.name() << "(" << xmlReader.lineNumber() << ":" << xmlReader.columnNumber() << ") The reported error was:" << xmlReader.errorString();
     }
-    qCDebug(QTQUICK_LOG) << Q_FUNC_INFO << "Completed ACBF document creation from ComicInfo.xml for" << acbfDocument->metaData()->bookInfo()->title();
+    qDebug()<< Q_FUNC_INFO << "Completed ACBF document creation from ComicInfo.xml for" << acbfDocument->metaData()->bookInfo()->title();
     acbfData = acbfDocument;
     return !xmlReader.hasError();
+#endif
+
+    return false;
 }
 
 bool ArchiveBookModel::loadCoMet(QStringList xmlDocuments, QObject *acbfData, QStringList entries, QString filename)
 {
+#ifdef KFILEMETADATA_FOUND
     KFileMetaData::UserMetaData filedata(filename);
     AdvancedComicBookFormat::Document* acbfDocument = qobject_cast<AdvancedComicBookFormat::Document*>(acbfData);
     for(const QString& xmlDocument : qAsConst(xmlDocuments)) {
@@ -1389,7 +1398,7 @@ bool ArchiveBookModel::loadCoMet(QStringList xmlDocuments, QObject *acbfData, QS
 
                     else
                     {
-                        qCWarning(QTQUICK_LOG) << Q_FUNC_INFO << "currently unsupported subsection:" << xmlReader.name();
+                        qWarning()<< Q_FUNC_INFO << "currently unsupported subsection:" << xmlReader.name();
                         xmlReader.skipCurrentElement();
                     }
                 }
@@ -1415,17 +1424,19 @@ bool ArchiveBookModel::loadCoMet(QStringList xmlDocuments, QObject *acbfData, QS
                 }
             }
             if (xmlReader.hasError()) {
-                qCWarning(QTQUICK_LOG) << Q_FUNC_INFO << "Failed to read CoMet document at token" << xmlReader.name()
+                qWarning()<< Q_FUNC_INFO << "Failed to read CoMet document at token" << xmlReader.name()
                            << "(" << xmlReader.lineNumber() << ":"
                            << xmlReader.columnNumber() << ") The reported error was:" << xmlReader.errorString();
             }
-            qCDebug(QTQUICK_LOG) << Q_FUNC_INFO << "Completed ACBF document creation from CoMet for" << acbfDocument->metaData()->bookInfo()->title();
+            qDebug()<< Q_FUNC_INFO << "Completed ACBF document creation from CoMet for" << acbfDocument->metaData()->bookInfo()->title();
             acbfData = acbfDocument;
             return !xmlReader.hasError();
         } else {
             xmlReader.skipCurrentElement();
         }
     }
+    return false;
+#endif
     return false;
 }
 

@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: 2020 Carl Schwan <carl@carlschwan.eu>
 #
 # SPDX-License-Identifier: BSD-2-Clause
+cmake_policy(SET CMP0048 NEW)
+cmake_minimum_required(VERSION 3.21)
 
-cmake_minimum_required(VERSION 3.16)
-
-set(KF5_VERSION "5.70.0")
+set(REQUIRED_KF5_VERSION "5.75.0")
 set(REQUIRED_QT_VERSION 5.15.0)
 
 set(KF5_MIN_VERSION "5.92.0")
@@ -17,11 +17,15 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+if(POLICY CMP0063)
+    cmake_policy (SET CMP0063 NEW)
+endif(POLICY CMP0063)
+
 set(AUTOMOC_MOC_OPTIONS -Muri=org.mauikit.documents)
 
 project(Documents LANGUAGES CXX VERSION 1.0.0)
 
-find_package(ECM ${KF5_VERSION} NO_MODULE)
+find_package(ECM ${REQUIRED_KF5_VERSION} NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(GenerateExportHeader)
@@ -37,6 +41,7 @@ include(CMakePackageConfigHelpers)
 #include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDEPackageAppTemplates)
 include(KDEClangFormat)
+include(ECMQtDeclareLoggingCategory)
 
 
 option(QUICK_COMPILER "Use QtQuick compiler to improve performance" TRUE)

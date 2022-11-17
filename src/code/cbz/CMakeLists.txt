@@ -1,80 +1,78 @@
-add_subdirectory(karchive-rar)
+
+
+find_package(ZLIB)
+set_package_properties(ZLIB PROPERTIES
+    PURPOSE "Required for the unarr based rar support used for reading books in the CBR format"
+    TYPE REQUIRED
+)
+
+find_package(Qt5 REQUIRED COMPONENTS Sql)
+find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Archive KIO GuiAddons IconThemes)
+
+kde_enable_exceptions()
+
+add_subdirectory(code/acbf)
+add_subdirectory(code/karchive-rar)
 
 set(qmlplugin_SRCS
-    qmlplugin.cpp
-    ArchiveBookModel.cpp
-    ArchiveImageProvider.cpp
-    BookDatabase.cpp
-    BookModel.cpp
-    BookListModel.cpp
-    CategoryEntriesModel.cpp
-    ComicCoverImageProvider.cpp
-    FilterProxy.cpp
-    FolderBookModel.cpp
-    PeruseConfig.cpp
-    PreviewImageProvider.cpp
-    PropertyContainer.cpp
-    TextDocumentEditor.cpp
-    TextViewerItem.cpp
+    code/ArchiveBookModel.cpp
+    code/ArchiveImageProvider.cpp
+    code/BookDatabase.cpp
+    code/BookModel.cpp
+    code/BookListModel.cpp
+    code/CategoryEntriesModel.cpp
+    code/ComicCoverImageProvider.cpp
+    code/FilterProxy.cpp
+    code/FolderBookModel.cpp
+    code/PreviewImageProvider.cpp
+    code/PropertyContainer.cpp
+    code/TextDocumentEditor.cpp
+    code/TextViewerItem.cpp
 )
 
-set(karchive_rar_SRCS
-    karchive-rar/KRar.cpp
-    karchive-rar/KRarFileEntry.cpp
-)
+add_library (
+    CBZLib
+    STATIC
+    ${qmlplugin_SRCS}
+   )
 
-if(USE_PERUSE_PDFTHUMBNAILER)
-    set(qmlplugin_SRCS
-        ${qmlplugin_SRCS}
-        PDFCoverImageProvider.cpp
-    )
-endif()
-
-ecm_qt_declare_logging_category(qmlplugin_SRCS
-    HEADER qtquick_debug.h
-    IDENTIFIER QTQUICK_LOG
-    CATEGORY_NAME org.kde.peruse.qml
-    DEFAULT_SEVERITY Warning
-)
-
-add_library (peruseqmlplugin SHARED ${qmlplugin_SRCS} ${karchive_rar_SRCS} $<TARGET_OBJECTS:karchive-c-unarr>)
-if(USE_PERUSE_PDFTHUMBNAILER)
-target_compile_definitions(peruseqmlplugin
-    PRIVATE
-    -DUSE_PERUSE_PDFTHUMBNAILER
-)
-endif()
-target_include_directories(peruseqmlplugin
-    PRIVATE
-    karchive-rar
-    karchive-rar/unarr
-    acbf
+target_include_directories(CBZLib
+    PUBLIC
+    code/acbf
     ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
 )
-target_link_libraries (peruseqmlplugin
+
+if(UNIX AND NOT ANDROID)
+    find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS FileMetaData)
+    target_link_libraries (CBZLib
+        PUBLIC
+        KF5::FileMetaData
+    )
+
+add_definitions(-DKFILEMETADATA_FOUND)
+target_compile_definitions(CBZLib PUBLIC KFILEMETADATA_FOUND)
+
+endif()
+
+target_link_libraries (CBZLib
     PUBLIC
     acbf
+    krarlib
     Qt5::Core
     Qt5::Qml
     Qt5::Quick
     Qt5::Sql
     KF5::Archive
-    KF5::IconThemes
     KF5::I18n
     KF5::ConfigCore
-    KF5::GuiAddons
-    KF5::KIOCore
     KF5::KIOWidgets
-    KF5::FileMetaData
-    KF5::NewStuffCore
+    KF5::KIOCore
+    KF5::IconThemes
+    KF5::GuiAddons
 )
 
 if (ZLIB_FOUND)
-    target_include_directories(peruseqmlplugin PRIVATE ${ZLIB_INCLUDE_DIRS})
-    target_link_libraries(peruseqmlplugin PRIVATE ${ZLIB_LIBRARIES})
+    target_include_directories(CBZLib PRIVATE ${ZLIB_INCLUDE_DIRS})
+    target_link_libraries(CBZLib PRIVATE ${ZLIB_LIBRARIES})
     add_definitions(-DHAVE_ZLIB)
 endif(ZLIB_FOUND)
-
-install (TARGETS peruseqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/peruse)
-install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/peruse)
-install (FILES peruse.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})

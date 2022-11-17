@@ -2,10 +2,18 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-find_package(Poppler REQUIRED COMPONENTS Qt5)
-set_package_properties("Poppler" PROPERTIES
-    TYPE RECOMMENDED
-    PURPOSE "Support for PDF files.")
+project(PopplerLib)
+
+if(ANDROID)
+    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)
+elseif(UNIX)
+    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
+    find_package(Poppler REQUIRED COMPONENTS Qt5)
+    set_package_properties("Poppler" PROPERTIES
+        TYPE RECOMMENDED
+        PURPOSE "Support for PDF files.")
+endif()
+
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}

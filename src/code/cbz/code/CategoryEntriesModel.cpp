@@ -21,7 +21,9 @@
 
 #include "CategoryEntriesModel.h"
 #include "PropertyContainer.h"
+#ifdef KFILEMETADATA_FOUND
 #include <KFileMetaData/UserMetaData>
+#endif
 #include <QDir>
 #include <QFileInfo>
 
@@ -486,6 +488,7 @@ QObject* CategoryEntriesModel::bookFromFile(const QString& filename)
             obj->setProperty("title", info.completeBaseName());
             obj->setProperty("created", info.birthTime());
 
+#ifdef KFILEMETADATA_FOUND
             KFileMetaData::UserMetaData data(filename);
             if (data.hasAttribute("peruse.currentPage")) {
                 int currentPage = data.attribute("peruse.currentPage").toInt();
@@ -502,6 +505,7 @@ QObject* CategoryEntriesModel::bookFromFile(const QString& filename)
             if (!data.userComment().isEmpty()) {
                 obj->setProperty("comment", QVariant::fromValue<QString>(data.userComment()));
             }
+#endif
             obj->setProperty("filename", filename);
 
             QString thumbnail;

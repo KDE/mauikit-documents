@@ -35,8 +35,6 @@
 #include <AcbfBinary.h>
 #include <AcbfData.h>
 
-#include <qtquick_debug.h>
-
 class ArchiveImageProvider::Private
 {
 public:
@@ -200,7 +198,7 @@ void ArchiveImageRunnable::run()//const QString& id, QSize* size, const QSize& r
         img = oops.pixmap(oops.availableSizes().last()).toImage();
         QPainter thing(&img);
         thing.drawText(img.rect(), Qt::AlignCenter | Qt::TextWordWrap, d->errorString);
-        qCDebug(QTQUICK_LOG) << "Failed to load image with id:" << d->id << "and the error" << d->errorString;
+        qDebug()<< "Failed to load image with id:" << d->id << "and the error" << d->errorString;
     }
 
     Q_EMIT done(img);

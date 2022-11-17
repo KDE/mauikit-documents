@@ -1,3 +1,10 @@
+project(KRar C)
+
+
+find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Archive)
+find_package(Qt5 ${REQUIRED_QT_VERSION} COMPONENTS Core REQUIRED)
+
+
 set(unarr_SRCS
     unarr/rar/uncompress-rar.c
     unarr/rar/huffman-rar.c
@@ -18,8 +25,10 @@ set(unarr_SRCS
     unarr/common/crc32.c
 )
 
-add_library(karchive-c-unarr OBJECT ${unarr_SRCS})
+add_library(karchive-c-unarr STATIC ${unarr_SRCS})
+
 if (UNIX OR MINGW)
+#    target_compile_options(karchive-c-unarr PUBLIC  KARCHIVE-C-UNARR)
     target_compile_options(karchive-c-unarr PRIVATE -std=gnu99 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -fPIC)
     set_property(TARGET karchive-c-unarr PROPERTY AUTOMOC OFF)
 endif (UNIX OR MINGW)
@@ -27,3 +36,32 @@ endif (UNIX OR MINGW)
 if (ZLIB_FOUND)
     target_include_directories(karchive-c-unarr PRIVATE ${ZLIB_INCLUDE_DIRS})
 endif(ZLIB_FOUND)
+
+add_library(iface_karchive-c-unarr  INTERFACE)
+target_link_libraries(iface_karchive-c-unarr  INTERFACE karchive-c-unarr  $<TARGET_OBJECTS:karchive-c-unarr>)
+
+set(karchive_rar_SRCS
+    KRar.cpp
+    KRarFileEntry.cpp
+)
+
+add_library (
+    krarlib
+    STATIC
+    ${karchive_rar_SRCS}
+   )
+
+
+target_include_directories(krarlib
+    PUBLIC
+    unarr
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_link_libraries (krarlib
+    PUBLIC
+    iface_karchive-c-unarr
+
+    Qt5::Core
+    KF5::Archive
+)
