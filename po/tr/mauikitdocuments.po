@@ -1,0 +1,142 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+#
+# Emir SARI <emir_sari@icloud.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"PO-Revision-Date: 2022-11-17 18:38+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.08.3\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "%1 içinde arşiv oluşturuluyor"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "ACBF verisine yazılıyor"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "Silme için imlenmemiş tüm dosyalar arasında kopyalanıyor"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#, kde-format
+msgid "Copying over %1"
+msgstr "%1 üzerinden kopyalanıyor"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "Tüm içerik %1 konumundan %2 konumuna kopyalanıyor"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr ""
+"Eski arşiv, yeni arşivle başarılı bir biçimde değiştirildi. Şimdi yeni arşiv "
+"yükleniyor..."
+
+#: src/controls/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Belge Kilitli"
+
+#: src/controls/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "Kilidi açıp dosyayı görüntülemek için lütfen parolanızı girin."
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Kilitli"
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Error"
+msgstr "Hata"
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "This document is password protected."
+msgstr "Bu dosya parola korumalı."
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Belgeyi yüklerken bir hata oluştu."
+
+#: src/controls/poppler/PDFViewer.qml:131
+#, kde-format
+msgid "UnLock"
+msgstr "Kilidi Aç"
+
+#~ msgid "Edit"
+#~ msgstr "Düzen"
+
+#~ msgctxt "@action:button Undo modification"
+#~ msgid "Undo"
+#~ msgstr "Geri Al"
+
+#~ msgctxt "@action:button Save the image as a new image"
+#~ msgid "Save As"
+#~ msgstr "Farklı Kaydet"
+
+#~ msgctxt "@action:button Save the image"
+#~ msgid "Save"
+#~ msgstr "Kaydet"
+
+#~ msgid ""
+#~ "Unable to save file. Check if you have the correct permission to edit "
+#~ "this file."
+#~ msgstr ""
+#~ "Dosya kaydedilemiyor. Bu dosyayı düzenlemek için gerekli izniniz olup "
+#~ "olmadığını denetleyin."
+
+#~ msgid "Save As"
+#~ msgstr "Farklı Kaydet"
+
+#~ msgid "You are now editing a new file."
+#~ msgstr "Şu anda yeni bir dosya düzenliyorsunuz."
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
+
+#~ msgctxt "@action:button Crop an image"
+#~ msgid "Crop"
+#~ msgstr "Kırp"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Crop"
+#~ msgstr "Kırp"
+
+#~ msgctxt "@action:button Rotate an image to the left"
+#~ msgid "Rotate left"
+#~ msgstr "Sola döndür"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Rotate right"
+#~ msgstr "Sağa döndür"
+
+#~ msgctxt "@action:button Mirror an image vertically"
+#~ msgid "Flip"
+#~ msgstr "Ters Çevir"
+
+#~ msgctxt "@action:button Mirror an image horizontally"
+#~ msgid "Mirror"
+#~ msgstr "Yansıt"

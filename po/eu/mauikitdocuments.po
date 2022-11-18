@@ -1,0 +1,147 @@
+# Translation for mauikitdocuments.po to Euskara/Basque (eu).
+# Copyright (C) 2022 This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"PO-Revision-Date: 2022-11-17 07:12+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.08.3\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "%1(e)an artxiboa sortzen"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "ACBF datuak gordetzen"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "Ezabatzeko markatu gabeko fitxategi guztietan kopiatzen du"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#, kde-format
+msgid "Copying over %1"
+msgstr "%1(e)ren gainean kopiatzen"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "%1(e)tik %2(e)ra eduki guztia kopiatzen"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr ""
+"Fitxategi zaharra berriarekin behar bezala ordeztu da - orain fitxategi "
+"berria zamatzen..."
+
+#: src/controls/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Dokumentua giltzatuta dago"
+
+#: src/controls/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr ""
+"Mesedez, sartu fitxategia giltzapetik askatzeko eta irekitzeko zure "
+"pasahitza."
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Giltzatuta"
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Error"
+msgstr "Errorea"
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "This document is password protected."
+msgstr "Dokumentu hau pasahitz bidez babestuta dago."
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Dokumentu hau zamatzean errore bat egon da."
+
+#: src/controls/poppler/PDFViewer.qml:131
+#, kde-format
+msgid "UnLock"
+msgstr "Giltzapetik askatu"
+
+#~ msgid "Edit"
+#~ msgstr "Editatu"
+
+#~ msgctxt "@action:button Undo modification"
+#~ msgid "Undo"
+#~ msgstr "Desegin"
+
+#~ msgctxt "@action:button Save the image as a new image"
+#~ msgid "Save As"
+#~ msgstr "Gorde honela"
+
+#~ msgctxt "@action:button Save the image"
+#~ msgid "Save"
+#~ msgstr "Gorde"
+
+#~ msgid ""
+#~ "Unable to save file. Check if you have the correct permission to edit "
+#~ "this file."
+#~ msgstr ""
+#~ "Ez da fitxategia gordetzeko gai. Ikuskatu fitxategi hau editatzeko baimen "
+#~ "egokiak dituzun."
+
+#~ msgid "Save As"
+#~ msgstr "Gorde honela"
+
+#~ msgid "You are now editing a new file."
+#~ msgstr "Orain fitxategi berri bat editatzen ari zara."
+
+#~ msgid "Cancel"
+#~ msgstr "Utzi"
+
+#~ msgctxt "@action:button Crop an image"
+#~ msgid "Crop"
+#~ msgstr "Moztu"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Crop"
+#~ msgstr "Moztu"
+
+#~ msgctxt "@action:button Rotate an image to the left"
+#~ msgid "Rotate left"
+#~ msgstr "Biratu ezkerrera"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Rotate right"
+#~ msgstr "Biratu eskuinera"
+
+#~ msgctxt "@action:button Mirror an image vertically"
+#~ msgid "Flip"
+#~ msgstr "Irauli"
+
+#~ msgctxt "@action:button Mirror an image horizontally"
+#~ msgid "Mirror"
+#~ msgstr "Ispilatu"

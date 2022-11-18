@@ -1,0 +1,141 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"PO-Revision-Date: 2022-11-17 04:26+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "Створюємо архів у %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "Записуємо дані ACBF"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "Копіюємо усі файли, які не позначено для вилучення"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#, kde-format
+msgid "Copying over %1"
+msgstr "Копіюємо %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "Копіюємо усі дані з %1 до %2"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr "Старий архів успішно замінено новим — тепер завантажуємо новий архів…"
+
+#: src/controls/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Документ заблоковано"
+
+#: src/controls/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "Будь ласка, введіть ваш пароль, щоб розблокувати і відкрити файл."
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Заблоковано"
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Error"
+msgstr "Помилка"
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "This document is password protected."
+msgstr "Цей документ захищено паролем."
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Під час спроби завантажити цей документ сталася помилка."
+
+#: src/controls/poppler/PDFViewer.qml:131
+#, kde-format
+msgid "UnLock"
+msgstr "Розблокувати"
+
+#~ msgid "Edit"
+#~ msgstr "Змінити"
+
+#~ msgctxt "@action:button Undo modification"
+#~ msgid "Undo"
+#~ msgstr "Скасувати"
+
+#~ msgctxt "@action:button Save the image as a new image"
+#~ msgid "Save As"
+#~ msgstr "Зберегти як"
+
+#~ msgctxt "@action:button Save the image"
+#~ msgid "Save"
+#~ msgstr "Зберегти"
+
+#~ msgid ""
+#~ "Unable to save file. Check if you have the correct permission to edit "
+#~ "this file."
+#~ msgstr ""
+#~ "Не вдалося зберегти файл. Перевірте, чи маєте ви належні права доступу "
+#~ "для редагування цього файла."
+
+#~ msgid "Save As"
+#~ msgstr "Зберегти як"
+
+#~ msgid "You are now editing a new file."
+#~ msgstr "Зараз ви редагуєте новий файл."
+
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
+
+#~ msgctxt "@action:button Crop an image"
+#~ msgid "Crop"
+#~ msgstr "Обрізати"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Crop"
+#~ msgstr "Обрізати"
+
+#~ msgctxt "@action:button Rotate an image to the left"
+#~ msgid "Rotate left"
+#~ msgstr "Обернути ліворуч"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Rotate right"
+#~ msgstr "Обернути праворуч"
+
+#~ msgctxt "@action:button Mirror an image vertically"
+#~ msgid "Flip"
+#~ msgstr "Перевернути"
+
+#~ msgctxt "@action:button Mirror an image horizontally"
+#~ msgid "Mirror"
+#~ msgstr "Віддзеркалити"
