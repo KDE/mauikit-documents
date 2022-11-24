@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.12
  import QtQuick.Window 2.15
 
 import org.mauikit.controls 1.3 as Maui
-import org.shelf.poppler 1.0 as Poppler
+import org.mauikit.documents 1.0 as Poppler
 
 Maui.Page
 {
