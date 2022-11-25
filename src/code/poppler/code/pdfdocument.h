@@ -92,6 +92,8 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void _q_populate(PdfPagesList pagesList);
+    
+    public Q_SLOTS:
     void unlock(const QString &ownerPassword, const QString &password);
 
 private:
