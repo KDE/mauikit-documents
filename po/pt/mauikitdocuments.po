@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"PO-Revision-Date: 2022-11-18 09:33+0000\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: ACBF\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "A criar um pacote em %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "A gravar os dados do ACBF"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "A copiar os ficheiros não marcados para remoção"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#, kde-format
+msgid "Copying over %1"
+msgstr "A copiar sobre o %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "A copiar todo o conteúdo de %1 para %2"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr ""
+"Foi substituído com sucesso o pacote antigo pelo novo - agora a carregar o "
+"pacote novo..."
+
+#: src/controls/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Documento Bloqueado"
+
+#: src/controls/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "Por favor indique a sua senha para abrir o ficheiro."
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Bloqueado"
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Error"
+msgstr "Erro"
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "This document is password protected."
+msgstr "Este documento está protegido com uma senha."
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Ocorreu um erro ao carregar este documento."
+
+#: src/controls/poppler/PDFViewer.qml:131
+#, kde-format
+msgid "UnLock"
+msgstr "Desbloquear"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgctxt "@action:button Undo modification"
+#~ msgid "Undo"
+#~ msgstr "Desfazer"
+
+#~ msgctxt "@action:button Save the image as a new image"
+#~ msgid "Save As"
+#~ msgstr "Gravar Como"
+
+#~ msgctxt "@action:button Save the image"
+#~ msgid "Save"
+#~ msgstr "Gravar"
+
+#~ msgid ""
+#~ "Unable to save file. Check if you have the correct permission to edit "
+#~ "this file."
+#~ msgstr ""
+#~ "Não foi possível gravar o ficheiro. Verifique se tem as permissões "
+#~ "correctas para o editar."
+
+#~ msgid "Save As"
+#~ msgstr "Gravar Como"
+
+#~ msgid "You are now editing a new file."
+#~ msgstr "Está agora a editar um novo ficheiro."
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgctxt "@action:button Crop an image"
+#~ msgid "Crop"
+#~ msgstr "Recortar"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Crop"
+#~ msgstr "Recortar"
+
+#~ msgctxt "@action:button Rotate an image to the left"
+#~ msgid "Rotate left"
+#~ msgstr "Rodar à esquerda"
+
+#~ msgctxt "@action:button Rotate an image to the right"
+#~ msgid "Rotate right"
+#~ msgstr "Rodar à direita"
+
+#~ msgctxt "@action:button Mirror an image vertically"
+#~ msgid "Flip"
+#~ msgstr "Inverter"
+
+#~ msgctxt "@action:button Mirror an image horizontally"
+#~ msgid "Mirror"
+#~ msgstr "Espelho"
