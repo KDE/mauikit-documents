@@ -1,85 +1,85 @@
-# German translations for mauikit-documents package.
-# Copyright (C) 2022 This file is copyright:
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the mauikit-documents package.
-# Automatically generated, 2022.
 #
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-18 00:44+0000\n"
-"PO-Revision-Date: 2022-11-18 10:30+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: de\n"
+"PO-Revision-Date: 2023-02-09 02:02+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:566
 #, kde-format
 msgid "Creating archive in %1"
-msgstr ""
+msgstr "正在於 %1 建立封存檔"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:578
 #, kde-format
 msgid "Writing in ACBF data"
-msgstr ""
+msgstr "正在寫入 ACBF 資料"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:589
 #, kde-format
 msgid "Copying across all files not marked for deletion"
-msgstr ""
+msgstr "正在複製所有未被標記要刪除的檔案"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:597
 #, kde-format
 msgid "Copying over %1"
-msgstr ""
+msgstr "正在複製到 %1 上"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:626
 #, kde-format
 msgid "Copying all content from %1 to %2"
-msgstr ""
+msgstr "正在從 %1 複製所有內容到 %2"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:636
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
 "archive..."
-msgstr ""
+msgstr "成功將舊封存檔替換為新封存檔 - 現在開始載入新封存檔…"
 
 #: src/controls/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
-msgstr ""
+msgstr "文件已鎖定"
 
 #: src/controls/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
-msgstr ""
+msgstr "請輸入密碼來解鎖並開啟檔案。"
 
 #: src/controls/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "已鎖定"
 
 #: src/controls/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 #: src/controls/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "This document is password protected."
-msgstr ""
+msgstr "這個文件已受密碼保護。"
 
 #: src/controls/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "There has been an error loading this document."
-msgstr ""
+msgstr "載入這個文件時發生了錯誤。"
 
 #: src/controls/poppler/PDFViewer.qml:131
 #, kde-format
 msgid "UnLock"
-msgstr ""
+msgstr "解除鎖定"
