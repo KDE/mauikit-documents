@@ -288,7 +288,8 @@ void ArchiveBookModel::setFilename(QString newFilename)
                     setAcbfData(nullptr);
                 }
             }
-            else if (!comicInfoEntry.isEmpty() || !xmlFiles.isEmpty()) {
+            else if (!comicInfoEntry.isEmpty() || !xmlFiles.isEmpty())
+            {
                 AdvancedComicBookFormat::Document* acbfDocument = new AdvancedComicBookFormat::Document(this);
                 const KArchiveFile* archFile = d->archive->directory()->file(comicInfoEntry);
                 bool loadData = false;
