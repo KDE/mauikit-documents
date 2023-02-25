@@ -43,7 +43,6 @@ include(KDEPackageAppTemplates)
 include(KDEClangFormat)
 include(ECMQtDeclareLoggingCategory)
 
-
 option(QUICK_COMPILER "Use QtQuick compiler to improve performance" TRUE)
 
 if(ANDROID)
@@ -59,22 +58,13 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} COMPONENTS Core Quick Concurrent REQUIRE
 find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons)
 find_package(MauiKit)
 
-if(QUICK_COMPILER)
-    find_package(Qt5QuickCompiler)
-    set_package_properties(Qt5QuickCompiler PROPERTIES
-        DESCRIPTION "Compile QML at build time"
-        TYPE OPTIONAL
-        )
-endif()
-
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/MauiKitDocuments")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/MauiKitDocumentsConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/MauiKitDocumentsConfig.cmake"
-
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-    PATH_VARS KF5_INCLUDE_INSTALL_DIR CMAKE_INSTALL_PREFIX
+    PATH_VARS CMAKE_INSTALL_PREFIX
     )
 
 install(FILES
@@ -99,6 +89,14 @@ ecm_setup_version(${PROJECT_VERSION}
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/documents_version.h"
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/MauiKit/Documents
     COMPONENT Devel)
+
+    if(QUICK_COMPILER)
+    find_package(Qt5QuickCompiler)
+    set_package_properties(Qt5QuickCompiler PROPERTIES
+        DESCRIPTION "Compile QML at build time"
+        TYPE OPTIONAL
+        )
+endif()
 
 add_definitions(-DTRANSLATION_DOMAIN="mauikitdocuments")
 ki18n_install(po)

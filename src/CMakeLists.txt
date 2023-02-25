@@ -11,18 +11,15 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/code
     )
 
-
 set(
     sources
     code/plugin.cpp
     )
 
-
 set(
     headers
     code/plugin.h
     )
-
 
 if(QUICK_COMPILER)
     qtquick_compiler_add_resources(documents_QML_QRC resources.qrc)
@@ -42,12 +39,12 @@ add_library(
 add_library(MauiKit::Documents ALIAS MauiKitDocuments)
 
 generate_export_header(MauiKitDocuments BASE_NAME Documents)
-
 set_target_properties(MauiKitDocuments PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION ${Documents_SOVERSION}
     EXPORT_NAME Documents
     )
+
 target_include_directories(MauiKitDocuments
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/MauiKit/Documents>")
 
