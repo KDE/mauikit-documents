@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2022-11-18 08:37+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Lokalize 22.08.2\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#: src/code/cbz/code/ArchiveBookModel.cpp:567
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "Ustvarjanje arhiva v %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#: src/code/cbz/code/ArchiveBookModel.cpp:579
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "Pisanje v podatke ACBF"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#: src/code/cbz/code/ArchiveBookModel.cpp:590
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "Kopiranje prek vseh datotek, ki niso označene za brisanje"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#: src/code/cbz/code/ArchiveBookModel.cpp:598
 #, kde-format
 msgid "Copying over %1"
 msgstr "Kopiranje prek %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#: src/code/cbz/code/ArchiveBookModel.cpp:627
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "Kopiranje vseh vsebin iz %1 v %2"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#: src/code/cbz/code/ArchiveBookModel.cpp:637
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "

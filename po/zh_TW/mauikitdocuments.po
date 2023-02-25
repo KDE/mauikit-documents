@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2023-02-09 02:02+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.03.70\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#: src/code/cbz/code/ArchiveBookModel.cpp:567
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "正在於 %1 建立封存檔"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#: src/code/cbz/code/ArchiveBookModel.cpp:579
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "正在寫入 ACBF 資料"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#: src/code/cbz/code/ArchiveBookModel.cpp:590
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "正在複製所有未被標記要刪除的檔案"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#: src/code/cbz/code/ArchiveBookModel.cpp:598
 #, kde-format
 msgid "Copying over %1"
 msgstr "正在複製到 %1 上"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#: src/code/cbz/code/ArchiveBookModel.cpp:627
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "正在從 %1 複製所有內容到 %2"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#: src/code/cbz/code/ArchiveBookModel.cpp:637
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "

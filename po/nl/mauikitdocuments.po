@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2022-11-17 13:57+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,33 +17,33 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#: src/code/cbz/code/ArchiveBookModel.cpp:567
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "Archief wordt in %1 aangemaakt"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#: src/code/cbz/code/ArchiveBookModel.cpp:579
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "In ACBF-gegevens wordt geschreven"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#: src/code/cbz/code/ArchiveBookModel.cpp:590
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr ""
 "Over alle bestanden, niet gemarkeerd voor verwijderen, wordt gekopieerd"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#: src/code/cbz/code/ArchiveBookModel.cpp:598
 #, kde-format
 msgid "Copying over %1"
 msgstr "Over %1 wordt gekopieerd"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#: src/code/cbz/code/ArchiveBookModel.cpp:627
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "Alle inhoud van %1 naar %2 wordt gekopieerd"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#: src/code/cbz/code/ArchiveBookModel.cpp:637
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "

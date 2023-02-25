@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:44+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2022-11-18 14:13+0100\n"
 "Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:566
+#: src/code/cbz/code/ArchiveBookModel.cpp:567
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "S'està creant l'arxiu a %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:578
+#: src/code/cbz/code/ArchiveBookModel.cpp:579
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "S'estan gravant les dades ACBF"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:589
+#: src/code/cbz/code/ArchiveBookModel.cpp:590
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "S'estan copiant tots els fitxers no marcats per a la supressió"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:597
+#: src/code/cbz/code/ArchiveBookModel.cpp:598
 #, kde-format
 msgid "Copying over %1"
 msgstr "S'està copiant %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:626
+#: src/code/cbz/code/ArchiveBookModel.cpp:627
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "S'està copiant tot el contingut des de %1 fins a %2"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:636
+#: src/code/cbz/code/ArchiveBookModel.cpp:637
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
