@@ -1,0 +1,86 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+# Tommi Nieminen <translator@legisign.org>, 2022, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"PO-Revision-Date: 2023-02-20 22:00+0200\n"
+"Last-Translator: Tommi Nieminen <tommi.nieminen@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "Luodaan arkistoa kohteeseen %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "Kirjoitetaan ABCF-tietoihin"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "Kopioidaan kaikki tiedostoihin, joita ei ole merkitty poistettaviksi"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#, kde-format
+msgid "Copying over %1"
+msgstr "Kopioidaan tiedoston %1 yli"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "Kopioidaan kaikki sisältö: %1 → %2"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr ""
+"Vanhan arkiston korvaaminen uudella onnistui – ladataan uutta arkistoa…"
+
+#: src/controls/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Tiedosto on lukittu"
+
+#: src/controls/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "Anna salasana tiedoston avaamiseksi."
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Lukittu"
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Error"
+msgstr "Virhe"
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "This document is password protected."
+msgstr "Tämä tiedosto on salasanasuojattu."
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Tiedostoa ladattaessa tapahtui virhe."
+
+#: src/controls/poppler/PDFViewer.qml:131
+#, kde-format
+msgid "UnLock"
+msgstr "Avaa lukitus"
