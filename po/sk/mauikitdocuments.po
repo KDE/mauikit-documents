@@ -1,28 +1,24 @@
-# German translations for mauikit-documents package.
-# Copyright (C) 2022 This file is copyright:
-# This file is distributed under the same license as the mauikit-documents package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2023.
-#
-# Automatically generated, 2022.
+# translation of mauikitdocuments.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: mauikit-documents\n"
+"Project-Id-Version: mauikitdocuments\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-25 00:59+0000\n"
-"PO-Revision-Date: 2023-03-12 16:37+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: de\n"
+"PO-Revision-Date: 2023-03-12 11:30+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:567
 #, kde-format
 msgid "Creating archive in %1"
-msgstr "Archiv wird in %1 erstellt"
+msgstr ""
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:579
 #, kde-format
@@ -64,24 +60,24 @@ msgstr ""
 #: src/controls/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Locked"
-msgstr "Gesperrt"
+msgstr "Zamknuté"
 
 #: src/controls/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Error"
-msgstr "Fehler"
+msgstr "Chyba"
 
 #: src/controls/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "This document is password protected."
-msgstr "Dieses Dokument ist passwortgeschützt."
+msgstr ""
 
 #: src/controls/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "There has been an error loading this document."
-msgstr "Beim Laden dieses Dokuments ist ein Fehler aufgetreten."
+msgstr ""
 
 #: src/controls/poppler/PDFViewer.qml:131
 #, kde-format
 msgid "UnLock"
-msgstr "Entsperren"
+msgstr "Odomknúť"
