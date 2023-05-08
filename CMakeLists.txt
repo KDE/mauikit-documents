@@ -23,7 +23,7 @@ endif(POLICY CMP0063)
 
 set(AUTOMOC_MOC_OPTIONS -Muri=org.mauikit.documents)
 
-project(Documents LANGUAGES CXX VERSION 1.0.1)
+project(Documents LANGUAGES CXX VERSION 1.1.0)
 
 find_package(ECM ${REQUIRED_KF5_VERSION} NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
