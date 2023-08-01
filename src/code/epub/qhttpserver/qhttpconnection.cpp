@@ -70,7 +70,7 @@ void QHttpConnection::socketDisconnected()
           return;
         }
         m_request->setSuccessful(false);
-        emit m_request->end();
+        Q_EMIT m_request->end();
     }
 
     deleteLater();
@@ -140,7 +140,7 @@ int QHttpConnection::HeadersComplete(http_parser *parser)
     connect(response, SIGNAL(done()), theConnection, SLOT(disconnectFromHost()));
 
     // we are good to go!
-    emit theConnection->newRequest(theConnection->m_request, response);
+    Q_EMIT theConnection->newRequest(theConnection->m_request, response);
     return 0;
 }
 
@@ -151,7 +151,7 @@ int QHttpConnection::MessageComplete(http_parser *parser)
     Q_ASSERT(theConnection->m_request);
 
     theConnection->m_request->setSuccessful(true);
-    emit theConnection->m_request->end();
+    Q_EMIT theConnection->m_request->end();
     return 0;
 }
 
@@ -203,6 +203,6 @@ int QHttpConnection::Body(http_parser *parser, const char *at, size_t length)
     QHttpConnection *theConnection = (QHttpConnection *)parser->data;
     Q_ASSERT(theConnection->m_request);
 
-    emit theConnection->m_request->data(QByteArray(at, length));
+    Q_EMIT theConnection->m_request->data(QByteArray(at, length));
     return 0;
 }

@@ -96,7 +96,7 @@ public:
 
     virtual ~QHttpResponse();
 
-public slots:
+public Q_SLOTS:
     /*!
      * Write the header of the response
      * using @c status as the response status
@@ -131,7 +131,7 @@ public slots:
      * itself will be closed if this is the last
      * response.
      *
-     * This will emit done() and queue this object
+     * This will Q_EMIT done() and queue this object
      * for deletion. For details see \ref memorymanagement
      */
     Q_INVOKABLE void end(const QString &data=QString());
@@ -141,7 +141,7 @@ public slots:
      */
     Q_INVOKABLE void setHeader(const QString &field, const QString &value);
 
-signals:
+Q:
     /*!
      * Emitted once the response is finished.
      * You should NOT interact with this object
@@ -171,7 +171,7 @@ private:
     bool m_useChunkedEncoding;
     bool m_finished;
 
-private slots:
+private Q_SLOTS:
     void connectionClosed();
 
 };

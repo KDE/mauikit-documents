@@ -309,7 +309,7 @@ void BookInfo::addAuthor(QString activity, QString language, QString firstName, 
     author->setHomePages(homePages);
     author->setEmails(emails);
     d->author.append(author);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 void BookInfo::setAuthor(int index, QString activity, QString language, QString firstName, QString middleName, QString lastName, QString nickName, QStringList homePages, QStringList emails)
@@ -323,25 +323,25 @@ void BookInfo::setAuthor(int index, QString activity, QString language, QString 
     author->setNickName(nickName);
     author->setHomePages(homePages);
     author->setEmails(emails);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 void BookInfo::removeAuthor(int index)
 {
     d->author.removeAt(index);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 void BookInfo::addAuthor(Author* author)
 {
     d->author.append(author);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 void BookInfo::removeAuthor(Author* author)
 {
     d->author.removeAll(author);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 QStringList BookInfo::titleForAllLanguages()
@@ -387,7 +387,7 @@ void BookInfo::setTitle(QString title, QString language)
     {
         d->title[language] = title;
     }
-    emit titleChanged();
+    Q_EMIT titleChanged();
 }
 
 QHash<QString, int> BookInfo::genre()
@@ -411,14 +411,14 @@ void BookInfo::setGenre(QString genre, int matchPercentage)
     d->genre[genre] = matchPercentage;
     if(emitNewGenre)
     {
-        emit genresChanged();
+        Q_EMIT genresChanged();
     }
 }
 
 void BookInfo::removeGenre(QString genre)
 {
     d->genre.remove(genre);
-    emit genresChanged();
+    Q_EMIT genresChanged();
 }
 
 QStringList BookInfo::availableGenres()
@@ -463,19 +463,19 @@ QStringList BookInfo::characters()
 void BookInfo::addCharacter(QString name)
 {
     d->characters.append(name);
-    emit charactersChanged();
+    Q_EMIT charactersChanged();
 }
 
 void BookInfo::removeCharacter(QString name)
 {
     d->characters.removeAll(name);
-    emit charactersChanged();
+    Q_EMIT charactersChanged();
 }
 
 void BookInfo::setCharacters(QStringList characters)
 {
     d->characters = characters;
-    emit charactersChanged();
+    Q_EMIT charactersChanged();
 }
 
 QList<QStringList> BookInfo::annotationsForAllLanguage()
@@ -609,7 +609,7 @@ QList<Sequence *> BookInfo::sequence()
 void BookInfo::addSequence(Sequence* sequence)
 {
     d->sequence.append(sequence);
-    emit sequenceCountChanged();
+    Q_EMIT sequenceCountChanged();
 }
 
 void BookInfo::addSequence(int number, QString title, int volume)
@@ -624,7 +624,7 @@ void BookInfo::addSequence(int number, QString title, int volume)
 void BookInfo::removeSequence(Sequence* sequence)
 {
     d->sequence.removeAll(sequence);
-    emit sequenceCountChanged();
+    Q_EMIT sequenceCountChanged();
 }
 
 void BookInfo::removeSequence(int index)
@@ -652,7 +652,7 @@ QList<DatabaseRef *> BookInfo::databaseRef()
 void BookInfo::addDatabaseRef(DatabaseRef* databaseRef)
 {
     d->databaseRef.append(databaseRef);
-    emit databaseRefCountChanged();
+    Q_EMIT databaseRefCountChanged();
 }
 
 void BookInfo::addDatabaseRef(QString reference, QString dbname, QString type)
@@ -667,7 +667,7 @@ void BookInfo::addDatabaseRef(QString reference, QString dbname, QString type)
 void BookInfo::removeDatabaseRef(DatabaseRef* databaseRef)
 {
     d->databaseRef.removeAll(databaseRef);
-    emit databaseRefCountChanged();
+    Q_EMIT databaseRefCountChanged();
 }
 
 void BookInfo::removeDatabaseRef(int index)
@@ -693,7 +693,7 @@ QList<ContentRating *> BookInfo::contentRating()
 void BookInfo::addContentRating(ContentRating* contentRating)
 {
     d->contentRating.append(contentRating);
-    emit contentRatingCountChanged();
+    Q_EMIT contentRatingCountChanged();
 }
 
 void BookInfo::addContentRating(QString rating, QString type)
@@ -707,7 +707,7 @@ void BookInfo::addContentRating(QString rating, QString type)
 void BookInfo::removeContentRating(ContentRating* contentRating)
 {
     d->contentRating.removeAll(contentRating);
-    emit contentRatingCountChanged();
+    Q_EMIT contentRatingCountChanged();
 }
 
 void BookInfo::removeContentRating(int index)
@@ -731,5 +731,5 @@ bool BookInfo::rightToLeft() const
 
 void BookInfo::setRightToLeft(const bool& rtl) {
     d->rightToLeft = rtl;
-    emit rightToLeftChanged();
+    Q_EMIT rightToLeftChanged();
 }

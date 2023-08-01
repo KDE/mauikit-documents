@@ -225,7 +225,7 @@ QVariantList EpubReader::getContents()
     QVariantList res = (this->navhref != "") ? this->parseNav() : this->parseNCX();
 
     qDebug()<< res;
-    emit contentsReady(res);
+    Q_EMIT contentsReady(res);
     return res;
 }
 

@@ -57,7 +57,7 @@ void FilterProxy::setFilterString(const QString &string)
 {
     QSortFilterProxyModel::setFilterFixedString(string);
     QSortFilterProxyModel::setFilterCaseSensitivity(Qt::CaseInsensitive);
-    emit filterStringChanged();
+    Q_EMIT filterStringChanged();
 }
 
 QString FilterProxy::filterString() const
@@ -68,7 +68,7 @@ QString FilterProxy::filterString() const
 void FilterProxy::setFilterBoolean(const bool& value)
 {
     d->filterBoolean = value;
-    emit filterBooleanChanged();
+    Q_EMIT filterBooleanChanged();
 }
 
 bool FilterProxy::filterBoolean() const

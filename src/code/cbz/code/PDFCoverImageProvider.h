@@ -55,7 +55,7 @@ class QDir;
  * \brief A worker class which does the bulk of the work for PreviewImageProvider
  */
 class PDFCoverRunnable : public QObject, public QRunnable {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     PDFCoverRunnable(const QString &id, const QSize &requestedSize, const QDir& thumbDir);
 

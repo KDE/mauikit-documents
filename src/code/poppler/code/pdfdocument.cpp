@@ -119,7 +119,7 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
         Q_EMIT error("Can't open the document located at " + pathName);
 
         this->m_isValid = false;
-        emit this->isValidChanged();
+        Q_EMIT this->isValidChanged();
 
         delete m_document;
         return false;
@@ -127,11 +127,11 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
 
     if (m_document->isLocked()) {
         qDebug() << "ERROR : Can't open the document located at beacuse it is locked" + pathName;
-        emit this->documentLocked();
-        emit this->isLockedChanged();
+        Q_EMIT this->documentLocked();
+        Q_EMIT this->isLockedChanged();
 
         this->m_isValid = false;
-        emit this->isValidChanged();
+        Q_EMIT this->isValidChanged();
 
         return false;
     }
@@ -139,12 +139,12 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
     qDebug() << "Document loaded successfully !";
 
     this->pages = this->m_document->numPages();
-    emit this->pagesCountChanged();
-    emit this->titleChanged();
-    emit this->isLockedChanged();
+    Q_EMIT this->pagesCountChanged();
+    Q_EMIT this->titleChanged();
+    Q_EMIT this->isLockedChanged();
 
     this->m_isValid = true;
-    emit this->isValidChanged();
+    Q_EMIT this->isValidChanged();
 
     // Init toc model
     if(!m_tocModel)
@@ -244,7 +244,7 @@ void PdfDocument::_q_populate(PdfPagesList pagesList)
 {
     qDebug() << "Number of pages:" << pagesList.count();
 
-    Q_FOREACH (Poppler::Page *page, pagesList)
+    for (Poppler::Page *page : pagesList)
     {
         beginInsertRows(QModelIndex(), rowCount(), rowCount());
         m_pages << page;

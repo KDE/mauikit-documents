@@ -129,7 +129,7 @@ QString PublishInfo::publisher() const
 void PublishInfo::setPublisher(const QString& publisher)
 {
     d->publisher = publisher;
-    emit publisherChanged();
+    Q_EMIT publisherChanged();
 }
 
 QDate PublishInfo::publishDate() const
@@ -144,7 +144,7 @@ QDate PublishInfo::publishDate() const
 void PublishInfo::setPublishDate(const QDate& publishDate)
 {
     d->publishDate = publishDate;
-    emit publishDateChanged();
+    Q_EMIT publishDateChanged();
 }
 
 void PublishInfo::setPublishDateFromInts(const int &year, const int &month, const int &day)
@@ -161,7 +161,7 @@ QString PublishInfo::city() const
 void PublishInfo::setCity(const QString& city)
 {
     d->city = city;
-    emit cityChanged();
+    Q_EMIT cityChanged();
 }
 
 QString PublishInfo::isbn() const
@@ -172,7 +172,7 @@ QString PublishInfo::isbn() const
 void PublishInfo::setIsbn(const QString& isbn)
 {
     d->isbn = isbn;
-    emit isbnChanged();
+    Q_EMIT isbnChanged();
 }
 
 QString PublishInfo::license() const
@@ -183,5 +183,5 @@ QString PublishInfo::license() const
 void PublishInfo::setLicense(const QString& license)
 {
     d->license = license;
-    emit licenseChanged();
+    Q_EMIT licenseChanged();
 }

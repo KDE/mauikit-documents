@@ -78,7 +78,7 @@ void PeruseConfig::bookOpened(QString path)
     }
     d->config.group("general").writeEntry("recently opened", recent);
     d->config.sync();
-    emit recentlyOpenedChanged();
+    Q_EMIT recentlyOpenedChanged();
 }
 
 QStringList PeruseConfig::recentlyOpened() const
@@ -120,13 +120,13 @@ void PeruseConfig::addBookLocation(const QString& location)
         if(alreadyInThere)
         {
             // Don't be silly, don't add a new location if it's already covered by something more high level...
-            emit showMessage("Attempted to add a new location to the list of search folders which is a sub-folder to something already in the list.");
+            Q_EMIT showMessage("Attempted to add a new location to the list of search folders which is a sub-folder to something already in the list.");
             return;
         }
         newLocations.append(newLocation);
         d->config.group("general").writeEntry("book locations", newLocations);
         d->config.sync();
-        emit bookLocationsChanged();
+        Q_EMIT bookLocationsChanged();
     }
 }
 
@@ -159,7 +159,7 @@ void PeruseConfig::setAnimateJumpAreas(bool animate)
     if(animateJumpAreasCurrentVal != animate) {
         d->config.group("general").writeEntry("animate jump areas", animate);
         d->config.sync();
-        emit animateJumpAreasChanged();
+        Q_EMIT animateJumpAreasChanged();
     }
 }
 

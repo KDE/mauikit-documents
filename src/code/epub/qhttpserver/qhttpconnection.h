@@ -46,13 +46,13 @@ public:
     void write(const QByteArray &data);
     void flush();
 
-public slots:
+public Q_SLOTS:
     void disconnectFromHost();
 
-signals:
+Q:
     void newRequest(QHttpRequest*, QHttpResponse*);
 
-private slots:
+private Q_SLOTS:
     void parseRequest();
     void socketDisconnected();
 

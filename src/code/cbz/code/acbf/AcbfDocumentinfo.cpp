@@ -219,7 +219,7 @@ void DocumentInfo::addAuthor(QString activity, QString language, QString firstNa
     author->setHomePages(homePages);
     author->setEmails(emails);
     d->author.append(author);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 void DocumentInfo::setAuthor(int index, QString activity, QString language, QString firstName, QString middleName, QString lastName, QString nickName, QStringList homePages, QStringList emails)
@@ -233,13 +233,13 @@ void DocumentInfo::setAuthor(int index, QString activity, QString language, QStr
     author->setNickName(nickName);
     author->setHomePages(homePages);
     author->setEmails(emails);
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 void DocumentInfo::removeAuthor(int index)
 {
     removeAuthor(d->author.at(index));
-    emit authorsChanged();
+    Q_EMIT authorsChanged();
 }
 
 QDate DocumentInfo::creationDate() const
@@ -260,13 +260,13 @@ QStringList DocumentInfo::source() const
 void DocumentInfo::setSource(const QStringList& source)
 {
     d->source = source;
-    emit sourceChanged();
+    Q_EMIT sourceChanged();
 }
 
 void DocumentInfo::removeSource(int index)
 {
     d->source.removeAt(index);
-    emit sourceChanged();
+    Q_EMIT sourceChanged();
 }
 
 QString DocumentInfo::id() const
@@ -291,7 +291,7 @@ float DocumentInfo::version() const
 void DocumentInfo::setVersion(const float& version)
 {
     d->version = version;
-    emit versionChanged();
+    Q_EMIT versionChanged();
 }
 
 QStringList DocumentInfo::history() const
@@ -302,17 +302,17 @@ QStringList DocumentInfo::history() const
 void DocumentInfo::setHistory(const QStringList& history)
 {
     d->history = history;
-    emit historyChanged();
+    Q_EMIT historyChanged();
 }
 
 void DocumentInfo::addHistoryLine(const QString& historyLine)
 {
     d->history.append(historyLine);
-    emit historyChanged();
+    Q_EMIT historyChanged();
 }
 
 void DocumentInfo::removeHistoryLine(int index)
 {
     d->history.removeAt(index);
-    emit historyChanged();
+    Q_EMIT historyChanged();
 }

@@ -44,7 +44,7 @@ public:
         LevelRole
     };
 
-    explicit PdfTocModel(QAbstractListModel *parent = 0);
+    explicit PdfTocModel(QAbstractListModel *parent = nullptr);
     virtual ~PdfTocModel();
 
     void setDocument(Poppler::Document* document);

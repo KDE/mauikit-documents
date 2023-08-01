@@ -73,7 +73,7 @@ private:
  * \brief A worker class which does the bulk of the work for PreviewImageProvider
  */
 class ArchiveImageRunnable : public QObject, public QRunnable {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     explicit ArchiveImageRunnable(const QString &id, const QSize &requestedSize, ArchiveBookModel* bookModel, const QString& prefix);
     ~ArchiveImageRunnable() override;

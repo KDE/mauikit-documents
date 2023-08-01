@@ -23,8 +23,7 @@ set(acbf_SRCS
     AcbfStyle.cpp
     AcbfStyleSheet.cpp
     AcbfTextarea.cpp
-    AcbfTextlayer.cpp
-)
+    AcbfTextlayer.cpp)
 
 set(acbf_HEADERS
     AcbfAuthor.h
@@ -51,8 +50,7 @@ set(acbf_HEADERS
     AcbfStyle.h
     AcbfStyleSheet.h
     AcbfTextarea.h
-    AcbfTextlayer.h
-)
+    AcbfTextlayer.h)
 
 ecm_qt_declare_logging_category(acbf_SRCS
     HEADER acbf_debug.h
@@ -60,8 +58,7 @@ ecm_qt_declare_logging_category(acbf_SRCS
     CATEGORY_NAME org.kde.peruse.acbf
     DEFAULT_SEVERITY Warning
     DESCRIPTION "Advanced Comic Book Format (aka ACBF)"
-    EXPORT AdvancedComicBookFormat
-)
+    EXPORT AdvancedComicBookFormat)
 
 add_library(acbf STATIC ${acbf_SRCS})
 
@@ -69,8 +66,7 @@ include(ECMGenerateExportHeader)
 
 target_link_libraries(acbf
     PUBLIC
-    Qt5::Core
-)
+    Qt${QT_MAJOR_VERSION}::Core)
 #target_include_directories(acbf
 #    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/AdvancedComicBookFormat>"
 #)

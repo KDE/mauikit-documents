@@ -1,8 +1,8 @@
 project(KRar C)
 
 
-find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Archive)
-find_package(Qt5 ${REQUIRED_QT_VERSION} COMPONENTS Core REQUIRED)
+find_package(KF${KF_MAJOR_VERSION} ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS Archive)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Core )
 
 
 set(unarr_SRCS
@@ -22,8 +22,7 @@ set(unarr_SRCS
     unarr/common/unarr.c
     unarr/common/stream.c
     unarr/common/conv.c
-    unarr/common/crc32.c
-)
+    unarr/common/crc32.c)
 
 add_library(karchive-c-unarr STATIC ${unarr_SRCS})
 
@@ -42,26 +41,20 @@ target_link_libraries(iface_karchive-c-unarr  INTERFACE karchive-c-unarr  $<TARG
 
 set(karchive_rar_SRCS
     KRar.cpp
-    KRarFileEntry.cpp
-)
+    KRarFileEntry.cpp)
 
-add_library (
-    krarlib
+add_library (krarlib
     STATIC
-    ${karchive_rar_SRCS}
-   )
-
+    ${karchive_rar_SRCS})
 
 target_include_directories(krarlib
     PUBLIC
     unarr
-    ${CMAKE_CURRENT_SOURCE_DIR}
-)
+    ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries (krarlib
     PUBLIC
     iface_karchive-c-unarr
 
-    Qt5::Core
-    KF5::Archive
-)
+    Qt${QT_MAJOR_VERSION}::Core
+    KF${KF_MAJOR_VERSION}::Archive)

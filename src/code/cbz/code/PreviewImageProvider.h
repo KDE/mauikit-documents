@@ -56,7 +56,7 @@ private:
  * \brief A worker class which does the bulk of the work for PreviewImageProvider
  */
 class PreviewRunnable : public QObject, public QRunnable {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     explicit PreviewRunnable(const QString &id, const QSize &requestedSize);
     ~PreviewRunnable() override;

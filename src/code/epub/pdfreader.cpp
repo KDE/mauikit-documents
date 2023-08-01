@@ -164,7 +164,7 @@ QVariantList PDFReader::getContents() {
             res.append(entry);
         }
     }
-    emit contentsReady(res);
+    Q_EMIT contentsReady(res);
     return res;
 }
 

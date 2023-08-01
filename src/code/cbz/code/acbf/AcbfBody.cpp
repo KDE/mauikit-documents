@@ -96,7 +96,7 @@ QString Body::bgcolor() const
 void Body::setBgcolor(const QString& newColor)
 {
     d->bgcolor = newColor;
-    emit bgcolorChanged();
+    Q_EMIT bgcolorChanged();
 }
 
 QList<Page *> Body::pages() const
@@ -123,13 +123,13 @@ void Body::addPage(Page* page, int index)
         d->pages.append(page);
     }
     Q_EMIT pageAdded(page);
-    emit pageCountChanged();
+    Q_EMIT pageCountChanged();
 }
 
 void Body::removePage(Page* page)
 {
     d->pages.removeAll(page);
-    emit pageCountChanged();
+    Q_EMIT pageCountChanged();
 }
 
 bool Body::swapPages(Page* swapThis, Page* withThis)
@@ -138,7 +138,7 @@ bool Body::swapPages(Page* swapThis, Page* withThis)
     int index2 = d->pages.indexOf(withThis);
     if(index1 > -1 && index2 > -1) {
         d->pages.swapItemsAt(index1, index2);
-        emit pageCountChanged();
+        Q_EMIT pageCountChanged();
         return true;
     }
     return false;

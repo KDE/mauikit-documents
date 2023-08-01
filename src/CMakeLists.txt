@@ -2,102 +2,85 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
+remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY)
 
 add_subdirectory(code/poppler)
 #add_subdirectory(epub)
 add_subdirectory(code/cbz)
 
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/code
-    )
+    ${CMAKE_CURRENT_SOURCE_DIR}/code)
 
-set(
-    sources
-    code/plugin.cpp
-    )
+ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} URI "org.mauikit.documents" VERSION 3.0 CLASSNAME DocumentsPlugin)
 
-set(
-    headers
-    code/plugin.h
-    )
+set(sources
+    code/plugin.cpp)
 
-if(QUICK_COMPILER)
-    qtquick_compiler_add_resources(documents_QML_QRC resources.qrc)
-else()
-    qt5_add_resources(documents_QML_QRC resources.qrc)
+set(headers
+    code/plugin.h)
+
+if (QT_MAJOR_VERSION STREQUAL "5")
+    if(QUICK_COMPILER)
+        qtquick_compiler_add_resources(documents_QML_QRC resources.qrc)
+    else()
+        qt5_add_resources(documents_QML_QRC resources.qrc)
+    endif()
 endif()
 
-ecm_generate_qmltypes(org.mauikit.documents ${PROJECT_VERSION} DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents)
+ecm_target_qml_sources(MauiKitDocuments${MAUI_MAJOR_VERSION} PATH poppler SOURCES
+    controls.${QT_MAJOR_VERSION}/poppler/PDFViewer.qml)
 
-add_library(
-    MauiKitDocuments
-    SHARED
-    ${sources}
-    ${documents_QML_QRC}
-    )
+target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION}
+    PRIVATE
+    ${sources})
 
-add_library(MauiKit::Documents ALIAS MauiKitDocuments)
+add_library(MauiKit${MAUI_MAJOR_VERSION}::Documents ALIAS MauiKitDocuments${MAUI_MAJOR_VERSION})
 
-generate_export_header(MauiKitDocuments BASE_NAME Documents)
-set_target_properties(MauiKitDocuments PROPERTIES
+if (QT_MAJOR_VERSION STREQUAL "5")
+    if(QUICK_COMPILER)
+        target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION} PRIVATE ${documents_QML_QRC})
+
+        add_definitions(-DQUICK_COMPILER)
+        target_compile_definitions(MauiKitDocuments${MAUI_MAJOR_VERSION} PUBLIC QUICK_COMPILER)
+    endif()
+endif()
+
+generate_export_header(MauiKitDocuments${MAUI_MAJOR_VERSION} BASE_NAME Documents)
+set_target_properties(MauiKitDocuments${MAUI_MAJOR_VERSION} PROPERTIES
     VERSION ${PROJECT_VERSION}
-    SOVERSION ${Documents_SOVERSION}
-    EXPORT_NAME Documents
-    )
+    SOVERSION ${PROJECT_VERSION_MAJOR}
+    EXPORT_NAME "Documents")
 
-target_include_directories(MauiKitDocuments
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/MauiKit/Documents>")
+target_include_directories(MauiKitDocuments${MAUI_MAJOR_VERSION}
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/MauiKit${MAUI_MAJOR_VERSION}/Documents>")
 
-target_include_directories(MauiKitDocuments PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR};${CMAKE_CURRENT_BINARY_DIR};>")
+target_include_directories(MauiKitDocuments${MAUI_MAJOR_VERSION} PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR};${CMAKE_CURRENT_BINARY_DIR};>")
 
 if(ANDROID)
-    target_link_libraries(MauiKitDocuments PRIVATE Qt5::AndroidExtras)
+    target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION} PRIVATE Qt${QT_MAJOR_VERSION}::AndroidExtras)
 endif()
 
 if(UNIX AND NOT ANDROID)
-    target_link_libraries(MauiKitDocuments PRIVATE KF5::ConfigCore)
+    target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION} PRIVATE KF${KF_MAJOR_VERSION}::ConfigCore)
 endif()
 
-if(QUICK_COMPILER)
-    add_definitions(-DQUICK_COMPILER)
-    target_compile_definitions(MauiKitDocuments PUBLIC QUICK_COMPILER)
-endif()
-
-target_link_libraries(
-    MauiKitDocuments
+target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION}
     PRIVATE
     PopplerLib
     CBZLib
-    KF5::I18n
-    Qt5::Core
-    Qt5::Quick
-    Qt5::Qml
-    MauiKit
-    )
+    KF${KF_MAJOR_VERSION}::I18n
+    Qt${QT_MAJOR_VERSION}::Core
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::Qml
+    MauiKit${MAUI_MAJOR_VERSION})
 
-install(TARGETS MauiKitDocuments EXPORT MauiKitDocumentsTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+ecm_finalize_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} DESTINATION ${KDE_INSTALL_QMLDIR})
+ecm_generate_qmltypes(org.mauikit.documents 3.0 DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents)
+
+install(TARGETS MauiKitDocuments${MAUI_MAJOR_VERSION} EXPORT MauiKitDocuments${MAUI_MAJOR_VERSION}Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
     ${headers}
     ${CMAKE_CURRENT_BINARY_DIR}/documents_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/MauiKit/Documents
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/MauiKit${MAUI_MAJOR_VERSION}/Documents
     COMPONENT Devel)
-
-if (BUILD_SHARED_LIBS)
-    add_custom_target(copy_to_bin ALL
-        COMMAND ${CMAKE_COMMAND} -E
-        make_directory ${CMAKE_BINARY_DIR}/bin/org/mauikit/documents/
-        COMMAND ${CMAKE_COMMAND} -E
-        copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/controls ${CMAKE_BINARY_DIR}/bin/org/mauikit/documents/
-        COMMAND ${CMAKE_COMMAND} -E
-        copy $<TARGET_FILE:MauiKitDocuments> ${CMAKE_BINARY_DIR}/bin/org/mauikit/documents/
-        )
-
-    if(QUICK_COMPILER AND NOT ANDROID )
-        install(FILES controls/qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents)
-    else()
-        install(DIRECTORY controls/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents)
-    endif()
-endif()
-
-install(TARGETS MauiKitDocuments DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents )

@@ -100,7 +100,7 @@ QString Textlayer::language() const
 void Textlayer::setLanguage(const QString& language)
 {
     d->language = language;
-    emit languageChanged();
+    Q_EMIT languageChanged();
 }
 
 QString Textlayer::bgcolor() const
@@ -117,7 +117,7 @@ QString Textlayer::bgcolor() const
 void Textlayer::setBgcolor(const QString& newColor)
 {
     d->bgcolor = newColor;
-    emit bgcolorChanged();
+    Q_EMIT bgcolorChanged();
 }
 
 QObjectList Textlayer::textareas() const

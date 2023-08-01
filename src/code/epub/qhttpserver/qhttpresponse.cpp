@@ -187,7 +187,7 @@ void QHttpResponse::end(const QString &data)
 
     m_finished = true;
 
-    emit done();
+    Q_EMIT done();
     deleteLater();
     // TODO: end connection and delete ourselves
 }

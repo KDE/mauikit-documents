@@ -45,26 +45,26 @@ void DocumentsPlugin::registerTypes(const char *uri)
     QFontDatabase::addApplicationFont(":/fonts/Helvetica-Font/Helvetica-Oblique.ttf");
     QFontDatabase::addApplicationFont(":/fonts/times/TIMESR.ttf");
     QFontDatabase::addApplicationFont(":/fonts/Helvetica-Font/Helvetica.ttf");
-    #endif
+#endif
 
+    Q_ASSERT(QLatin1String(uri) == QLatin1String("org.mauikit.documents"));
     //Poppler stuff
     qmlRegisterType<PdfDocument>(uri, 1, 0, "Document");
-    qmlRegisterType(resolveFileUrl(QStringLiteral("poppler/PDFViewer.qml")), uri, 1, 0, "PDFViewer");
-    qmlRegisterType(resolveFileUrl(QStringLiteral("FileDialog.qml")), uri, 1, 0, "FileDialog");
+    qmlRegisterType(componentUrl(QStringLiteral("poppler/PDFViewer.qml")), uri, 1, 0, "PDFViewer");
 
     //CB stuff
     qmlRegisterType<CategoryEntriesModel>(uri, 1, 0, "CategoryEntriesModel");
-       qmlRegisterType<BookListModel>(uri, 1, 0, "BookListModel");
-       qmlRegisterType<BookModel>(uri, 1, 0, "BookModel");
-       qmlRegisterType<ArchiveBookModel>(uri, 1, 0, "ArchiveBookModel");
-       qmlRegisterType<FolderBookModel>(uri, 1, 0, "FolderBookModel");
-       qmlRegisterType<PropertyContainer>(uri, 1, 0, "PropertyContainer");
-       qmlRegisterType<FilterProxy>(uri, 1, 0, "FilterProxy");
+    qmlRegisterType<BookListModel>(uri, 1, 0, "BookListModel");
+    qmlRegisterType<BookModel>(uri, 1, 0, "BookModel");
+    qmlRegisterType<ArchiveBookModel>(uri, 1, 0, "ArchiveBookModel");
+    qmlRegisterType<FolderBookModel>(uri, 1, 0, "FolderBookModel");
+    qmlRegisterType<PropertyContainer>(uri, 1, 0, "PropertyContainer");
+    qmlRegisterType<FilterProxy>(uri, 1, 0, "FilterProxy");
 
-       qmlRegisterUncreatableType<AdvancedComicBookFormat::Reference>(uri, 1, 0, "Reference", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
-        qmlRegisterUncreatableType<AdvancedComicBookFormat::Binary>(uri, 1, 0, "Binary", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
-        qmlRegisterUncreatableType<AdvancedComicBookFormat::Style>(uri, 1, 0, "Style", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
-        qmlRegisterType<AdvancedComicBookFormat::IdentifiedObjectModel>(uri, 1, 0, "IdentifiedObjectModel");
+    qmlRegisterUncreatableType<AdvancedComicBookFormat::Reference>(uri, 1, 0, "Reference", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
+    qmlRegisterUncreatableType<AdvancedComicBookFormat::Binary>(uri, 1, 0, "Binary", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
+    qmlRegisterUncreatableType<AdvancedComicBookFormat::Style>(uri, 1, 0, "Style", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
+    qmlRegisterType<AdvancedComicBookFormat::IdentifiedObjectModel>(uri, 1, 0, "IdentifiedObjectModel");
 
 }
 
@@ -76,7 +76,12 @@ void DocumentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
     engine->addImageProvider("preview", new Thumbnailer());
 
 
-//    engine->addImageProvider("preview", new PreviewImageProvider());
+    //    engine->addImageProvider("preview", new PreviewImageProvider());
     engine->addImageProvider("comiccover", new ComicCoverImageProvider());
 
+}
+
+QUrl DocumentsPlugin::componentUrl(const QString &fileName) const
+{
+    return QUrl(resolveFileUrl(fileName));
 }

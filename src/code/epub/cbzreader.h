@@ -24,7 +24,7 @@ public:
     Q_INVOKABLE bool load(const QString &filename);
     Q_INVOKABLE QVariantMap getCoverInfo(int thumbsize, int fullsize);
 
-signals:
+Q:
     void contentsReady(QVariantList contents);
 
 private:

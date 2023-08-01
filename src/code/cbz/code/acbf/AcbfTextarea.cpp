@@ -203,13 +203,13 @@ void Textarea::addPoint(const QPoint& point, int index)
     else {
         d->points.append(point);
     }
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 void Textarea::removePoint(const QPoint& point)
 {
     d->points.removeAll(point);
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 bool Textarea::swapPoints(const QPoint& swapThis, const QPoint& withThis)
@@ -218,7 +218,7 @@ bool Textarea::swapPoints(const QPoint& swapThis, const QPoint& withThis)
     int index2 = d->points.indexOf(withThis);
     if(index1 > -1 && index2 > -1) {
         d->points.swapItemsAt(index1, index2);
-        emit pointCountChanged();
+        Q_EMIT pointCountChanged();
         return true;
     }
     return false;
@@ -231,7 +231,7 @@ void Textarea::setPointsFromRect(const QPoint &topLeft, const QPoint &bottomRigh
     d->points.append(rect.topRight());
     d->points.append(rect.bottomRight());
     d->points.append(rect.bottomLeft());
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 int Textarea::pointCount() const
@@ -278,13 +278,13 @@ QString Textarea::bgcolor() const
 void Textarea::setBgcolor(const QString& newColor)
 {
     d->bgcolor = newColor;
-    emit bgcolorChanged();
+    Q_EMIT bgcolorChanged();
 }
 
 void Textarea::setTextRotation(int rotation)
 {
     d->textRotation = rotation;
-    emit textRotationChanged();
+    Q_EMIT textRotationChanged();
 }
 
 int Textarea::textRotation() const
@@ -300,7 +300,7 @@ QString Textarea::type() const
 void Textarea::setType(const QString& type)
 {
     d->type = type;
-    emit typeChanged();
+    Q_EMIT typeChanged();
 }
 
 QStringList Textarea::availableTypes()
@@ -327,7 +327,7 @@ bool Textarea::inverted() const
 void Textarea::setInverted(bool inverted)
 {
     d->inverted = inverted;
-    emit invertedChanged();
+    Q_EMIT invertedChanged();
 }
 
 bool Textarea::transparent() const
@@ -338,7 +338,7 @@ bool Textarea::transparent() const
 void Textarea::setTransparent(bool transparent)
 {
     d->transparent = transparent;
-    emit transparentChanged();
+    Q_EMIT transparentChanged();
 }
 
 QStringList Textarea::paragraphs() const
@@ -349,7 +349,7 @@ QStringList Textarea::paragraphs() const
 void Textarea::setParagraphs(const QStringList& paragraphs)
 {
     d->paragraphs = paragraphs;
-    emit paragraphsChanged();
+    Q_EMIT paragraphsChanged();
 }
 
 int Textarea::localIndex()

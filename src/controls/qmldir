@@ -1,4 +1,0 @@
-module org.mauikit.documents
-plugin MauiKitDocuments
-classname DocumentsPlugin
-typeinfo plugins.qmltypes
