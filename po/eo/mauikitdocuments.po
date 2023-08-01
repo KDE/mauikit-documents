@@ -1,0 +1,88 @@
+# translation of mauikitdocuments.pot to esperanto
+# Copyright (C) 2023 Free Software Foundation, Inc.
+# This file is distributed under the same license as the mauikit-documents package.
+# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"PO-Revision-Date: 2023-07-31 06:28+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "Kreante arkivon en %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "Skribo en ACBF-datumoj"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "Kopiado tra ĉiuj dosieroj ne markitaj por forigo"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#, kde-format
+msgid "Copying over %1"
+msgstr "Kopiante super %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "Kopiante la tutan enhavon de %1 al %2"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr ""
+"Sukcese anstataŭigita malnova arkivo per la nova arkivo - nun ŝargante la "
+"novan arkivon..."
+
+#: src/controls/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Dokumento Ŝlosita"
+
+#: src/controls/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "Bonvolu enigi vian pasvorton por malŝlosi kaj malfermi la dosieron."
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Ŝlosita"
+
+#: src/controls/poppler/PDFViewer.qml:125
+#, kde-format
+msgid "Error"
+msgstr "Eraro"
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "This document is password protected."
+msgstr "Ĉi tiu dokumento estas pasvorta protektita."
+
+#: src/controls/poppler/PDFViewer.qml:126
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Okazis eraro dum la ŝargo de ĉi tiu dokumento."
+
+#: src/controls/poppler/PDFViewer.qml:131
+#, kde-format
+msgid "UnLock"
+msgstr "Malŝlosi"
