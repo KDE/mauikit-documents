@@ -21,7 +21,7 @@ Maui.Page
     title:  poppler.title
     padding: 0
 
-    Maui.NewDialog
+    Maui.InputDialog
     {
         id: _passwordDialog
 
