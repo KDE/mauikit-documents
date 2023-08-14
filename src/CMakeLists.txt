@@ -11,7 +11,7 @@ add_subdirectory(code/cbz)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/code)
 
-ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} URI "org.mauikit.documents" VERSION 3.0 CLASSNAME DocumentsPlugin)
+ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} URI "org.mauikit.documents" CLASSNAME DocumentsPlugin)
 
 set(sources
     code/plugin.cpp)
