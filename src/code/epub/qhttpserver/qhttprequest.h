@@ -194,7 +194,7 @@ public:
           Qt::UniqueConnection);
     }
 
-signals:
+Q:
     /*!
      * This signal is emitted whenever body data is encountered
      * in a message.
@@ -204,7 +204,7 @@ signals:
 
     /*!
      * Emitted at the end of the HTTP request.
-     * No data() signals will be emitted after this.
+     * No data() Q will be emitted after this.
      */
     void end();
 
@@ -235,7 +235,7 @@ private:
 
     friend class QHttpConnection;
 
-    private slots:
+    private Q_SLOTS:
       void appendBody(const QByteArray &body)
       {
         m_body.append(body);

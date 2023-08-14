@@ -216,7 +216,7 @@ QString Page::bgcolor() const
 void Page::setBgcolor(const QString& newColor)
 {
     d->bgcolor = newColor;
-    emit bgcolorChanged();
+    Q_EMIT bgcolorChanged();
 }
 
 QString Page::transition() const
@@ -227,7 +227,7 @@ QString Page::transition() const
 void Page::setTransition(const QString& transition)
 {
     d->transition = transition;
-    emit transitionChanged();
+    Q_EMIT transitionChanged();
 }
 
 QStringList Page::availableTransitions()
@@ -274,7 +274,7 @@ void Page::setTitle(const QString& title, const QString& language)
     {
         d->title[language] = title;
     }
-    emit titlesChanged();
+    Q_EMIT titlesChanged();
 }
 
 QString Page::imageHref() const
@@ -314,7 +314,7 @@ void Page::setTextLayer(Textlayer* textlayer, const QString& language)
             layer->deleteLater();
         }
     }
-    emit textLayerLanguagesChanged();
+    Q_EMIT textLayerLanguagesChanged();
 }
 
 void Page::addTextLayer(const QString &language)
@@ -384,13 +384,13 @@ void Page::addFrame(Frame* frame, int index)
         d->frames.append(frame);
     }
     Q_EMIT frameAdded(frame);
-    emit framePointStringsChanged();
+    Q_EMIT framePointStringsChanged();
 }
 
 void Page::removeFrame(Frame* frame)
 {
     d->frames.removeAll(frame);
-    emit framePointStringsChanged();
+    Q_EMIT framePointStringsChanged();
 }
 
 void Page::removeFrame(int index)
@@ -408,7 +408,7 @@ bool Page::swapFrames(int swapThis, int withThis)
 {
     if(swapThis > -1 && withThis > -1) {
         d->frames.swapItemsAt(swapThis, withThis);
-        emit framePointStringsChanged();
+        Q_EMIT framePointStringsChanged();
         return true;
     }
     return false;
@@ -465,7 +465,7 @@ void Page::addJump(Jump* jump, int index)
         d->jumps.append(jump);
     }
     Q_EMIT jumpAdded(jump);
-    emit jumpsChanged();
+    Q_EMIT jumpsChanged();
 }
 
 void Page::addJump(int pageIndex, int index)
@@ -478,7 +478,7 @@ void Page::addJump(int pageIndex, int index)
 void Page::removeJump(Jump* jump)
 {
     d->jumps.removeAll(jump);
-    emit jumpsChanged();
+    Q_EMIT jumpsChanged();
 }
 
 void Page::removeJump(int index)
@@ -490,7 +490,7 @@ bool Page::swapJumps(int swapThis, int withThis)
 {
     if(swapThis > -1 && withThis > -1) {
         d->jumps.swapItemsAt(swapThis, withThis);
-        emit jumpsChanged();
+        Q_EMIT jumpsChanged();
         return true;
     }
     return false;

@@ -108,7 +108,7 @@ void BookModel::addPage(QString url, QString title)
 
     beginInsertRows(QModelIndex(), d->entries.count(), d->entries.count());
     d->entries.append(page);
-    emit pageCountChanged();
+    Q_EMIT pageCountChanged();
     endInsertRows();
 }
 
@@ -117,7 +117,7 @@ void BookModel::removePage(int pageNumber)
     QModelIndex index  = createIndex(pageNumber, 0);
     beginRemoveRows(QModelIndex(), index.row(), index.row());
     d->entries.removeAt(pageNumber);
-    emit pageCountChanged();
+    Q_EMIT pageCountChanged();
     endRemoveRows();
 }
 
@@ -126,7 +126,7 @@ void BookModel::clearPages()
     beginResetModel();
     qDeleteAll(d->entries);
     d->entries.clear();
-    emit pageCountChanged();
+    Q_EMIT pageCountChanged();
     endResetModel();
 }
 
@@ -139,8 +139,8 @@ void BookModel::setFilename(QString newFilename)
 {
     d->filename = newFilename;
     d->title = newFilename.split('/').last().left(newFilename.lastIndexOf('.'));
-    emit filenameChanged();
-    emit titleChanged();
+    Q_EMIT filenameChanged();
+    Q_EMIT titleChanged();
 }
 
 QString BookModel::author() const
@@ -151,7 +151,7 @@ QString BookModel::author() const
 void BookModel::setAuthor(QString newAuthor)
 {
     d->author = newAuthor;
-    emit authorChanged();
+    Q_EMIT authorChanged();
 }
 
 QString BookModel::publisher() const
@@ -162,7 +162,7 @@ QString BookModel::publisher() const
 void BookModel::setPublisher(QString newPublisher)
 {
     d->publisher = newPublisher;
-    emit publisherChanged();
+    Q_EMIT publisherChanged();
 }
 
 QString BookModel::title() const
@@ -173,7 +173,7 @@ QString BookModel::title() const
 void BookModel::setTitle(QString newTitle)
 {
     d->title = newTitle;
-    emit titleChanged();
+    Q_EMIT titleChanged();
 }
 
 int BookModel::pageCount() const
@@ -198,7 +198,7 @@ void BookModel::setCurrentPage(int newCurrentPage, bool updateFilesystem)
 #endif
 
     d->currentPage = newCurrentPage;
-    emit currentPageChanged();
+    Q_EMIT currentPageChanged();
 }
 
 QObject * BookModel::acbfData() const
@@ -209,7 +209,7 @@ QObject * BookModel::acbfData() const
 void BookModel::setAcbfData(QObject* obj)
 {
     d->acbfData = qobject_cast<AdvancedComicBookFormat::Document*>(obj);
-    emit acbfDataChanged();
+    Q_EMIT acbfDataChanged();
 }
 
 bool BookModel::processing() const
@@ -220,7 +220,7 @@ bool BookModel::processing() const
 void BookModel::setProcessing(bool processing)
 {
     d->processing = processing;
-    emit processingChanged();
+    Q_EMIT processingChanged();
 }
 
 QString BookModel::processingDescription() const

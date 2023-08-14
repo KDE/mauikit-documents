@@ -119,13 +119,13 @@ void Jump::addPoint(const QPoint& point, int index)
     else {
         d->points.append(point);
     }
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 void Jump::removePoint(const QPoint& point)
 {
     d->points.removeAll(point);
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 bool Jump::swapPoints(const QPoint& swapThis, const QPoint& withThis)
@@ -134,7 +134,7 @@ bool Jump::swapPoints(const QPoint& swapThis, const QPoint& withThis)
     int index2 = d->points.indexOf(withThis);
     if(index1 > -1 && index2 > -1) {
         d->points.swapItemsAt(index1, index2);
-        emit pointCountChanged();
+        Q_EMIT pointCountChanged();
         return true;
     }
     return false;
@@ -148,7 +148,7 @@ void Jump::setPointsFromRect(const QPoint &topLeft, const QPoint &bottomRight)
     d->points.append(rect.topRight());
     d->points.append(rect.bottomRight());
     d->points.append(rect.bottomLeft());
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 int Jump::pointCount() const
@@ -189,7 +189,7 @@ int Jump::pageIndex() const
 void Jump::setPageIndex(const int& pageNumber)
 {
     d->pageIndex = pageNumber;
-    emit pageIndexChanged();
+    Q_EMIT pageIndexChanged();
 }
 
 QString Jump::href() const

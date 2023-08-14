@@ -59,7 +59,7 @@ private:
  * \brief A worker class which does the bulk of the work for PreviewImageProvider
  */
 class ComicCoverRunnable : public QObject, public QRunnable {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     explicit ComicCoverRunnable(const QString &id, const QSize &requestedSize, KImageCache* imageCache);
     virtual ~ComicCoverRunnable();

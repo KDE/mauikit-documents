@@ -116,7 +116,7 @@ public:
     void setDirty()
     {
         isDirty = true;
-        emit q->hasUnsavedChangesChanged();
+        Q_EMIT q->hasUnsavedChangesChanged();
     }
 
     AdvancedComicBookFormat::Document* createNewAcbfDocumentFromLegacyInformation()
@@ -354,7 +354,7 @@ void ArchiveBookModel::setFilename(QString newFilename)
     }
 
     d->isLoading = false;
-    emit loadingCompleted(success);
+    Q_EMIT loadingCompleted(success);
     setProcessing(false);
     endResetModel();
 }
@@ -457,7 +457,7 @@ QObject * ArchiveBookModel::qmlEngine() const
 void ArchiveBookModel::setQmlEngine(QObject* newEngine)
 {
     d->engine = qobject_cast<QQmlEngine*>(newEngine);
-    emit qmlEngineChanged();
+    Q_EMIT qmlEngineChanged();
 }
 
 bool ArchiveBookModel::readWrite() const
@@ -468,7 +468,7 @@ bool ArchiveBookModel::readWrite() const
 void ArchiveBookModel::setReadWrite(bool newReadWrite)
 {
     d->readWrite = newReadWrite;
-    emit readWriteChanged();
+    Q_EMIT readWriteChanged();
 }
 
 bool ArchiveBookModel::hasUnsavedChanges() const
@@ -479,7 +479,7 @@ bool ArchiveBookModel::hasUnsavedChanges() const
 void ArchiveBookModel::setDirty(bool isDirty)
 {
     d->isDirty = isDirty;
-    emit hasUnsavedChangesChanged();
+    Q_EMIT hasUnsavedChangesChanged();
 }
 
 QStringList ArchiveBookModel::fileEntries() const

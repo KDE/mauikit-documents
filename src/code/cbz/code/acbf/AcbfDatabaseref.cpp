@@ -74,7 +74,7 @@ QString DatabaseRef::dbname() const
 void DatabaseRef::setDbname(const QString& dbname)
 {
     d->dbname = dbname;
-    emit dbnameChanged();
+    Q_EMIT dbnameChanged();
 }
 
 QString DatabaseRef::type() const
@@ -85,7 +85,7 @@ QString DatabaseRef::type() const
 void DatabaseRef::setType(const QString& type)
 {
     d->type = type;
-    emit typeChanged();
+    Q_EMIT typeChanged();
 }
 
 QString DatabaseRef::reference() const
@@ -96,5 +96,5 @@ QString DatabaseRef::reference() const
 void DatabaseRef::setReference(const QString& reference)
 {
     d->reference = reference;
-    emit referenceChanged();
+    Q_EMIT referenceChanged();
 }

@@ -79,7 +79,7 @@ void FolderBookModel::setFilename(QString newFilename)
         BookModel::setCurrentPage(data.attribute("peruse.currentPage").toInt(), false);
 #endif
 
-    emit loadingCompleted(true);
+    Q_EMIT loadingCompleted(true);
     setProcessing(false);
 }
 

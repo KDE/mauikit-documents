@@ -59,11 +59,11 @@ extern QHash<int, QString> STATUS_CODES;
  * a tempting possibility, and something that I want to
  * demonstrate at <a href="http://conf.kde.in">conf.kde.in 2011</a>.
  *
- * %QHttpServer uses a signal-slots based mechanism
+ * %QHttpServer uses a signal-Q_SLOTS based mechanism
  * for all communication, so no inheritance is required.
  * It tries to be as asynchronous as possible, to the
  * extent that request body data is also delivered as and
- * when it is received over the socket via signals. This
+ * when it is received over the socket via Q. This
  * kind of programming may take some getting used to.
  *
  * %QHttpServer is backed by <a href="http://github.com/ry/http-parser">Ryan
@@ -153,7 +153,7 @@ public:
      */
     void close();
 
-signals:
+Q:
     /*!
      * This signal is emitted whenever a client
      * makes a new request to the server.
@@ -179,7 +179,7 @@ signals:
      *
      * QHttpResponse queues itself up for auto-deletion once the application
      * calls its end() method. Once the data has been flushed to the underlying
-     * socket, the object will emit a QHttpResponse::done() signal before queueing itself up
+     * socket, the object will Q_EMIT a QHttpResponse::done() signal before queueing itself up
      * for deletion. You should <strong>NOT</strong> interact with the response
      * object once it has emitted QHttpResponse::done() although actual deletion does not
      * happen until QHttpResponse::destroyed() is emitted.
@@ -231,7 +231,7 @@ signals:
      */
     void newRequest(QHttpRequest *request, QHttpResponse *response);
 
-private slots:
+private Q_SLOTS:
     void newConnection();
 
 private:

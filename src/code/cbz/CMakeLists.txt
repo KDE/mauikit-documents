@@ -3,11 +3,14 @@
 find_package(ZLIB)
 set_package_properties(ZLIB PROPERTIES
     PURPOSE "Required for the unarr based rar support used for reading books in the CBR format"
-    TYPE REQUIRED
-)
+    TYPE REQUIRED)
 
-find_package(Qt5 REQUIRED COMPONENTS Sql)
-find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Archive KIO GuiAddons IconThemes)
+find_package(Qt${QT_MAJOR_VERSION} REQUIRED COMPONENTS Sql)
+find_package(KF${KF_MAJOR_VERSION} ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS
+    Archive
+    KIO
+    GuiAddons
+    IconThemes)
 
 kde_enable_exceptions()
 
@@ -27,27 +30,22 @@ set(qmlplugin_SRCS
     code/PreviewImageProvider.cpp
     code/PropertyContainer.cpp
     code/TextDocumentEditor.cpp
-    code/TextViewerItem.cpp
-)
+    code/TextViewerItem.cpp)
 
-add_library (
-    CBZLib
+add_library (CBZLib
     STATIC
-    ${qmlplugin_SRCS}
-   )
+    ${qmlplugin_SRCS})
 
 target_include_directories(CBZLib
     PUBLIC
     code/acbf
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-)
+    ${Qt${QT_MAJOR_VERSION}Quick_PRIVATE_INCLUDE_DIRS})
 
 if(UNIX AND NOT ANDROID)
     find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS FileMetaData)
     target_link_libraries (CBZLib
         PUBLIC
-        KF5::FileMetaData
-    )
+        KF${KF_MAJOR_VERSION}::FileMetaData)
 
 add_definitions(-DKFILEMETADATA_FOUND)
 target_compile_definitions(CBZLib PUBLIC KFILEMETADATA_FOUND)
@@ -58,18 +56,17 @@ target_link_libraries (CBZLib
     PUBLIC
     acbf
     krarlib
-    Qt5::Core
-    Qt5::Qml
-    Qt5::Quick
-    Qt5::Sql
-    KF5::Archive
-    KF5::I18n
-    KF5::ConfigCore
-    KF5::KIOWidgets
-    KF5::KIOCore
-    KF5::IconThemes
-    KF5::GuiAddons
-)
+    Qt${QT_MAJOR_VERSION}::Core
+    Qt${QT_MAJOR_VERSION}::Qml
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::Sql
+    KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::KIOWidgets
+    KF${KF_MAJOR_VERSION}::KIOCore
+    KF${KF_MAJOR_VERSION}::IconThemes
+    KF${KF_MAJOR_VERSION}::GuiAddons)
 
 if (ZLIB_FOUND)
     target_include_directories(CBZLib PRIVATE ${ZLIB_INCLUDE_DIRS})

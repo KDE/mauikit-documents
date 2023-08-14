@@ -82,49 +82,49 @@ public:
             titleCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, titleCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, titleCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->titleCategoryModelChanged();
+            Q_EMIT q->titleCategoryModelChanged();
         }
         if(!newlyAddedCategoryModel)
         {
             newlyAddedCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, newlyAddedCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, newlyAddedCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->newlyAddedCategoryModelChanged();
+            Q_EMIT q->newlyAddedCategoryModelChanged();
         }
         if(!authorCategoryModel)
         {
             authorCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, authorCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, authorCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->authorCategoryModelChanged();
+            Q_EMIT q->authorCategoryModelChanged();
         }
         if(!seriesCategoryModel)
         {
             seriesCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, seriesCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, seriesCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->seriesCategoryModelChanged();
+            Q_EMIT q->seriesCategoryModelChanged();
         }
         if(!publisherCategoryModel)
         {
             publisherCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, publisherCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, publisherCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->publisherCategoryModelChanged();
+            Q_EMIT q->publisherCategoryModelChanged();
         }
         if(!keywordCategoryModel)
         {
             keywordCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, keywordCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, keywordCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->keywordCategoryModelChanged();
+            Q_EMIT q->keywordCategoryModelChanged();
         }
         if(!folderCategoryModel)
         {
             folderCategoryModel = new CategoryEntriesModel(q);
             connect(q, &CategoryEntriesModel::entryDataUpdated, folderCategoryModel, &CategoryEntriesModel::entryDataUpdated);
             connect(q, &CategoryEntriesModel::entryRemoved, folderCategoryModel, &CategoryEntriesModel::entryRemoved);
-            emit q->folderCategoryModel();
+            Q_EMIT q->folderCategoryModel();
         }
     }
 
@@ -176,7 +176,7 @@ public:
             if (QFileInfo::exists(entry->filename)) {
                 addEntry(q, entry);
                 if(++i % 100 == 0) {
-                    emit q->countChanged();
+                    Q_EMIT q->countChanged();
                     qApp->processEvents();
                 }
             } else {
@@ -184,7 +184,7 @@ public:
             }
         }
         cacheLoaded = true;
-        emit q->cacheLoadedChanged();
+        Q_EMIT q->cacheLoadedChanged();
     }
 };
 
@@ -220,7 +220,7 @@ void BookListModel::setContentModel(QObject* newModel)
     {
         connect(d->contentModel, &QAbstractItemModel::rowsInserted, this, &BookListModel::contentModelItemsInserted);
     }
-    emit contentModelChanged();
+    Q_EMIT contentModelChanged();
 }
 
 QObject * BookListModel::contentModel() const
@@ -336,7 +336,7 @@ void BookListModel::contentModelItemsInserted(QModelIndex index, int first, int 
         d->db->addEntry(entry);
     }
     endInsertRows();
-    emit countChanged();
+    Q_EMIT countChanged();
     qApp->processEvents();
 }
 
@@ -422,7 +422,7 @@ void BookListModel::setBookData(QString fileName, QString property, QString valu
                 entry->comment = value;
                 d->db->updateEntry(entry->filename, property, QVariant(value));
             }
-            emit entryDataUpdated(entry);
+            Q_EMIT entryDataUpdated(entry);
             break;
         }
     }
@@ -439,7 +439,7 @@ void BookListModel::removeBook(QString fileName, bool deleteFile)
     {
         if(entry->filename == fileName)
         {
-            emit entryRemoved(entry);
+            Q_EMIT entryRemoved(entry);
             d->db->removeEntry(entry);
             delete entry;
             break;

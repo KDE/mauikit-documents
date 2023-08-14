@@ -27,7 +27,7 @@ public:
 //    Q_INVOKABLE void serveComponent(const QString &filename, QHttpResponse *response);
     Q_INVOKABLE QVariantMap getCoverInfo(int thumbsize, int fullsize);
 
-signals:
+Q:
     void contentsReady(QVariantList contents);
 
 private:

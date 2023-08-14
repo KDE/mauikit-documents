@@ -131,13 +131,13 @@ void Frame::addPoint(const QPoint& point, int index)
     else {
         d->points.append(point);
     }
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 void Frame::removePoint(const QPoint& point)
 {
     d->points.removeAll(point);
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 bool Frame::swapPoints(const QPoint& swapThis, const QPoint& withThis)
@@ -146,7 +146,7 @@ bool Frame::swapPoints(const QPoint& swapThis, const QPoint& withThis)
     int index2 = d->points.indexOf(withThis);
     if(index1 > -1 && index2 > -1) {
         d->points.swapItemsAt(index1, index2);
-        emit pointCountChanged();
+        Q_EMIT pointCountChanged();
         return true;
     }
     return false;
@@ -160,7 +160,7 @@ void Frame::setPointsFromRect(const QPoint &topLeft, const QPoint &bottomRight)
     d->points.append(rect.topRight());
     d->points.append(rect.bottomRight());
     d->points.append(rect.bottomLeft());
-    emit pointCountChanged();
+    Q_EMIT pointCountChanged();
 }
 
 int Frame::pointCount() const
@@ -201,7 +201,7 @@ QString Frame::bgcolor() const
 void Frame::setBgcolor(const QString& newColor)
 {
     d->bgcolor = newColor;
-    emit bgcolorChanged();
+    Q_EMIT bgcolorChanged();
 }
 
 int AdvancedComicBookFormat::Frame::localIndex()
