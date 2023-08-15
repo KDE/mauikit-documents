@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-08-15 00:44+0000\n"
 "PO-Revision-Date: 2022-12-31 15:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -51,37 +51,37 @@ msgstr ""
 "Successfully replaced old archive with the new archive - now loading the new "
 "archive..."
 
-#: src/controls/poppler/PDFViewer.qml:28
+#: src/controls.5/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Document Locked"
 
-#: src/controls/poppler/PDFViewer.qml:29
+#: src/controls.5/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Please enter your password to unlock and open the file."
 
-#: src/controls/poppler/PDFViewer.qml:125
+#: src/controls.5/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Locked"
 msgstr "Locked"
 
-#: src/controls/poppler/PDFViewer.qml:125
+#: src/controls.5/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Error"
 msgstr "Error"
 
-#: src/controls/poppler/PDFViewer.qml:126
+#: src/controls.5/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "This document is password protected."
 msgstr "This document is password protected."
 
-#: src/controls/poppler/PDFViewer.qml:126
+#: src/controls.5/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "There has been an error loading this document."
 
-#: src/controls/poppler/PDFViewer.qml:131
+#: src/controls.5/poppler/PDFViewer.qml:131
 #, kde-format
 msgid "UnLock"
 msgstr "UnLock"
