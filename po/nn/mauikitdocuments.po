@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-08-15 00:44+0000\n"
 "PO-Revision-Date: 2023-07-29 12:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -51,37 +51,37 @@ msgid ""
 "archive..."
 msgstr "Erstatta gammalt arkiv med nytt arkiv. Opnar no det nye arkivet …"
 
-#: src/controls/poppler/PDFViewer.qml:28
+#: src/controls.5/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Dokument låst"
 
-#: src/controls/poppler/PDFViewer.qml:29
+#: src/controls.5/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Skriv inn passord for å låsa opp og opna fila."
 
-#: src/controls/poppler/PDFViewer.qml:125
+#: src/controls.5/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Locked"
 msgstr "Låst"
 
-#: src/controls/poppler/PDFViewer.qml:125
+#: src/controls.5/poppler/PDFViewer.qml:125
 #, kde-format
 msgid "Error"
 msgstr "Feil"
 
-#: src/controls/poppler/PDFViewer.qml:126
+#: src/controls.5/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "This document is password protected."
 msgstr "Dokumentet er verna med passord."
 
-#: src/controls/poppler/PDFViewer.qml:126
+#: src/controls.5/poppler/PDFViewer.qml:126
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Det oppstod ein feil ved opning av dokumentet."
 
-#: src/controls/poppler/PDFViewer.qml:131
+#: src/controls.5/poppler/PDFViewer.qml:131
 #, kde-format
 msgid "UnLock"
 msgstr "Lås opp"
