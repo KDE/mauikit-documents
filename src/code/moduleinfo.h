@@ -2,13 +2,13 @@
 
 #include <QString>
 #include <KAboutData>
-#include "mauikit_export.h"
+#include "documents_export.h"
 
 namespace MauiKitDocuments
 {
-   MAUIKIT_EXPORT QString versionString();
-   MAUIKIT_EXPORT QString buildVersion();
-   MAUIKIT_EXPORT KAboutComponent aboutData();
+   DOCUMENTS_EXPORT QString versionString();
+   DOCUMENTS_EXPORT QString buildVersion();
+   DOCUMENTS_EXPORT KAboutComponent aboutData();
 
-   MAUIKIT_EXPORT KAboutComponent aboutLuv();
+   DOCUMENTS_EXPORT KAboutComponent aboutPoppler();
 };

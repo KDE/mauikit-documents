@@ -122,7 +122,7 @@ else()
     add_definitions(-DGIT_BRANCH="Stable")
 endif()
 
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/MauiKitDocuments")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/MauiKitDocuments${MAUI_MAJOR_VERSION}")
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX Documents
