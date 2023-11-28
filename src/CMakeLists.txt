@@ -14,10 +14,11 @@ include_directories(
 ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} URI "org.mauikit.documents" CLASSNAME DocumentsPlugin)
 
 set(sources
-    code/plugin.cpp)
+    code/plugin.cpp
+    code/moduleinfo.cpp)
 
 set(headers
-    code/plugin.h)
+    code/moduleinfo.h)
 
 if (QT_MAJOR_VERSION STREQUAL "5")
     if(QUICK_COMPILER)
