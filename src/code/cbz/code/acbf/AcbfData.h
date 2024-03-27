@@ -25,9 +25,7 @@
 #include <memory>
 
 #include <QObject>
-#include <QXmlStreamReader>
 
-#include "AcbfDocument.h"
 #include "AcbfBinary.h"
 /**
  * \brief Class to handle the list of embedded data in an ACBF document.
@@ -41,7 +39,8 @@
  */
 namespace AdvancedComicBookFormat
 {
-class  Data : public QObject
+class Document;
+class Data : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QObjectList binaries READ binaries NOTIFY binariesChanged)

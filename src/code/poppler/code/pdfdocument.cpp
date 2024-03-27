@@ -36,8 +36,8 @@ PdfDocument::PdfDocument(QAbstractListModel *parent):
   , m_providersNumber(1)
   , m_tocModel(nullptr)
 {
-
-    qRegisterMetaType<PdfPagesList>("PdfPagesList");
+    // qRegisterMetaType<PdfPagesList>("PdfPagesList");
+    qDebug() << "REGISTERING POPPLER DOCUMENT INSTANCE";
 }
 
 QHash<int, QByteArray> PdfDocument::roleNames() const
@@ -45,37 +45,40 @@ QHash<int, QByteArray> PdfDocument::roleNames() const
     QHash<int, QByteArray> roles;
     roles[WidthRole] = "width";
     roles[HeightRole] = "height";
+    roles[UrlRole] = "url";
     return roles;
 }
 
 int PdfDocument::rowCount(const QModelIndex & parent) const
 {
-    if (parent.isValid())
+    if (parent.isValid() || !m_document)
     {
         return 0;
     }
 
-    return m_pages.count();
+    return m_document->numPages();
 }
 
 QVariant PdfDocument::data(const QModelIndex & index, int role) const
-{    
-    if (!index.isValid())
+{
+    if (!index.isValid() || !m_document)
         return QVariant();
 
-    if (index.row() < 0 || index.row() > m_pages.count())
+    if (index.row() < 0 || index.row() > m_document->numPages())
         return QVariant();
 
-    const PdfItem &pdfItem = m_pages.at(index.row());
+    auto page = m_pages.at(index.row());
 
     switch (role)
     {
     case WidthRole:
-        return pdfItem.width();
+        return page.width();
     case HeightRole:
-        return pdfItem.height();
+        return page.height();
+    case UrlRole:
+        return page.url();
     default:
-        return 0;
+        return QVariant();
     }
 }
 
@@ -114,18 +117,22 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
 
     m_document = Poppler::Document::load(pathName, password.toUtf8(), userPassword.toUtf8());
 
-    if (!m_document) {
+    if (!m_document)
+    {
         qDebug() << "ERROR : Can't open the document located at " + pathName;
         Q_EMIT error("Can't open the document located at " + pathName);
 
         this->m_isValid = false;
         Q_EMIT this->isValidChanged();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         delete m_document;
+#endif
         return false;
     }
 
-    if (m_document->isLocked()) {
+    if (m_document->isLocked())
+    {
         qDebug() << "ERROR : Can't open the document located at beacuse it is locked" + pathName;
         Q_EMIT this->documentLocked();
         Q_EMIT this->isLockedChanged();
@@ -136,9 +143,10 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
         return false;
     }
 
+    this->pages = this->m_document->numPages();
+
     qDebug() << "Document loaded successfully !";
 
-    this->pages = this->m_document->numPages();
     Q_EMIT this->pagesCountChanged();
     Q_EMIT this->titleChanged();
     Q_EMIT this->isLockedChanged();
@@ -149,10 +157,10 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
     // Init toc model
     if(!m_tocModel)
     {
-        m_tocModel = new PdfTocModel;
+        m_tocModel = new PdfTocModel(this);
     }
 
-    m_tocModel->setDocument(m_document);
+    m_tocModel->setDocument(m_document.get());
     Q_EMIT tocModelChanged();
 
     m_document->setRenderHint(Poppler::Document::Antialiasing, true);
@@ -200,6 +208,9 @@ QString PdfDocument::title() const
 
 bool PdfDocument::isLocked() const
 {
+    if(!m_document)
+        return false;
+
     return m_document->isLocked();
 }
 
@@ -216,7 +227,6 @@ QString PdfDocument::id() const
 bool PdfDocument::loadPages()
 {
     qDebug() << "Populating model...";
-
     m_pages.clear();
 
     if (!m_document)
@@ -224,36 +234,48 @@ bool PdfDocument::loadPages()
 
     loadProvider();
     qDebug() << m_document->title() << m_document->numPages();
-    Poppler::Document* document = m_document;
-    QtConcurrent::run( [=]
+
+
+    for(int i = 0; i < pages; i++)
     {
-        PdfPagesList pages;
+        PdfItem item(QString("image://%1%2/page/%3").arg(m_id, QString::number(i % m_providersNumber), QString::number(i)),  m_document->page(i)->pageSize());
+        m_pages << item;
+    }
 
-        for( int i = 0; i < document->numPages(); ++i )
-        {
-            pages.append(document->page(i));
-        }
+    // Poppler::Document* document = m_document.get();
 
-        QMetaObject::invokeMethod(this, "_q_populate", Qt::QueuedConnection, Q_ARG(PdfPagesList, pages));
-    });
+    // QtConcurrent::run( [=]
+    // {
+    //     PdfPagesList pages;
+
+    //     for( int i = 0; i < document->numPages(); ++i )
+    //     {
+    //         std::unique_ptr<Poppler::Page> page = m_document->page(i);
+    //         if (!page)
+    //             continue;
+    //         // remember the page
+    //         pages.emplace_back(std::move(page));
+    //     }
+
+    //     // QMetaObject::invokeMethod(this, "_q_populate", Qt::QueuedConnection, Q_ARG(PdfPagesList, pages));
+    // });
 
     return true;
 }
 
-void PdfDocument::_q_populate(PdfPagesList pagesList)
-{
-    qDebug() << "Number of pages:" << pagesList.count();
+// void PdfDocument::_q_populate(PdfPagesList pagesList)
+// {
+//     qDebug() << "Number of pages:" << pagesList.size();
 
-    for (Poppler::Page *page : pagesList)
-    {
-        beginInsertRows(QModelIndex(), rowCount(), rowCount());
-        m_pages << page;
-        endInsertRows();
-    }
+//     // for (auto page : pagesList)
+//     // {
+//     //     if(page)
+//     //         m_pages << page.get();
+//     // }
 
-    qDebug() << "Model has been successfully populated!";
-    Q_EMIT pagesLoaded();
-}
+//     qDebug() << "Model has been successfully populated!";
+//     // Q_EMIT pagesLoaded();
+// }
 
 void PdfDocument::unlock(const QString &ownerPassword, const QString &password)
 {
@@ -288,7 +310,7 @@ void PdfDocument::loadProvider()
 
     for (int i=0; i<m_providersNumber; i++)
     {
-        engine->addImageProvider(m_id+QByteArray::number(i), new PdfImageProvider(m_document));
+        engine->addImageProvider(m_id+QByteArray::number(i), new PdfImageProvider(m_document.get()));
     }
 
     qDebug() << "Image provider(s) loaded successfully !";

@@ -24,9 +24,9 @@
 
 #include <memory>
 
-#include "AcbfDocument.h"
-
 #include <QDate>
+#include <QObject>
+
 class QXmlStreamWriter;
 class QXmlStreamReader;
 /**
@@ -43,7 +43,9 @@ class QXmlStreamReader;
 namespace AdvancedComicBookFormat
 {
 class Page;
-class  Body : public QObject
+class Document;
+
+class Body : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString bgcolor READ bgcolor WRITE setBgcolor NOTIFY bgcolorChanged)

@@ -44,7 +44,7 @@
  */
 namespace AdvancedComicBookFormat
 {
-class  Frame : public InternalReferenceObject
+class Frame : public InternalReferenceObject
 {
     Q_OBJECT
     Q_PROPERTY(QString id READ id WRITE setId NOTIFY idChanged)

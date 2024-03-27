@@ -20,9 +20,7 @@
  */
 
 #include "AcbfMetadata.h"
-#include "AcbfBookinfo.h"
-#include "AcbfPublishinfo.h"
-#include "AcbfDocumentinfo.h"
+#include "AcbfDocument.h"
 
 #include <QXmlStreamReader>
 

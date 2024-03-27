@@ -90,15 +90,19 @@ public:
             font.setItalic(style->fontStyle().toLower() == QStringLiteral("italic"));
             const QString fontWeight(style->fontWeight().toLower());
             if (fontWeight == QStringLiteral("normal")) {
-                font.setWeight(400);
+                font.setWeight(QFont::Normal);
             } else if (fontWeight == QStringLiteral("bold")) {
-                font.setWeight(700);
+                font.setWeight(QFont::Bold);
             } else if (fontWeight == QStringLiteral("bolder")) {
-                font.setWeight(900);
+                font.setWeight(QFont::ExtraBold);
             } else if (fontWeight == QStringLiteral("lighter")) {
-                font.setWeight(100);
+                font.setWeight(QFont::Light);
             } else if (QString::number(fontWeight.toInt()) == fontWeight) {
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
                 font.setWeight(fontWeight.toInt());
+#else
+            font.setLegacyWeight(fontWeight.toInt());
+#endif
             }
             const QString fontStretch(style->fontStretch().toLower());
             if (fontStretch == QStringLiteral("")) {
@@ -177,7 +181,7 @@ public:
                     if (i + 1 < para.size() && para[i+1] != '/') {
                         QTextCharFormat format = currentFormat.format;
                         // We're starting a new tag, let's see which that is...
-                        const QString thisIsStarting = para.midRef(i + 1, tagEnd - i - 1).left(para.indexOf(" ")).trimmed().toString();
+                        const QString thisIsStarting = QStringView{para}.mid(i + 1, tagEnd - i - 1).left(para.indexOf(" ")).trimmed().toString();
                         if (thisIsStarting == strongTag) {
                             format.setFontWeight(QFont::Bold);
                         } else if (thisIsStarting == emTag) {
@@ -664,12 +668,21 @@ QSGNode * TextViewerItem::updatePaintNode(QSGNode* node, QQuickItem::UpdatePaint
     return n;
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
 void TextViewerItem::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     Q_UNUSED(newGeometry)
     Q_UNUSED(oldGeometry)
     d->throttle->start();
 }
+#else
+    void TextViewerItem::geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry)
+{
+    Q_UNUSED(newGeometry)
+    Q_UNUSED(oldGeometry)
+    d->throttle->start();
+}
+#endif
 
 void TextViewerItem::hoverMoveEvent(QHoverEvent* event)
 {

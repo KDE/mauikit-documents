@@ -20,12 +20,9 @@
  */
 
 #include "AcbfDocument.h"
-#include "AcbfBody.h"
-#include "AcbfMetadata.h"
+
 #include "AcbfBookinfo.h"
-#include "AcbfData.h"
-#include "AcbfReferences.h"
-#include "AcbfStyleSheet.h"
+
 
 #include <QXmlStreamReader>
 

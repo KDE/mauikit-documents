@@ -38,7 +38,7 @@ QImage PdfImageProvider::requestImage(const QString & id, QSize * size, const QS
 
         const QString type = id.section("/", 0, 0);
         QImage result;
-        Poppler::Page *page;
+        std::unique_ptr<Poppler::Page> page;
 
         if (type == "page")
         {
@@ -56,8 +56,8 @@ QImage PdfImageProvider::requestImage(const QString & id, QSize * size, const QS
                 return result;
             }
 
-            size->setHeight(page->pageSize().height());
-            size->setWidth(page->pageSize().width());
+            // size->setHeight(page->pageSize().height());
+            // size->setWidth(page->pageSize().width());
 
             QSizeF pageSizePhys;
             QSizeF pageSize = page->pageSizeF();
@@ -74,12 +74,13 @@ QImage PdfImageProvider::requestImage(const QString & id, QSize * size, const QS
 //            qDebug() << "Size :" << pageSizePhys.width() << ";" << pageSizePhys.height();
 //            qDebug() << "Resolution :" << res;
 
+            double res = requestedSize.width() / (pageSize.width() / 72);
+            result = page->renderToImage(res, res);
+            // result = page->renderToImage(resW, resH);
 
+            *size = result.size();
             // Render the page to QImage
-            result = page->renderToImage(resW, resH);
-
         }
-
 //    }
 
     // Requested size is 0, so return a null image.

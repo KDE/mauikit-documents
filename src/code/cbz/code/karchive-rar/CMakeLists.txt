@@ -25,6 +25,7 @@ set(unarr_SRCS
     unarr/common/crc32.c)
 
 add_library(karchive-c-unarr STATIC ${unarr_SRCS})
+set_property(TARGET karchive-c-unarr PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 if (UNIX OR MINGW)
 #    target_compile_options(karchive-c-unarr PUBLIC  KARCHIVE-C-UNARR)

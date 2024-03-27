@@ -24,9 +24,9 @@
 
 #include <memory>
 
-#include "AcbfMetadata.h"
-
 #include <QHash>
+#include <QObject>
+#include <QXmlStreamWriter>
 
 /**
  * \brief Class for handling the book metadata.
@@ -73,13 +73,14 @@
 
 namespace AdvancedComicBookFormat
 {
+class Metadata;
 class Author;
 class Page;
 class Language;
 class Sequence;
 class DatabaseRef;
 class ContentRating;
-class  BookInfo : public QObject
+class BookInfo : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QStringList authorNames READ authorNames NOTIFY authorsChanged)

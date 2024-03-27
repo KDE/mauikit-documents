@@ -22,13 +22,17 @@
 
 #include <QAbstractListModel>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <poppler/qt5/poppler-qt5.h>
+#else
+#include <poppler/qt6/poppler-qt6.h>
+#endif
 
 #include "pdfitem.h"
 #include "pdftocmodel.h"
 #include <QUrl>
 
-typedef QList<Poppler::Page*> PdfPagesList;
+// typedef std::list<std::unique_ptr<Poppler::Page>> PdfPagesList;
 
 class PdfDocument : public QAbstractListModel
 {
@@ -46,7 +50,8 @@ class PdfDocument : public QAbstractListModel
 public:
     enum Roles {
         WidthRole = Qt::UserRole + 1,
-        HeightRole
+        HeightRole,
+        UrlRole
     };
 
     explicit PdfDocument(QAbstractListModel *parent = nullptr);
@@ -91,7 +96,7 @@ Q_SIGNALS:
     void isValidChanged();
 
 private Q_SLOTS:
-    void _q_populate(PdfPagesList pagesList);
+    // void _q_populate(PdfPagesList pagesList);
     
     public Q_SLOTS:
     void unlock(const QString &ownerPassword, const QString &password);
@@ -106,7 +111,11 @@ private:
     void loadProvider();
     bool loadPages();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Poppler::Document *m_document;
+#else
+    std::unique_ptr<Poppler::Document> m_document;
+#endif
     QList<PdfItem> m_pages;
     PdfTocModel* m_tocModel;
     bool m_isValid = false;

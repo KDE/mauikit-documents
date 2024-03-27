@@ -11,11 +11,9 @@ add_subdirectory(code/cbz)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/code)
 
-ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} URI "org.mauikit.documents" CLASSNAME DocumentsPlugin)
-
-set(sources
-    code/plugin.cpp
-    code/moduleinfo.cpp)
+ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION}
+    URI "org.mauikit.documents"
+    CLASS_NAME DocumentsPlugin)
 
 set(headers
     code/moduleinfo.h)
@@ -33,7 +31,9 @@ ecm_target_qml_sources(MauiKitDocuments${MAUI_MAJOR_VERSION} PATH poppler SOURCE
 
 target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION}
     PRIVATE
-    ${sources})
+    code/plugin.cpp
+    code/moduleinfo.cpp
+    code/poppler/img_assets.qrc)
 
 add_library(MauiKit${MAUI_MAJOR_VERSION}::Documents ALIAS MauiKitDocuments${MAUI_MAJOR_VERSION})
 
@@ -76,7 +76,7 @@ target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION}
     MauiKit${MAUI_MAJOR_VERSION})
 
 ecm_finalize_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} DESTINATION ${KDE_INSTALL_QMLDIR})
-ecm_generate_qmltypes(org.mauikit.documents 3.0 DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents)
+# ecm_generate_qmltypes(org.mauikit.documents 3.0 DESTINATION ${KDE_INSTALL_QMLDIR}/org/mauikit/documents)
 
 install(TARGETS MauiKitDocuments${MAUI_MAJOR_VERSION} EXPORT MauiKitDocuments${MAUI_MAJOR_VERSION}Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 

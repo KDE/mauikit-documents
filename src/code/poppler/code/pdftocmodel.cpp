@@ -117,7 +117,7 @@ void PdfTocModel::recursiveGetEntries(QVector<Poppler::OutlineItem> data, int no
         } else {
             QString destName = node.externalFileName();
             if (!destName.isEmpty()) {
-                Poppler::LinkDestination* l = m_document->linkDestination(destName);
+                std::unique_ptr<Poppler::LinkDestination> l = m_document->linkDestination(destName);
                 entry.pageIndex = l->pageNumber() - 1;
             }
         }

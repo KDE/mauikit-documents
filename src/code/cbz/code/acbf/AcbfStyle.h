@@ -124,16 +124,12 @@ public:
      * \brief Build a style string from this object
      */
     QString toString() const;
-    /**
-     * \brief load a stylesheet entry into this object.
-     * @return True if the parser encountered no errors.
-     */
-    bool fromString(const QString &style);
+
     /**
      * \brief load a stylesheet entry into this object
      * @return True if the parser encountered no errors.
      */
-    bool fromString(QStringRef style);
+    bool fromString(const QStringView &style);
 
     QString element() const;
     void setElement(const QString& element);

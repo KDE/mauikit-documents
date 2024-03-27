@@ -32,9 +32,9 @@ set(qmlplugin_SRCS
     code/TextDocumentEditor.cpp
     code/TextViewerItem.cpp)
 
-add_library (CBZLib
-    STATIC
-    ${qmlplugin_SRCS})
+add_library (CBZLib STATIC)
+target_sources(CBZLib PRIVATE ${qmlplugin_SRCS})
+set_property(TARGET CBZLib PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 target_include_directories(CBZLib
     PUBLIC
@@ -42,7 +42,7 @@ target_include_directories(CBZLib
     ${Qt${QT_MAJOR_VERSION}Quick_PRIVATE_INCLUDE_DIRS})
 
 if(UNIX AND NOT ANDROID)
-    find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS FileMetaData)
+    find_package(KF${KF_MAJOR_VERSION} ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS FileMetaData)
     target_link_libraries (CBZLib
         PUBLIC
         KF${KF_MAJOR_VERSION}::FileMetaData)

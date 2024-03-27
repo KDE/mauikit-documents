@@ -1,5 +1,11 @@
 #include "thumbnailer.h"
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <poppler/qt5/poppler-qt5.h>
+#else
+#include <poppler/qt6/poppler-qt6.h>
+#endif
+
 #include <QImage>
 #include <QUrl>
 
@@ -14,7 +20,7 @@ QImage Thumbnailer::requestImage(const QString &id, QSize *size, const QSize &re
     QScopedPointer<Poppler::Document> document;
     QImage result;
 
-    document.reset( Poppler::Document::load(QUrl::fromUserInput(id).toLocalFile()));
+    document.reset( Poppler::Document::load(QUrl::fromUserInput(id).toLocalFile()).get());
 
     if(!document || document->isLocked())
     {
@@ -29,7 +35,7 @@ QImage Thumbnailer::requestImage(const QString &id, QSize *size, const QSize &re
         document->setRenderHint(Poppler::Document::TextAntialiasing);
 
         QScopedPointer<Poppler::Page> page;
-        page.reset(document->page(0));
+        page.reset(document->page(0).get());
 
         if(!page)
         {

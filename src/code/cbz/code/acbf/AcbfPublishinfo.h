@@ -24,9 +24,12 @@
 
 #include <memory>
 
-#include "AcbfMetadata.h"
-
 #include <QDate>
+#include <QObject>
+
+class QXmlStreamWriter;
+class QXmlStreamReader;
+
 /**
  * \brief Class to handle the publishing info.
  * 
@@ -36,7 +39,8 @@
  */
 namespace AdvancedComicBookFormat
 {
-class  PublishInfo : public QObject
+class Metadata;
+class PublishInfo : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString publisher READ publisher WRITE setPublisher NOTIFY publisherChanged)

@@ -19,18 +19,21 @@
 #ifndef PDFITEM_H
 #define PDFITEM_H
 
-#include <poppler/qt5/poppler-qt5.h>
+#include <QString>
+#include <QSize>
 
 class PdfItem
 {
 public:
-    PdfItem(Poppler::Page *page);
+    PdfItem(const QString &url, const QSize &size);
     int width() const;
     int height() const;
+    QString url() const;
 
 private:
     int m_width;
     int m_height;
+    QString m_url;
 };
 
 #endif // PDFITEM_H

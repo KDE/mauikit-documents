@@ -1,8 +1,12 @@
 #include "moduleinfo.h"
 #include "../documents_version.h"
-#include <KI18n/KLocalizedString>
+#include <KLocalizedString>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <poppler/poppler-config.h>
+#else
+#include <poppler/qt6/poppler-version.h>
+#endif
 
 QString MauiKitDocuments::versionString()
 {

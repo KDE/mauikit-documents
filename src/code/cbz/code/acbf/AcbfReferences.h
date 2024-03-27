@@ -24,13 +24,13 @@
 
 #include <memory>
 
-#include "AcbfDocument.h"
 #include "AcbfReference.h"
 #include <QObject>
 #include <QXmlStreamReader>
 
 namespace AdvancedComicBookFormat
 {
+class Document;
 
     /**
      * @brief Class to handle the ACBF references section.

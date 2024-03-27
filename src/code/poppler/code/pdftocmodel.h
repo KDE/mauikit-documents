@@ -21,7 +21,11 @@
 
 #include <QAbstractListModel>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <poppler/qt5/poppler-qt5.h>
+#else
+#include <poppler/qt6/poppler-qt6.h>
+#endif
 
 class TocEntry
 {
@@ -47,7 +51,7 @@ public:
     explicit PdfTocModel(QAbstractListModel *parent = nullptr);
     virtual ~PdfTocModel();
 
-    void setDocument(Poppler::Document* document);
+    void setDocument(Poppler::Document *document);
 
     QHash<int, QByteArray> roleNames() const override;
 
@@ -65,6 +69,7 @@ private Q_SLOTS:
 
 private:
     Poppler::Document* m_document;
+
     QList<TocEntry> m_entries;
 
     void recursiveGetEntries(QVector<Poppler::OutlineItem> node, int nodeLevel);

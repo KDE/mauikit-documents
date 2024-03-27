@@ -18,10 +18,11 @@
 
 #include "pdfitem.h"
 
-PdfItem::PdfItem(Poppler::Page *page)
+PdfItem::PdfItem(const QString &url, const QSize &size) :
+    m_width(size.width())
+    , m_height(size.height())
+    , m_url(url)
 {
-    m_width = page->pageSize().width();
-    m_height = page->pageSize().height();
 }
 
 int PdfItem::width() const
@@ -32,4 +33,9 @@ int PdfItem::width() const
 int PdfItem::height() const
 {
     return m_height;
+}
+
+QString PdfItem::url() const
+{
+    return m_url;
 }

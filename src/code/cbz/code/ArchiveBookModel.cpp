@@ -40,6 +40,7 @@
 #include <QQmlEngine>
 #include <QTemporaryFile>
 #include <QXmlStreamReader>
+#include <QRegularExpression>
 
 #ifdef KFILEMETADATA_FOUND
 #include <KFileMetaData/UserMetaData>
@@ -791,7 +792,9 @@ QString ArchiveBookModel::createBook(QString folder, QString title, QString cove
 {
     bool success = true;
 
-    QString fileTitle = title.replace( QRegExp("\\W"),QString("")).simplified();
+    QString fileTitle = title;
+    fileTitle = fileTitle.replace(QRegularExpression("\\W"), {}).simplified();
+
     QString filename = QString("%1/%2.cbz").arg(folder).arg(fileTitle);
     int i = 1;
     while(QFile(filename).exists())
@@ -1447,8 +1450,8 @@ QString ArchiveBookModel::previewForId(const QString& id) const
     static const QString period{"."};
     static const QString acbfSuffix{"acbf"};
     if (d->archive) {
-        if (id.splitRef(directorySplit).last().contains(period)) {
-            const QString suffix = id.splitRef(period).last().toString().toLower();
+        if (id.split(directorySplit).last().contains(period)) {
+            const QString suffix = id.split(period).last().toLower();
             if (d->imageProvider && QImageReader::supportedImageFormats().contains(suffix.toLatin1())) {
                 return QString("image://%1/%2").arg(d->imageProvider->prefix()).arg(id);
             } else if (suffix == acbfSuffix) {

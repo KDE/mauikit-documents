@@ -1,14 +1,39 @@
 <RCC>
     <qresource prefix="/fonts">
-        <file>Courier/Courier.ttf</file>
-        <file>Courier/Courier Bold Oblique.otf</file>
-        <file>times/TIMESR.ttf</file>
-        <file>Helvetica-Font/helvetica-rounded-bold-5871d05ead8de.otf</file>
-        <file>Helvetica-Font/helvetica-compressed-5871d14b6903a.otf</file>
-        <file>Helvetica-Font/helvetica-light-587ebe5a59211.ttf</file>
-        <file>Helvetica-Font/Helvetica.ttf</file>
-        <file>Helvetica-Font/Helvetica-Oblique.ttf</file>
-        <file>Helvetica-Font/Helvetica-BoldOblique.ttf</file>
-        <file>Helvetica-Font/Helvetica-Bold.ttf</file>
+        <file>C059-BdIta</file>
+        <file>C059-Bold</file>
+        <file>C059-Italic</file>
+        <file>NimbusMonoPS-Regular</file>
+        <file>NimbusRoman-Bold</file>
+        <file>NimbusRoman-BoldItalic</file>
+        <file>C059-Roman</file>
+        <file>D050000L</file>
+        <file>NimbusRoman-Italic</file>
+        <file>NimbusRoman-Regular</file>
+        <file>NimbusSansNarrow-Bold</file>
+        <file>NimbusSansNarrow-BoldOblique</file>
+        <file>NimbusSansNarrow-Oblique</file>
+        <file>URWBookman-Demi</file>
+        <file>URWBookman-DemiItalic</file>
+        <file>URWBookman-Light</file>
+        <file>NimbusSansNarrow-Regular</file>
+        <file>P052-Bold</file>
+        <file>URWBookman-LightItalic</file>
+        <file>URWGothic-Book</file>
+        <file>NimbusSans-Bold</file>
+        <file>NimbusSans-BoldItalic</file>
+        <file>NimbusMonoPS-BoldItalic</file>
+        <file>NimbusMonoPS-Italic</file>
+        <file>NimbusSans-Italic</file>
+        <file>NimbusSans-Regular</file>
+        <file>P052-BoldItalic</file>
+        <file>P052-Italic</file>
+        <file>URWGothic-BookOblique</file>
+        <file>URWGothic-Demi</file>
+        <file>P052-Roman</file>
+        <file>StandardSymbolsPS</file>
+        <file>URWGothic-DemiOblique</file>
+        <file>Z003-MediumItalic</file>
+        <file>NimbusMonoPS-Bold</file>
     </qresource>
 </RCC>

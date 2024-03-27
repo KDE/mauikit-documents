@@ -61,6 +61,7 @@ ecm_qt_declare_logging_category(acbf_SRCS
     EXPORT AdvancedComicBookFormat)
 
 add_library(acbf STATIC ${acbf_SRCS})
+set_property(TARGET acbf PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 include(ECMGenerateExportHeader)
 

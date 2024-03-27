@@ -119,9 +119,9 @@ bool Textarea::fromXml(QXmlStreamReader *xmlReader, const QString& xmlData)
     setInverted(xmlReader->attributes().value(QStringLiteral("inverted")).toString().toLower() == QStringLiteral("true"));
     setTransparent(xmlReader->attributes().value(QStringLiteral("transparent")).toString().toLower() == QStringLiteral("true"));
 
-    QVector<QStringRef> points = xmlReader->attributes().value(QStringLiteral("points")).split(' ');
-    for(QStringRef point : points) {
-        QVector<QStringRef> elements = point.split(',');
+    QVector<QStringView> points = xmlReader->attributes().value(QStringLiteral("points")).split(' ');
+    for(QStringView point : points) {
+        QVector<QStringView> elements = point.split(',');
         if(elements.length() == 2)
         {
             addPoint(QPoint(elements.at(0).toInt(), elements.at(1).toInt()));

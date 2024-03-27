@@ -24,9 +24,8 @@
 
 #include <memory>
 
-#include "AcbfMetadata.h"
-
 #include <QDate>
+#include <QObject>
 /**
  * \brief Class to handle the DocumentInfo section.
  * 
@@ -37,10 +36,15 @@
  * Sources is a stringlist, which is useful when the ACBF encompasses several
  * pages of a webcomic, for example.
  */
+
+class QXmlStreamWriter;
+class QXmlStreamReader;
+
 namespace AdvancedComicBookFormat
 {
 class Author;
-class  DocumentInfo : public QObject
+class Metadata;
+class DocumentInfo : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QStringList authorNames READ authorNames NOTIFY authorsChanged)
