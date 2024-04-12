@@ -9,18 +9,18 @@
 /** @mainpage mauikit-texteditor
 
 @section overview Introduction
-MauiKit Text Editor is a set of <a href="https://doc.qt.io/qt-6/qtquick-index.html">QtQuick</a> components and classes for viewing and editing plain text files, with support for syntax highlighing, find&replace, and many other built-in features. The visual controls are designed to integrate well with the rest of MauiKit controls and the Maui HIG.
+MauiKit Documents is a set of <a href="https://doc.qt.io/qt-6/qtquick-index.html">QtQuick</a> components and classes for viewing documents types such as PDF, EBook and comic-books. The visual controls are designed to integrate well with the rest of MauiKit controls and the Maui HIG.
 
 You can think of this - and other - MauiKit Frameworks as KDE's KParts, where each module accomplishes a specific function and when plug together you can quickly assemble a more powerful app. Components like this one are usually used and shared among multiple Maui Applications.
 
-@image html nota.png "Nota app using the Text Editor controls"
+@image html nota.png "Shelf app using the Documents controls"
 
 @section component Components
-MauiKit Text Editor has a set of visual controls and helper classes. Some of the visual controls are a graphical representation of the classes or wrappers that consume the API models.
+MauiKit Documents has a set of visual controls and helper classes. Some of the visual controls are a graphical representation of the classes or wrappers that consume the API models.
 
 @subsection views Visual Controls
 
-- @link TextEditor TextEditor @endlink
+- @link Documents Documents @endlink
 - @link ColorSchemesPage ColorSchemesPage @endlink
 
 @subsection classes Classes
@@ -36,7 +36,7 @@ import QtQuick.Controls
 
 import org.mauikit.controls as Maui
 
-import org.mauikit.texteditor as TE
+import org.mauikit.documents as Docs
 
 Maui.ApplicationWindow
 {
@@ -65,20 +65,20 @@ Maui.ApplicationWindow
 @endcode
 
 @subsection tutorial Tutorial
-To use this framework components, you can import the module using QML as `import org.mauikit.texteditor`, or include the headers and link to the target library for C++.
+To use this framework components, you can import the module using QML as `import org.mauikit.documents`, or include the headers and link to the target library for C++.
 
 Examples for every control can be found in the examples directory.
 
-If you have any questions about MauiKit Text Editor, feel free to drop by the Maui Project group on Telegram as `[at]mauiproject`.
+If you have any questions about MauiKit Documents, feel free to drop by the Maui Project group on Telegram as `[at]mauiproject`.
 
-A complete guide on how to set up and create an application using the MauiKit Text Editor controls can be found here [quickstart](@ref quickstart).
+A complete guide on how to set up and create an application using the MauiKit Documents controls can be found here [quickstart](@ref quickstart).
 
 @image html colors.png "ColorSchemes component"
 
 @section deployment Deployment
 
 @subsection building Building
-For building MauiKit Text Editor from source, you will need to be familiar with some basic shell commands, with a console aka terminal emulator and your distribution package manager.
+For building MauiKit Documents from source, you will need to be familiar with some basic shell commands, with a console aka terminal emulator and your distribution package manager.
 
 Before building it, make sure you have all the dependencies already installed with its development files.
 
@@ -86,11 +86,11 @@ Before building it, make sure you have all the dependencies already installed wi
 
 Then you can clone the project to your machine.
 
-`git clone https://invent.kde.org/maui/mauikit-texteditor.git`
+`git clone https://invent.kde.org/maui/mauikit-documents.git`
 
-Now that you have the sources, go into the `mauikit-texteditor` folder and start the building process.
+Now that you have the sources, go into the `mauikit-documents` folder and start the building process.
 
-`cd mauikit-texteditor`
+`cd mauikit-documents`
 
 Let's build the project into a separate directory
 
@@ -119,11 +119,11 @@ If you don't want to build it from source, you can also look for it in your dist
 
 For example, to install it on Arch based distributions:
 
-`sudo pacman install mauikit-texteditor4`
+`sudo pacman install mauikit-documents4`
 
 Debian based distros:
 
-`sudo apt install mauikit-texteditor4`
+`sudo apt install mauikit-documents4`
 
 
 For Android, you will need to build it from source and install it at your Qt for Android root directory. 
@@ -145,7 +145,7 @@ Once MauiKit has been installed you can start using it in your QML files. Checko
 @subsection contributing Contributing
 
 If you find any syntax errors, missing documentation, or not working code snippets or examples, please consider reporting the issue at 
-<a href="https://invent.kde.org/maui/mauikit-texteditor/-/issues">MauiKit Text Editor</a> issues page, with the **documentation** tag.
+<a href="https://invent.kde.org/maui/mauikit-documents/-/issues">MauiKit Documents</a> issues page, with the **documentation** tag.
 
 If you want to contribute with the documentation efforts, you can contact the Maui Project at Telegram [at]mauiproject.
 
