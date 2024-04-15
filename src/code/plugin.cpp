@@ -73,7 +73,7 @@ void DocumentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
     Q_UNUSED(uri);
 
     /** IMAGE PROVIDERS **/
-    engine->addImageProvider("preview", new Thumbnailer());
+    // engine->addImageProvider("preview", new Thumbnailer());
 
 
     //    engine->addImageProvider("preview", new PreviewImageProvider());
