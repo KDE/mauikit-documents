@@ -3,5 +3,6 @@
         <file>assets/lock.svg</file>
         <file>assets/alarm.svg</file>
         <file>assets/draw-watercolor.svg</file>
+        <file>assets/emblem-locked.svg</file>
     </qresource>
 </RCC>
