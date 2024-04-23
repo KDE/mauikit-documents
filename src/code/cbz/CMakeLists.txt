@@ -59,6 +59,7 @@ target_link_libraries (CBZLib
     Qt${QT_MAJOR_VERSION}::Core
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::QuickPrivate
     Qt${QT_MAJOR_VERSION}::Sql
     KF${KF_MAJOR_VERSION}::Archive
     KF${KF_MAJOR_VERSION}::I18n

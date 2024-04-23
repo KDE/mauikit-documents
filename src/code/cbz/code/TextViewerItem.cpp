@@ -25,7 +25,8 @@
 #include <QFontMetrics>
 #include <qmath.h>
 #include <QTimer>
-#include <private/qquicktextnode_p.h>
+#include <QTextLayout>
+// #include <private/qquicktextnode_p.h>
 
 class TextViewerItem::Private {
 public:
@@ -58,8 +59,8 @@ public:
     QHash<QPair<int,int>, QList<QRectF>> anchorRects;
     QList<QTextLayout*> layouts;
 
-    // State tracker for making sure that if the user moves outside of the anchor they originally
-    // clicked on, we don't actually suggest it was clicked
+           // State tracker for making sure that if the user moves outside of the anchor they originally
+           // clicked on, we don't actually suggest it was clicked
     QPair<int, int> clickedAnchor{-1, -1};
     QString hoveredLink;
 
@@ -98,11 +99,7 @@ public:
             } else if (fontWeight == QStringLiteral("lighter")) {
                 font.setWeight(QFont::Light);
             } else if (QString::number(fontWeight.toInt()) == fontWeight) {
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-                font.setWeight(fontWeight.toInt());
-#else
-            font.setLegacyWeight(fontWeight.toInt());
-#endif
+                font.setLegacyWeight(fontWeight.toInt());
             }
             const QString fontStretch(style->fontStretch().toLower());
             if (fontStretch == QStringLiteral("")) {
@@ -292,14 +289,14 @@ public:
                         ++step;
                     }
 
-                    // At this point it's entirely possible that we might still have an overlap, if the polygon
-                    // we're fitting things into has bits poking /in/ rather than out along the sides, so...
-                    // maybe we want to try and figure this out. Maybe store the four innermost corner points,
-                    // and then find them on each side, and pick the innermost x coord from that list of points
-                    // on the polygon.
+                           // At this point it's entirely possible that we might still have an overlap, if the polygon
+                           // we're fitting things into has bits poking /in/ rather than out along the sides, so...
+                           // maybe we want to try and figure this out. Maybe store the four innermost corner points,
+                           // and then find them on each side, and pick the innermost x coord from that list of points
+                           // on the polygon.
 
-                    // First, we've no idea of where the polygon actually starts, so let's make sure it's the top-left corner
-                    int firstPointPosition{intersection.indexOf(cornerPoints[0])};
+                           // First, we've no idea of where the polygon actually starts, so let's make sure it's the top-left corner
+                    qsizetype firstPointPosition{intersection.indexOf(cornerPoints[0])};
                     if (firstPointPosition > 0) {
                         QPolygonF snippet{intersection.mid(0, firstPointPosition)};
                         intersection.remove(0, firstPointPosition);
@@ -334,9 +331,9 @@ public:
                     line.setPosition(QPointF(xLeft, y));
                     line.setLineWidth(xRight - xLeft);
 
-                    // Does it fit the first string here...
-                    // Would be kind of nice to just be able to ask QTextLine whether it is able to
-                    // fit the any part of the text it's requested to fit before wrapping
+                           // Does it fit the first string here...
+                           // Would be kind of nice to just be able to ask QTextLine whether it is able to
+                           // fit the any part of the text it's requested to fit before wrapping
                     if (line.width() < averageCharWidth * (line.textLength() + 1)) {
                         // We can't actually fit the first word here, so... let's push the line one pixel and try again
                         y += 1;
@@ -344,8 +341,8 @@ public:
                     } else {
                         y += line.height();
 
-                        // If the text is wider than the available space, move the
-                        // text onto the next line if there is space.
+                               // If the text is wider than the available space, move the
+                               // text onto the next line if there is space.
                         if (line.naturalTextWidth() <= (xRight - xLeft)) {
                             line = textLayout->createLine();
                         } else {
@@ -356,13 +353,13 @@ public:
                     y += 1;
                 }
 
-                // Break if there isn't enough space for another line.
+                       // Break if there isn't enough space for another line.
                 if (y + lineHeight > ymax && line.isValid()) {
                     break;
                 }
             }
 
-            // This puts whatever overflow we have on the bottom right hand corner of the item
+                   // This puts whatever overflow we have on the bottom right hand corner of the item
             if (line.isValid()) {
                 managedToFitEverything = false;
                 line.setPosition(QPointF(shapePolygon.boundingRect().width(), shapePolygon.boundingRect().height()));
@@ -381,7 +378,7 @@ public:
         return managedToFitEverything;
     }
 
-    // This sets the font size for everything (including our "many" stored character formats)
+           // This sets the font size for everything (including our "many" stored character formats)
     void setFontSize(int size) {
         font.setPixelSize(size);
         for (QVector<QTextLayout::FormatRange>& formatRange : formats) {
@@ -474,7 +471,7 @@ public:
         if (paragraphs.count() > 0 && q->height() > (margin * 2) + pixelSize) {
             // Now attempt to do the text layouting, squeezing it upwards until it no longer fits
             // Cap it at the size of the polygon, divided by the number of paragraphs, minus our margin
-            int maximumSize{(qFloor(shapePolygon.boundingRect().height()) / paragraphs.count()) - margin * 2};
+            qsizetype maximumSize{(qFloor(shapePolygon.boundingRect().height()) / paragraphs.count()) - margin * 2};
             int bestSize = findMaxSize(pixelSize, maximumSize);
             setFontSize(bestSize);
             bool layoutSuccessful = attemptLayout(debugLayout);
@@ -658,35 +655,26 @@ void TextViewerItem::updatePolish()
 QSGNode * TextViewerItem::updatePaintNode(QSGNode* node, QQuickItem::UpdatePaintNodeData* data)
 {
     Q_UNUSED(data)
-    QQuickTextNode *n = static_cast<QQuickTextNode *>(node);
-    if (!n)
-        n = new QQuickTextNode(this);
-    n->removeAllChildNodes();
-    for (QTextLayout* layout : d->layouts) {
-        n->addTextLayout(QPoint(0, 0), layout);
-    }
-    return n;
+    // QQuickTextNode *n = static_cast<QQuickTextNode *>(node);
+    // if (!n)
+    //     n = new QQuickTextNode(this);
+    // n->removeAllChildNodes();
+    // for (QTextLayout* layout : d->layouts) {
+    //     n->addTextLayout(QPoint(0, 0), layout);
+    // }
+    return nullptr;
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
-void TextViewerItem::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
+void TextViewerItem::geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     Q_UNUSED(newGeometry)
     Q_UNUSED(oldGeometry)
     d->throttle->start();
 }
-#else
-    void TextViewerItem::geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry)
-{
-    Q_UNUSED(newGeometry)
-    Q_UNUSED(oldGeometry)
-    d->throttle->start();
-}
-#endif
 
 void TextViewerItem::hoverMoveEvent(QHoverEvent* event)
 {
-    QPair<int, int> anchor = d->getAnchor(event->pos());
+    QPair<int, int> anchor = d->getAnchor(event->position());
     // Only really need one of the point's items to be greater than -1 to know there's an anchor, no need to check more
     if (anchor.first > -1) {
         setCursor(Qt::PointingHandCursor);
