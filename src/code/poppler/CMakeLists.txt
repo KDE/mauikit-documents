@@ -26,13 +26,11 @@ set(sources
     code/thumbnailer.cpp
     code/pdfitem.cpp
 #    code/verticalview.cpp
-    code/pdftocmodel.cpp
-    )
+    code/pdftocmodel.cpp)
 
-set( pluginData
+qt_add_resources(pluginData
     data/fonts/fonts.qrc
     img_assets.qrc)
-
 
 add_library(PopplerLib
     STATIC

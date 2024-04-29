@@ -56,6 +56,11 @@ int PdfDocument::rowCount(const QModelIndex & parent) const
         return 0;
     }
 
+    if (m_document->isLocked())
+    {
+        return 0;
+    }
+
     return m_document->numPages();
 }
 
@@ -89,16 +94,11 @@ void PdfDocument::setPath(QUrl &pathName)
         return;
     }
 
-    beginResetModel();
-
     m_path = pathName;
     Q_EMIT pathChanged();
 
     if (!loadDocument(m_path.toLocalFile()))
         return;
-
-    loadPages();
-    endResetModel();
 }
 
 int PdfDocument::pageCount() const
@@ -130,6 +130,9 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
 #endif
         return false;
     }
+
+    m_document->setRenderHint(Poppler::Document::Antialiasing, true);
+    m_document->setRenderHint(Poppler::Document::TextAntialiasing, true);
 
     if (m_document->isLocked())
     {
@@ -163,8 +166,9 @@ bool PdfDocument::loadDocument(const QString &pathName, const QString &password,
     m_tocModel->setDocument(m_document.get());
     Q_EMIT tocModelChanged();
 
-    m_document->setRenderHint(Poppler::Document::Antialiasing, true);
-    m_document->setRenderHint(Poppler::Document::TextAntialiasing, true);
+    beginResetModel();
+    loadPages();
+    endResetModel();
 
     return true;
 }

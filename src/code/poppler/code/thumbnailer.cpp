@@ -8,6 +8,7 @@
 
 #include <QImage>
 #include <QUrl>
+#include <QIcon>
 
 Thumbnailer::Thumbnailer() : QQuickImageProvider(QQuickImageProvider::Image, QQuickImageProvider::ForceAsynchronousImageLoading)
 {
@@ -27,7 +28,8 @@ QImage Thumbnailer::requestImage(const QString &id, QSize *size, const QSize &re
 
     if(document->isLocked())
     {
-        result = QImage("qrc://img_assets/assets/emblem-locked.svg");
+        result = QImage(":/img_assets/assets/emblem-locked.svg");
+        // result = QIcon::fromTheme("love").pixmap(64).toImage();
         return result;
     }
 
