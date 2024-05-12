@@ -52,7 +52,7 @@ msgid ""
 "archive..."
 msgstr ""
 "S'ha reemplaçat correctament l'arxiu antic per l'arxiu nou - ara es carrega "
-"l'arxiu nou..."
+"l'arxiu nou…"
 
 #: src/controls.5/poppler/PDFViewer.qml:28
 #, kde-format
