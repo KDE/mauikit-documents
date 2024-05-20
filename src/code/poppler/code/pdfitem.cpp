@@ -18,10 +18,11 @@
 
 #include "pdfitem.h"
 
-PdfItem::PdfItem(const QString &url, const QSize &size) :
+PdfItem::PdfItem(const QString &url, const QSize &size, const QVariantList &links) :
     m_width(size.width())
     , m_height(size.height())
     , m_url(url)
+    ,m_pageLinks(links)
 {
 }
 
@@ -38,4 +39,9 @@ int PdfItem::height() const
 QString PdfItem::url() const
 {
     return m_url;
+}
+
+QVariantList PdfItem::links() const
+{
+    return m_pageLinks;
 }

@@ -46,6 +46,7 @@ QHash<int, QByteArray> PdfDocument::roleNames() const
     roles[WidthRole] = "width";
     roles[HeightRole] = "height";
     roles[UrlRole] = "url";
+    roles[LinksRole] = "links";
     return roles;
 }
 
@@ -82,6 +83,8 @@ QVariant PdfDocument::data(const QModelIndex & index, int role) const
         return page.height();
     case UrlRole:
         return page.url();
+    case LinksRole:
+        return page.links();
     default:
         return QVariant();
     }
@@ -228,6 +231,15 @@ QString PdfDocument::id() const
     return m_id;
 }
 
+static QVariantMap convertDestination(const Poppler::LinkDestination& destination)
+{
+    QVariantMap result;
+    result["page"] = destination.pageNumber() - 1;
+    result["top"] = destination.top();
+    result["left"] = destination.left();
+    return result;
+}
+
 bool PdfDocument::loadPages()
 {
     qDebug() << "Populating model...";
@@ -239,10 +251,26 @@ bool PdfDocument::loadPages()
     loadProvider();
     qDebug() << m_document->title() << m_document->numPages();
 
+    QVariantList pageLinks;
 
     for(int i = 0; i < pages; i++)
     {
-        PdfItem item(QString("image://%1%2/page/%3").arg(m_id, QString::number(i % m_providersNumber), QString::number(i)),  m_document->page(i)->pageSize());
+        auto page =  m_document->page(i);
+        auto links = page->links();
+
+        for (const auto& link : links)
+        {
+            if (link->linkType() == Poppler::Link::Goto)
+            {
+                auto gotoLink = static_cast<Poppler::LinkGoto*>(link.get());
+                if (!gotoLink->isExternal())
+                {
+                    pageLinks.append(QVariantMap{{ "rect", link->linkArea().normalized() }, { "destination", convertDestination(gotoLink->destination()) }});
+                }
+            }
+        }
+
+        PdfItem item(QString("image://%1%2/page/%3").arg(m_id, QString::number(i % m_providersNumber), QString::number(i)), page->pageSize(), pageLinks);
         m_pages << item;
     }
 
@@ -288,6 +316,32 @@ void PdfDocument::unlock(const QString &ownerPassword, const QString &password)
 
 
     loadPages();
+}
+
+QVariantList PdfDocument::search(int page, const QString &text, Qt::CaseSensitivity caseSensitivity)
+{
+    QVariantList result;
+    if (!m_document)
+    {
+        qWarning() << "Poppler plugin: no document to search";
+        return result;
+    }
+
+    if (page >= m_document->numPages() || page < 0)
+    {
+        qWarning() << "Poppler plugin: search page" << page << "isn't in a document";
+        return result;
+    }
+
+    auto p = m_document->page(page);
+    auto searchResult = p->search(text, caseSensitivity == Qt::CaseInsensitive ? Poppler::Page::IgnoreCase : Poppler::Page::NoSearchFlags);
+
+    auto pageSize = p->pageSizeF();
+    for (const auto& r : searchResult)
+    {
+        result.append(QRectF(r.left() / pageSize.width(), r.top() / pageSize.height(), r.width() / pageSize.width(), r.height() / pageSize.height()));
+    }
+    return result;
 }
 
 void PdfDocument::loadProvider()

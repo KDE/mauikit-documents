@@ -16,24 +16,24 @@
  * Author: Stefano Verzegnassi <stefano92.100@gmail.com>
  */
 
-#ifndef PDFITEM_H
-#define PDFITEM_H
+#pragma once
 
 #include <QString>
 #include <QSize>
+#include <QVariantList>
 
 class PdfItem
 {
 public:
-    PdfItem(const QString &url, const QSize &size);
+    PdfItem(const QString &url, const QSize &size, const QVariantList &links);
     int width() const;
     int height() const;
     QString url() const;
+    QVariantList links() const;
 
 private:
     int m_width;
     int m_height;
     QString m_url;
+    QVariantList m_pageLinks;
 };
-
-#endif // PDFITEM_H

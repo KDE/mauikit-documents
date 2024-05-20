@@ -17,8 +17,7 @@
  *         Stefano Verzegnassi <stefano92.100@gmail.com>
  */
 
-#ifndef PDFDOCUMENT_H
-#define PDFDOCUMENT_H
+#pragma once
 
 #include <QAbstractListModel>
 
@@ -51,7 +50,8 @@ public:
     enum Roles {
         WidthRole = Qt::UserRole + 1,
         HeightRole,
-        UrlRole
+        UrlRole,
+        LinksRole
     };
 
     explicit PdfDocument(QAbstractListModel *parent = nullptr);
@@ -98,8 +98,9 @@ Q_SIGNALS:
 private Q_SLOTS:
     // void _q_populate(PdfPagesList pagesList);
     
-    public Q_SLOTS:
+public Q_SLOTS:
     void unlock(const QString &ownerPassword, const QString &password);
+    QVariantList search(int page, const QString& text, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive);
 
 private:
     QUrl m_path;
@@ -120,5 +121,3 @@ private:
     PdfTocModel* m_tocModel;
     bool m_isValid = false;
 };
-
-#endif // PDFDOCUMENT_H
