@@ -50,6 +50,7 @@ Maui.Page
                 Action
                 {
                     text: i18n("Case sensitive")
+                    checkable: true
                     icon.name: "format-text-uppercase"
                     checked: searchSensitivity === Qt.CaseInsensitive
                     onTriggered:
