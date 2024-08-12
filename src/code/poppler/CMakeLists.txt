@@ -5,7 +5,7 @@
 project(PopplerLib)
 
 if(ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras QuickControls2)
+    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS QuickControls2)
 elseif(UNIX)
     find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
     find_package(Poppler REQUIRED COMPONENTS Qt${QT_MAJOR_VERSION})

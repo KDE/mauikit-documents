@@ -22,9 +22,7 @@ ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION}
 set(headers
     code/moduleinfo.h)
 
-
-        qt_add_resources(documents_QML_QRC code/poppler/img_assets.qrc)
-
+qt_add_resources(documents_QML_QRC code/poppler/img_assets.qrc)
 
 ecm_target_qml_sources(MauiKitDocuments${MAUI_MAJOR_VERSION} PATH poppler SOURCES
     controls.${QT_MAJOR_VERSION}/poppler/PDFViewer.qml)
@@ -53,33 +51,28 @@ target_include_directories(MauiKitDocuments${MAUI_MAJOR_VERSION}
 
 target_include_directories(MauiKitDocuments${MAUI_MAJOR_VERSION} PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR};${CMAKE_CURRENT_BINARY_DIR};>")
 
-if(ANDROID)
-    target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION} PRIVATE Qt${QT_MAJOR_VERSION}::AndroidExtras)
-endif()
-
 if(UNIX AND NOT ANDROID)
     target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION} PRIVATE KF${KF_MAJOR_VERSION}::ConfigCore)
 endif()
 
-    target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION}plugin
-        PRIVATE
-        PopplerLib
-        CBZLib
-        KF${KF_MAJOR_VERSION}::I18n
-        Qt${QT_MAJOR_VERSION}::Core
-        Qt${QT_MAJOR_VERSION}::Quick
-        Qt${QT_MAJOR_VERSION}::Qml
-        MauiKit${MAUI_MAJOR_VERSION})
+target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION}plugin
+    PRIVATE
+    PopplerLib
+    CBZLib
+    KF${KF_MAJOR_VERSION}::I18n
+    Qt${QT_MAJOR_VERSION}::Core
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::Qml
+    MauiKit${MAUI_MAJOR_VERSION})
 
-    target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION}
-        PRIVATE
-        PopplerLib
-        KF${KF_MAJOR_VERSION}::I18n
-        KF${KF_MAJOR_VERSION}::CoreAddons
-        Qt${QT_MAJOR_VERSION}::Core
-        Qt${QT_MAJOR_VERSION}::Quick
-        Qt${QT_MAJOR_VERSION}::Qml)
-
+target_link_libraries(MauiKitDocuments${MAUI_MAJOR_VERSION}
+    PRIVATE
+    PopplerLib
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    Qt${QT_MAJOR_VERSION}::Core
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::Qml)
 
 ecm_finalize_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION} DESTINATION ${KDE_INSTALL_QMLDIR})
 

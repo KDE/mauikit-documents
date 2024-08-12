@@ -5,13 +5,13 @@
 cmake_minimum_required(VERSION 3.16)
 
 set(QT_MAJOR_VERSION 6)
+set(REQUIRED_QT_VERSION 6.4)
 
-    set(REQUIRED_QT_VERSION 6.4)
-    set(REQUIRED_KF_VERSION 5.240.0)
-    set(KF_MAJOR_VERSION 6)
-    set(MAUI_MAJOR_VERSION 4)
+set(KF_MAJOR_VERSION 6)
+set(REQUIRED_KF_VERSION 5.240.0)
 
-    set(MAUIKIT_VERSION 4.0.0)
+set(MAUI_MAJOR_VERSION 4)
+set(MAUIKIT_VERSION 4.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -52,7 +52,6 @@ include(ECMSourceVersionControl)
 option(QUICK_COMPILER "Use QtQuick compiler to improve performance" TRUE)
 
 if(ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} REQUIRED COMPONENTS AndroidExtras)
     find_package(Gradle REQUIRED)
 endif()
 

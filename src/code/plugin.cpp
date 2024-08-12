@@ -77,7 +77,7 @@ void DocumentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 
 
     //    engine->addImageProvider("preview", new PreviewImageProvider());
-    // engine->addImageProvider("comiccover", new ComicCoverImageProvider());
+    engine->addImageProvider("comiccover", new ComicCoverImageProvider());
 
 }
 
