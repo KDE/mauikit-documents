@@ -315,7 +315,7 @@ void ArchiveBookModel::setFilename(QString newFilename)
             {
                 // fall back to just handling the files directly if there's no ACBF document...
                 QString undesired = QString("%1").arg("/").append("Thumbs.db");
-                for(const QString& entry : qAsConst(d->fileEntries))
+                for(const QString& entry : std::as_const(d->fileEntries))
                 {
                     const KArchiveEntry* archEntry = d->archive->directory()->entry(entry);
                     if(archEntry->isFile() && !entry.endsWith(undesired))

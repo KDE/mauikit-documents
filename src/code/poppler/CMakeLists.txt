@@ -17,8 +17,8 @@ endif()
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Qml_PRIVATE_INCLUDE_DIRS})
+    ${Qt6Quick_PRIVATE_INCLUDE_DIRS}
+    ${Qt6Qml_PRIVATE_INCLUDE_DIRS})
 
 set(sources
     code/pdfdocument.cpp
@@ -39,14 +39,14 @@ add_library(PopplerLib
 
 if (ANDROID)
     add_library(poppler STATIC IMPORTED GLOBAL)
-    set_target_properties(poppler PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt5152/5.15.2/android/lib/libpoppler_armeabi-v7a.so" )
+    set_target_properties(poppler PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt/6.7.1/android_arm64_v8a/lib/libpoppler_arm64-v8a.so" )
 
-    add_library(poppler-qt5 STATIC IMPORTED GLOBAL)
-    set_target_properties(poppler-qt5 PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt5152/5.15.2/android/lib/libpoppler-qt5_armeabi-v7a.so" )
+    add_library(poppler-qt6 STATIC IMPORTED GLOBAL)
+    set_target_properties(poppler-qt6 PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt/6.7.1/android_arm64_v8a/lib/libpoppler-qt6_arm64-v8a.so" )
 
-    target_include_directories(PopplerLib PUBLIC "/home/camilo/Qt5152/5.15.2/android/include/")
+    target_include_directories(PopplerLib PUBLIC "/home/camilo/Qt/6.7.1/android_arm64_v8a/include/")
 
-    target_link_libraries(PopplerLib PRIVATE poppler-qt5)
+    target_link_libraries(PopplerLib PRIVATE poppler-qt6)
 elseif(UNIX)
     target_link_libraries(PopplerLib PRIVATE Poppler::Qt${QT_MAJOR_VERSION})
 endif()

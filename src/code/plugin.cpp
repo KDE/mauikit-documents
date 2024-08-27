@@ -52,7 +52,7 @@ void DocumentsPlugin::registerTypes(const char *uri)
     qmlRegisterType<PdfDocument>(uri, 1, 0, "Document");
     qmlRegisterType(componentUrl(QStringLiteral("poppler/PDFViewer.qml")), uri, 1, 0, "PDFViewer");
 
-    //CB stuff
+           //CB stuff
     qmlRegisterType<CategoryEntriesModel>(uri, 1, 0, "CategoryEntriesModel");
     qmlRegisterType<BookListModel>(uri, 1, 0, "BookListModel");
     qmlRegisterType<BookModel>(uri, 1, 0, "BookModel");
@@ -76,7 +76,7 @@ void DocumentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
     engine->addImageProvider("preview", new Thumbnailer());
 
 
-    //    engine->addImageProvider("preview", new PreviewImageProvider());
+           //    engine->addImageProvider("preview", new PreviewImageProvider());
     engine->addImageProvider("comiccover", new ComicCoverImageProvider());
 
 }

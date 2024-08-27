@@ -1,5 +1,4 @@
-#ifndef THUMBNAILER_H
-#define THUMBNAILER_H
+#pragma once
 
 #include <QQuickImageProvider>
 
@@ -10,5 +9,3 @@ public:
     QImage requestImage(const QString & id, QSize * size, const QSize & requestedSize) override;
 
 };
-
-#endif // THUMBNAILER_H

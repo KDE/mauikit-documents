@@ -22,7 +22,7 @@
 #include "PreviewImageProvider.h"
 
 #include <kiconloader.h>
-#include <kio/previewjob.h>
+#include <KIO/PreviewJob>
 
 #include <QCoreApplication>
 #include <QDir>
