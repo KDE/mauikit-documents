@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
 "PO-Revision-Date: 2023-08-15 09:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "Ustvarjanje arhiva v %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "Pisanje v podatke ACBF"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "Kopiranje prek vseh datotek, ki niso označene za brisanje"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
 msgstr "Kopiranje prek %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "Kopiranje vseh vsebin iz %1 v %2"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
@@ -52,37 +52,42 @@ msgstr ""
 "Uspešno zamenjan stari arhiv z novim arhivom - zdaj nalaganje novega "
 "arhiva..."
 
-#: src/controls.5/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Dokument zaklenjen"
 
-#: src/controls.5/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Vnesite geslo za odklepanje in odpiranje datoteke."
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Locked"
 msgstr "Zaklenjeno"
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Error"
 msgstr "Napaka"
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "This document is password protected."
 msgstr "Ta dokument je zavarovan z geslom."
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Prišlo je do napake pri nalaganju dokumenta."
 
-#: src/controls.5/poppler/PDFViewer.qml:131
+#: src/controls.6/poppler/PDFViewer.qml:194
 #, kde-format
 msgid "UnLock"
 msgstr "Odkleni"

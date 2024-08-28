@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
 "PO-Revision-Date: 2022-11-17 07:12+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "%1(e)an artxiboa sortzen"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "ACBF datuak gordetzen"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "Ezabatzeko markatu gabeko fitxategi guztietan kopiatzen du"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
 msgstr "%1(e)ren gainean kopiatzen"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "%1(e)tik %2(e)ra eduki guztia kopiatzen"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
@@ -54,39 +54,44 @@ msgstr ""
 "Fitxategi zaharra berriarekin behar bezala ordeztu da - orain fitxategi "
 "berria zamatzen..."
 
-#: src/controls.5/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Dokumentua giltzatuta dago"
 
-#: src/controls.5/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr ""
 "Mesedez, sartu fitxategia giltzapetik askatzeko eta irekitzeko zure "
 "pasahitza."
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Locked"
 msgstr "Giltzatuta"
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Error"
 msgstr "Errorea"
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "This document is password protected."
 msgstr "Dokumentu hau pasahitz bidez babestuta dago."
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Dokumentu hau zamatzean errore bat egon da."
 
-#: src/controls.5/poppler/PDFViewer.qml:131
+#: src/controls.6/poppler/PDFViewer.qml:194
 #, kde-format
 msgid "UnLock"
 msgstr "Giltzapetik askatu"

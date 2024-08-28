@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
 "PO-Revision-Date: 2023-01-01 15:25+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -14,32 +14,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.12.0\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "Création en cours d'une archive dans %1..."
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "Écriture en cours de données « ACBF »..."
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "Copie en cours de tous les fichiers, non marqués pour suppression..."
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
 msgstr "Copie en cours vers %1..."
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "Copie en cours de la totalité du contenu de %1 vers %2..."
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
@@ -48,38 +48,43 @@ msgstr ""
 "Ancienne archive remplacée avec succès par la nouvelle archive. Maintenant, "
 "chargement en cours de la nouvelle archive..."
 
-#: src/controls.5/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Document verrouillé"
 
-#: src/controls.5/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr ""
 "Veuillez saisir votre mot de passe pour déverrouiller et ouvrir le fichier."
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Locked"
 msgstr "Verrouillé"
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Error"
 msgstr "Erreur"
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "This document is password protected."
 msgstr "Ce document est protégé par un mot de passe."
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Une erreur est survenue durant le chargement de ce document."
 
-#: src/controls.5/poppler/PDFViewer.qml:131
+#: src/controls.6/poppler/PDFViewer.qml:194
 #, kde-format
 msgid "UnLock"
 msgstr "Déverrouiller"

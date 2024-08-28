@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
 "PO-Revision-Date: 2022-11-17 13:57+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,33 +17,33 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "Archief wordt in %1 aangemaakt"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "In ACBF-gegevens wordt geschreven"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr ""
 "Over alle bestanden, niet gemarkeerd voor verwijderen, wordt gekopieerd"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
 msgstr "Over %1 wordt gekopieerd"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "Alle inhoud van %1 naar %2 wordt gekopieerd"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
@@ -52,37 +52,42 @@ msgstr ""
 "Oude archief met succes vervangen door het nieuwe archief - het nieuwe "
 "archief wordt geladen..."
 
-#: src/controls.5/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Document is vergrendeld"
 
-#: src/controls.5/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Voer uw wachtwoord in om het bestand te ontgrendelen en te openen."
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Locked"
 msgstr "Vergrendeld"
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Error"
 msgstr "Fout"
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "This document is password protected."
 msgstr "Dit document is beveiligd met een wachtwoord."
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Er was een fout bij laden van dit document."
 
-#: src/controls.5/poppler/PDFViewer.qml:131
+#: src/controls.6/poppler/PDFViewer.qml:194
 #, kde-format
 msgid "UnLock"
 msgstr "Ontgrendelen"
