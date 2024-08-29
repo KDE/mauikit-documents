@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the mauikit-documents package.
 #
 # Automatically generated, 2022.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikitdocuments\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2022-11-22 12:30+0100\n"
+"PO-Revision-Date: 2024-08-29 00:08+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.11.80\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -66,7 +66,7 @@ msgstr "Introduzca su contraseña para desbloquear y abrir el archivo."
 #: src/controls.6/poppler/PDFViewer.qml:52
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Distinguir entre mayúsculas y minúsculas"
 
 #: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format

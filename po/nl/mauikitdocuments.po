@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mauikit-documents package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2022-11-17 13:57+0100\n"
+"PO-Revision-Date: 2024-08-28 11:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -65,7 +65,7 @@ msgstr "Voer uw wachtwoord in om het bestand te ontgrendelen en te openen."
 #: src/controls.6/poppler/PDFViewer.qml:52
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Hoofdlettergevoelig"
 
 #: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
