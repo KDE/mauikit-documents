@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/mauikit/documents">
-        <file alias="poppler/PDFViewer.qml">controls.5/poppler/PDFViewer.qml</file>
-    </qresource>
-</RCC>

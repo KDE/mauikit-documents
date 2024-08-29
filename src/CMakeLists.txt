@@ -11,13 +11,15 @@ add_subdirectory(code/cbz)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/code)
 
-    add_library(MauiKitDocuments${MAUI_MAJOR_VERSION} SHARED)
+add_library(MauiKitDocuments${MAUI_MAJOR_VERSION} SHARED)
 
 ecm_add_qml_module(MauiKitDocuments${MAUI_MAJOR_VERSION}
     URI "org.mauikit.documents"
     CLASS_NAME DocumentsPlugin
     NO_PLUGIN_OPTIONAL
-    NO_GENERATE_PLUGIN_SOURCE)
+    NO_GENERATE_PLUGIN_SOURCE
+    DEPENDENCIES
+    "org.mauikit.controls")
 
 set(headers
     code/moduleinfo.h)
@@ -27,15 +29,15 @@ qt_add_resources(documents_QML_QRC code/poppler/img_assets.qrc)
 ecm_target_qml_sources(MauiKitDocuments${MAUI_MAJOR_VERSION} PATH poppler SOURCES
     controls.${QT_MAJOR_VERSION}/poppler/PDFViewer.qml)
 
-    target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION}
-        PRIVATE
-        code/moduleinfo.cpp)
+target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION}
+    PRIVATE
+    code/moduleinfo.cpp)
 
-    target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION}plugin
-        PRIVATE
-        code/plugin.cpp
-        code/plugin.h
-        ${documents_QML_QRC})
+target_sources(MauiKitDocuments${MAUI_MAJOR_VERSION}plugin
+    PRIVATE
+    code/plugin.cpp
+    code/plugin.h
+    ${documents_QML_QRC})
 
 
 add_library(MauiKit${MAUI_MAJOR_VERSION}::Documents ALIAS MauiKitDocuments${MAUI_MAJOR_VERSION})
