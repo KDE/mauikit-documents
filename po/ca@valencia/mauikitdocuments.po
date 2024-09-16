@@ -1,24 +1,24 @@
 # Translation of mauikitdocuments.po to Catalan (Valencian)
-# Copyright (C) 2022 This_file_is_part_of_KDE
+# Copyright (C) 2022-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2022-11-18 14:13+0100\n"
-"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2024-08-28 11:03+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -67,7 +67,7 @@ msgstr "Introduïu la contrasenya per a desblocar i obrir el fitxer."
 #: src/controls.6/poppler/PDFViewer.qml:52
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Distingix entre majúscules i minúscules"
 
 #: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format

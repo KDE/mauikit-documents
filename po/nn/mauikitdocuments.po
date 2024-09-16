@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
 "PO-Revision-Date: 2023-07-29 12:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -19,69 +19,74 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:567
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
 msgstr "Opprettar arkiv i %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:579
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
 msgstr "Skriv i ACBF-data"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:590
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
 msgstr "Kopierer til alle filer ikkje merkte for sletting"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:598
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
 msgstr "Kopierer over %1"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:627
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
 msgstr "Kopierer alt innhald frå %1 til %2"
 
-#: src/code/cbz/code/ArchiveBookModel.cpp:637
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
 "archive..."
 msgstr "Erstatta gammalt arkiv med nytt arkiv. Opnar no det nye arkivet …"
 
-#: src/controls.5/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
 msgstr "Dokument låst"
 
-#: src/controls.5/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Skriv inn passord for å låsa opp og opna fila."
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Locked"
 msgstr "Låst"
 
-#: src/controls.5/poppler/PDFViewer.qml:125
+#: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Error"
 msgstr "Feil"
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "This document is password protected."
 msgstr "Dokumentet er verna med passord."
 
-#: src/controls.5/poppler/PDFViewer.qml:126
+#: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Det oppstod ein feil ved opning av dokumentet."
 
-#: src/controls.5/poppler/PDFViewer.qml:131
+#: src/controls.6/poppler/PDFViewer.qml:194
 #, kde-format
 msgid "UnLock"
 msgstr "Lås opp"

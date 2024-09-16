@@ -62,7 +62,7 @@ msgstr ""
 #: src/controls.6/poppler/PDFViewer.qml:52
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Rozlišovat VELKÁ/malá"
 
 #: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
