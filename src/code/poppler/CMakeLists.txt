@@ -15,17 +15,13 @@ elseif(UNIX)
 endif()
 
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${Qt6Quick_PRIVATE_INCLUDE_DIRS}
-    ${Qt6Qml_PRIVATE_INCLUDE_DIRS})
+    ${CMAKE_CURRENT_SOURCE_DIR})
 
 set(sources
     code/pdfdocument.cpp
     code/pdfimageprovider.cpp
     code/thumbnailer.cpp
     code/pdfitem.cpp
-#    code/verticalview.cpp
     code/pdftocmodel.cpp)
 
 qt_add_resources(pluginData
