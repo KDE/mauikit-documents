@@ -30,6 +30,9 @@
 
 void DocumentsPlugin::registerTypes(const char *uri)
 {
+    Q_ASSERT(QLatin1String(uri) == QLatin1String("org.mauikit.documents"));
+
+    qDebug() << "INITIALIZE MAUIKIT DOCUMENTS PLUGIN";
 #if defined(Q_OS_ANDROID)
     QResource::registerResource(QStringLiteral("assets:/android_rcc_bundle.rcc"));
     QResource::registerResource(QStringLiteral("fonts.qrc"), "fonts");
@@ -47,7 +50,6 @@ void DocumentsPlugin::registerTypes(const char *uri)
     QFontDatabase::addApplicationFont(":/fonts/Helvetica-Font/Helvetica.ttf");
 #endif
 
-    Q_ASSERT(QLatin1String(uri) == QLatin1String("org.mauikit.documents"));
     //Poppler stuff
     qmlRegisterType<PdfDocument>(uri, 1, 0, "Document");
     qmlRegisterType(componentUrl(QStringLiteral("poppler/PDFViewer.qml")), uri, 1, 0, "PDFViewer");
@@ -72,13 +74,13 @@ void DocumentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 {
     Q_UNUSED(uri);
 
+    qDebug() << "Initialize the MauiKit Documents image provider";
     /** IMAGE PROVIDERS **/
     engine->addImageProvider("preview", new Thumbnailer());
 
 
            //    engine->addImageProvider("preview", new PreviewImageProvider());
     engine->addImageProvider("comiccover", new ComicCoverImageProvider());
-
 }
 
 QUrl DocumentsPlugin::componentUrl(const QString &fileName) const

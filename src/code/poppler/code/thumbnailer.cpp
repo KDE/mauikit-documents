@@ -13,12 +13,14 @@ Thumbnailer::Thumbnailer() : QQuickImageProvider(QQuickImageProvider::Image, QQu
 
 QImage Thumbnailer::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {
+    qDebug() << "REQUESTED URL IS" << id << requestedSize;
     QImage result;
 
     auto document = Poppler::Document::load(QUrl::fromUserInput(id).toLocalFile());
 
     if(!document)
     {
+        qWarning() << "Failed to get image from PDF document. Document can not be loaded" << id << requestedSize;
         return result;
     }
 
@@ -32,34 +34,45 @@ QImage Thumbnailer::requestImage(const QString &id, QSize *size, const QSize &re
     document->setRenderHint(Poppler::Document::Antialiasing, true);
     document->setRenderHint(Poppler::Document::TextAntialiasing, true);
 
-    // If the requestedSize.width is 0, avoid Poppler rendering
-    // FIXME: Actually it works correctly, but an error is anyway shown in the application output.
-    if (requestedSize.width() > 0)
+           // If the requestedSize.width is 0, avoid Poppler rendering
+           // FIXME: Actually it works correctly, but an error is anyway shown in the application output.
+
+    auto page = document->page(0);
+
+    if(!page)
     {
-        auto page = document->page(0);
-
-        if(!page)
-        {
-            return result;
-        }
-
-        size->setHeight(requestedSize.height());
-        size->setWidth(requestedSize.width());
-
-        const qreal fakeDpiX = requestedSize.width() / page->pageSizeF().width() * 72.0;
-        const qreal fakeDpiY = requestedSize.height() / page->pageSizeF().height() * 72.0;
-
-        // Preserve aspect fit
-        const qreal fakeDpi = std::min(fakeDpiX, fakeDpiY);
-
-        // Render the page to QImage
-        result = page->renderToImage(fakeDpi, fakeDpi);
-
+        qWarning() << "Failed to get image from PDF document. Page can not be loaded" << id << requestedSize;
         return result;
     }
 
-    // Requested size is 0, so return a null image.
-    return QImage();
+    auto thumbnail = page->thumbnail();
+    if(!thumbnail.isNull())
+    {
+        qDebug() << "Thumbnail retirved from page thumbnail";
+        size->setHeight(thumbnail.height());
+        size->setWidth(thumbnail.width());
+        return thumbnail;
+    }
+
+    if (requestedSize.width() <= 0)
+    {
+        size->setHeight(400);
+        size->setWidth(200);
+    }else
+    {
+        size->setHeight(requestedSize.height());
+        size->setWidth(requestedSize.width());
+    }
+
+    const qreal fakeDpiX = size->width() / page->pageSizeF().width() * 72.0;
+    const qreal fakeDpiY = size->height() / page->pageSizeF().height() * 72.0;
+
+           // Preserve aspect fit
+    const qreal fakeDpi = std::min(fakeDpiX, fakeDpiY);
+
+           // Render the page to QImage
+    result = page->renderToImage(fakeDpi, fakeDpi);
+    return result;
 }
 
 

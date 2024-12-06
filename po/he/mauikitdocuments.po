@@ -1,90 +1,90 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mauikit-documents package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2024-10-07 14:58+0900\n"
-"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2024-10-10 09:00+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.1\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
-msgstr "正在於 %1 建立封存檔"
+msgstr "נוצר ארכיון תחת %1"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
-msgstr "正在寫入 ACBF 資料"
+msgstr "נכתבים נתוני ACBF"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
-msgstr "正在複製所有未被標記要刪除的檔案"
+msgstr "מועתק על פני כל הקבצים שלא מסומנים למחיקה"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
-msgstr "正在複製到 %1 上"
+msgstr "מועתק על פני %1"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
-msgstr "正在從 %1 複製所有內容到 %2"
+msgstr "כל התוכן מועתק מ־%1 אל %2"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
 msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
 "archive..."
-msgstr "成功將舊封存檔替換為新封存檔 - 現在開始載入新封存檔…"
+msgstr "הארכיון הישן הוחלף בהצלחה בארכיון החדש - הארכיון החדש נטען כעת…"
 
 #: src/controls.6/poppler/PDFViewer.qml:28
 #, kde-format
 msgid "Document Locked"
-msgstr "文件已鎖定"
+msgstr "המסמך ננעל"
 
 #: src/controls.6/poppler/PDFViewer.qml:29
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
-msgstr "請輸入密碼來解鎖並開啟檔案。"
+msgstr "נא למלא את הסיסמה שלך כדי לשחרר את הנעילה ולפתוח את הקובץ הזה."
 
 #: src/controls.6/poppler/PDFViewer.qml:52
 #, kde-format
 msgid "Case sensitive"
-msgstr "區分大小寫"
+msgstr "תלוי רישיות"
 
 #: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Locked"
-msgstr "已鎖定"
+msgstr "נעול"
 
 #: src/controls.6/poppler/PDFViewer.qml:188
 #, kde-format
 msgid "Error"
-msgstr "錯誤"
+msgstr "שגיאה"
 
 #: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "This document is password protected."
-msgstr "這個文件已受密碼保護。"
+msgstr "המסמך הזה מוגן בסיסמה."
 
 #: src/controls.6/poppler/PDFViewer.qml:189
 #, kde-format
 msgid "There has been an error loading this document."
-msgstr "載入這個文件時發生了錯誤。"
+msgstr "אירעה שגיאה בטעינת המסמך הזה."
 
 #: src/controls.6/poppler/PDFViewer.qml:194
 #, kde-format
 msgid "UnLock"
-msgstr "解除鎖定"
+msgstr "שחרור נעילה"
