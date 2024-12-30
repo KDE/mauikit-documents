@@ -1,0 +1,89 @@
+# Sanskrit translations for mauikit-documents package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
+"PO-Revision-Date: 2024-12-29 16:07+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "%1 मध्ये संग्रहस्य निर्माणम्"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "एसीबीएफ-आँकडेषु लेखनम्"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "लोपार्थं न चिह्नितानां सर्वासु सञ्चिकासु प्रतिलिपिः"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
+#, kde-format
+msgid "Copying over %1"
+msgstr "%1 इत्यस्य उपरि प्रतिलिपिः"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "%1 तः %2 पर्यन्तं सर्वाणि सामग्रीनि प्रतिलिख्यताम्"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr "सफलतया पुरातनं संग्रहणं नूतनसंग्रहेण प्रतिस्थापितम् - अधुना नूतनं संग्रहणं लोड् क्रियते..."
+
+#: src/controls.6/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "दस्तावेजं तालाबद्धम्"
+
+#: src/controls.6/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "सञ्चिकां अनलॉक् कर्तुं उद्घाटयितुं च कृपया स्वस्य गुप्तशब्दं प्रविशन्तु ।"
+
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr "प्रकरणसंवेदनशीलम्"
+
+#: src/controls.6/poppler/PDFViewer.qml:188
+#, kde-format
+msgid "Locked"
+msgstr "तालाबद्धः"
+
+#: src/controls.6/poppler/PDFViewer.qml:188
+#, kde-format
+msgid "Error"
+msgstr "त्रुटि"
+
+#: src/controls.6/poppler/PDFViewer.qml:189
+#, kde-format
+msgid "This document is password protected."
+msgstr "एतत् दस्तावेजं गुप्तशब्दसंरक्षितम् अस्ति ।"
+
+#: src/controls.6/poppler/PDFViewer.qml:189
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "एतत् दस्तावेजं लोड् करणं त्रुटिः अभवत् ।"
+
+#: src/controls.6/poppler/PDFViewer.qml:194
+#, kde-format
+msgid "UnLock"
+msgstr "UnLock इति"
