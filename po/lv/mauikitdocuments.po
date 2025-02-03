@@ -1,0 +1,91 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+#
+# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-08-28 01:56+0000\n"
+"PO-Revision-Date: 2025-02-01 17:16+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.12.1\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "Izveidot arhīvu: „%1“"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "Raksta ACBF datos"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "Kopēt pāri visām datnēm, kas nav atzīmētas dzēšanai"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
+#, kde-format
+msgid "Copying over %1"
+msgstr "Kopēt pāri „%1“"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "Kopē visu saturu no „%1“ uz „%2“"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr "Jaunais arhīvs ir nomainīts pret veco arhīvu — ielādē jauno arhīvu..."
+
+#: src/controls.6/poppler/PDFViewer.qml:28
+#, kde-format
+msgid "Document Locked"
+msgstr "Dokuments ir slēgts"
+
+#: src/controls.6/poppler/PDFViewer.qml:29
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "Lai atslēgtu un atvērtu datni, ierakstiet tās paroli."
+
+#: src/controls.6/poppler/PDFViewer.qml:52
+#, kde-format
+msgid "Case sensitive"
+msgstr "Reģistrjutīga"
+
+#: src/controls.6/poppler/PDFViewer.qml:188
+#, kde-format
+msgid "Locked"
+msgstr "Slēgta"
+
+#: src/controls.6/poppler/PDFViewer.qml:188
+#, kde-format
+msgid "Error"
+msgstr "Kļūda"
+
+#: src/controls.6/poppler/PDFViewer.qml:189
+#, kde-format
+msgid "This document is password protected."
+msgstr "Dokuments ir aizsargāts ar paroli."
+
+#: src/controls.6/poppler/PDFViewer.qml:189
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "Ielādējot dokumentu, radās kļūda."
+
+#: src/controls.6/poppler/PDFViewer.qml:194
+#, kde-format
+msgid "UnLock"
+msgstr "Atslēgt"
