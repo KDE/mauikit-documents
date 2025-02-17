@@ -97,7 +97,8 @@ private Q_SLOTS:
 public Q_SLOTS:
     void unlock(const QString &ownerPassword, const QString &password);
     QVariantList search(int page, const QString& text, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive);
-
+    QString getText(const QRectF &rect,const QSize &pageSize, int page);
+    
 private:
     QUrl m_path;
     QString m_id; //id of this document for the provider

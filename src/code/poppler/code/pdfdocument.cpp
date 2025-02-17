@@ -344,6 +344,36 @@ QVariantList PdfDocument::search(int page, const QString &text, Qt::CaseSensitiv
     return result;
 }
 
+QString PdfDocument::getText(const QRectF &rect, const QSize &pageSize, int page)
+{
+    if (!m_document)
+    {
+        qWarning() << "Poppler plugin: no document to gather text";
+        return QString();
+    }
+    
+    if (page >= m_document->numPages() || page < 0)
+    {
+        qWarning() << "Poppler plugin: get text page" << page << "isn't in a document";
+        return QString();
+    }
+    
+    
+    auto p = m_document->page(page);
+    
+    
+    auto newRect = QRectF(rect.x() * p->pageSize().width()/pageSize.width(),
+                          rect.y() * p->pageSize().height()/pageSize.height(), 
+                          rect.width() * p->pageSize().width() / pageSize.width(),
+                          rect.height() * p->pageSize().height() / pageSize.height());
+    
+    qDebug() << "Sizes:" << rect << pageSize << QSize(p->pageSize().width(), p->pageSize().height()) << newRect;
+    
+     auto text = p->text(newRect);
+     
+     return text;
+}
+
 void PdfDocument::loadProvider()
 {
     // WORKAROUND: QQuickImageProvider should create multiple threads to load more images at the same time.

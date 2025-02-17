@@ -67,7 +67,6 @@ void DocumentsPlugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<AdvancedComicBookFormat::Binary>(uri, 1, 0, "Binary", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
     qmlRegisterUncreatableType<AdvancedComicBookFormat::Style>(uri, 1, 0, "Style", "Don't attempt to create ACBF types directly, use the convenience functions on their container types for creating them");
     qmlRegisterType<AdvancedComicBookFormat::IdentifiedObjectModel>(uri, 1, 0, "IdentifiedObjectModel");
-
 }
 
 void DocumentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
