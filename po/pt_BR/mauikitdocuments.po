@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2025-02-05 23:39-0300\n"
+"PO-Revision-Date: 2025-02-27 20:15-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "Copiando todos os arquivos não marcados para exclusão"
 #: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
-msgstr "Copiando  %1"
+msgstr "Copiando %1"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
