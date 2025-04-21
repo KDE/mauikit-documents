@@ -8,7 +8,7 @@ import org.mauikit.documents as Poppler
 Maui.Page
 {
     id: control
-
+    
     property bool fitWidth: false
     property int currentPage : _listView.currentIndex
     property alias currentItem :_listView.currentItem
@@ -35,22 +35,22 @@ Maui.Page
     signal areaRightClicked()
     
     signal areaSelected(var rect)
-
+    
     headBar.visible: true
     footBar.visible: true
     title:  poppler.title
     padding: 0
-
+    
     Maui.InputDialog
     {
         id: _passwordDialog
-
+        
         title: i18n("Document Locked")
         message: i18n("Please enter your password to unlock and open the file.")
         textEntry.echoMode: TextInput.Password
         onFinished: poppler.unlock(text, text)
     }
-
+    
     footerColumn: Maui.ToolBar
     {
         width: parent.width
@@ -59,13 +59,13 @@ Maui.Page
             Layout.fillWidth: true
             Layout.maximumWidth: 500
             Layout.alignment: Qt.AlignHCenter
-
+            
             onAccepted:
             {
                 console.log("SEARCH FOR ", text)
                 search(text)
             }
-
+            
             actions: [
                 Action
                 {
@@ -87,14 +87,14 @@ Maui.Page
             ]
         }
     }
-
+    
     footBar.middleContent: Maui.ToolActions
     {
         Layout.alignment: Qt.AlignHCenter
         expanded: true
         autoExclusive: false
         checkable: false
-
+        
         Action
         {
             enabled: _listView.currentIndex > 0
@@ -105,12 +105,12 @@ Maui.Page
                     _listView.currentIndex = _listView.currentIndex - 1
             }
         }
-
+        
         Action
         {
             text:  _listView.currentIndex + 1 +" / "+ poppler.pages
         }
-
+        
         Action
         {
             enabled: _listView.currentIndex +1 < poppler.pages
@@ -122,7 +122,7 @@ Maui.Page
             }
         }
     }
-
+    
     Maui.ListBrowser
     {
         id: _listView
@@ -130,34 +130,34 @@ Maui.Page
         model: Poppler.Document
         {
             id: poppler
-
+            
             property bool isLoading: true
-
+            
             onPagesLoaded:
             {
                 isLoading = false;
             }
-
+            
             onDocumentLocked: _passwordDialog.open()
         }
-
+        
         orientation: ListView.Vertical
         snapMode: ListView.SnapOneItem
         //        cacheBuffer: control.fitWidth ? poppler.providersNumber *  : height * poppler.providersNumber
-
+        
         flickable.onMovementEnded:
         {
             var index = indexAt(_listView.contentX, _listView.contentY)
             currentIndex = index
         }
-
+        
         delegate: Maui.ImageViewer
         {
             id: pageImg
             asynchronous: true
             width: ListView.view.width
             height: ListView.view.height
-readonly property int page: index
+            readonly property int page: index
             cache: false
             //                source: "image://poppler" + (index % poppler.providersNumber) + "/page/" + _listView.currentPage;
             //                source: "image://poppler" + (index % poppler.providersNumber) + "/page/" + index;
@@ -171,9 +171,9 @@ readonly property int page: index
             //                    imageWidth: 1000
             //                    imageHeight: 1000
             // fillMode: Image.Pad
-
+            
             //                onSourceChanged: console.log(source)
-
+            
             readonly property var links : model.links
             Repeater
             {
@@ -184,12 +184,12 @@ readonly property int page: index
                     y: Math.round(modelData.rect.y * parent.height)
                     width: Math.round(modelData.rect.width * parent.width)
                     height: Math.round(modelData.rect.height * parent.height)
-
+                    
                     cursorShape: Qt.PointingHandCursor
                     onClicked: __goTo(modelData.destination)
                 }
             }
-
+            
             Item
             {
                 id: _selectionLayer
@@ -210,38 +210,38 @@ readonly property int page: index
                     height: Math.round(__currentSearchResult.rect.height *  pageImg.image.paintedHeight)
                 }
                 
-               
-               Maui.ContextualMenu
-               {
-                   id: _menu
-                   property string selectedText
-                   MenuItem
-                   {
-                           icon.name: "edit-copy-symbolic"
-                           text: i18n("Copy")
-                                              
-                       onTriggered:
-                       {
-                           Maui.Handy.copyTextToClipboard(_menu.selectedText)
-                       }
-                       
-                       enabled: _menu.selectedText.length
-                   } 
-                   
-                   MenuItem
-                   {
-                       text: i18n("Search")
-                }
                 
-                MenuItem
+                Maui.ContextualMenu
                 {
-                    text: i18nd("mauikitdocuments","Search Selected Text on Google...")
-                    onTriggered: Qt.openUrlExternally("https://www.google.com/search?q="+_menu.selectedText)
-                    enabled: _menu.selectedText.length
+                    id: _menu
+                    property string selectedText
+                    MenuItem
+                    {
+                        icon.name: "edit-copy-symbolic"
+                        text: i18n("Copy")
+                        
+                        onTriggered:
+                        {
+                            Maui.Handy.copyTextToClipboard(_menu.selectedText)
+                        }
+                        
+                        enabled: _menu.selectedText.length
+                    } 
+                    
+                    MenuItem
+                    {
+                        text: i18n("Search")
+                    }
+                    
+                    MenuItem
+                    {
+                        text: i18nd("mauikitdocuments","Search Selected Text on Google...")
+                        onTriggered: Qt.openUrlExternally("https://www.google.com/search?q="+_menu.selectedText)
+                        enabled: _menu.selectedText.length
+                    }
+                    
+                    onClosed: selectLayer.reset()
                 }
-                
-                onClosed: selectLayer.reset()
-            }
                 
                 Loader
                 {
@@ -361,9 +361,9 @@ readonly property int page: index
                             
                             if(selectLayer.width > 0 && selectLayer.height > 0)
                             {
-                            _menu.selectedText = poppler.getText(Qt.rect(selectLayer.x, selectLayer.y, selectLayer.width, selectLayer.height), Qt.size(pageImg.image.paintedWidth, pageImg.image.paintedHeight), pageImg.page)
-                            _menu.show()
-                                                            }
+                                _menu.selectedText = poppler.getText(Qt.rect(selectLayer.x, selectLayer.y, selectLayer.width, selectLayer.height), Qt.size(pageImg.image.paintedWidth, pageImg.image.paintedHeight), pageImg.page)
+                                _menu.show()
+                            }
                             //                 for(var i =lassoRec.x; i < limitX; i+=(lassoRec.width/(controlView.cellWidth* 0.5)))
                             //                 {
                             //                     for(var y = lassoRec.y; y < limitY; y+=(lassoRec.height/(controlView.cellHeight * 0.5)))
@@ -394,7 +394,7 @@ readonly property int page: index
                     anchors.margins: Maui.Style.space.big
                     anchors.left: selectLayer.left
                     
-                                        text: poppler.getText(Qt.rect(selectLayer.x, selectLayer.y, selectLayer.width, selectLayer.height), Qt.size(pageImg.image.paintedWidth, pageImg.image.paintedHeight), pageImg.page)
+                    text: poppler.getText(Qt.rect(selectLayer.x, selectLayer.y, selectLayer.width, selectLayer.height), Qt.size(pageImg.image.paintedWidth, pageImg.image.paintedHeight), pageImg.page)
                     
                     background: Rectangle
                     {
@@ -420,11 +420,11 @@ readonly property int page: index
                     borderWidth: 2
                     solidBorder: false
                     /*
-                    Text
-                    {
-                        color: "yellow"
-                        text: selectLayer.x + " / " + selectLayer.y + " // " + selectLayer.width  + " // " + selectLayer.height 
-                    }*/
+                     *                    Text
+                     *                    {
+                     *                        color: "yellow"
+                     *                        text: selectLayer.x + " / " + selectLayer.y + " // " + selectLayer.width  + " // " + selectLayer.height 
+                }*/
                     
                     function reset()
                     {
@@ -442,7 +442,7 @@ readonly property int page: index
             }
         } 
     }
-
+    
     Maui.Holder
     {
         visible: !poppler.isValid
@@ -450,7 +450,7 @@ readonly property int page: index
         emoji: poppler.isLocked ? "qrc:/img_assets/assets/lock.svg" : "qrc:/img_assets/assets/alarm.svg"
         title: poppler.isLocked ? i18n("Locked") : i18n("Error")
         body: poppler.isLocked ? i18n("This document is password protected.") : i18n("There has been an error loading this document.")
-
+        
         actions: Action
         {
             enabled: poppler.isLocked
@@ -459,13 +459,13 @@ readonly property int page: index
         }
     }
     
- 
-
+    
+    
     function open(filePath)
     {
         poppler.path = filePath
     }
-
+    
     function __goTo (destination)
     {
         _listView.flickable.positionViewAtIndex(destination.page, ListView.Beginning)
@@ -473,134 +473,134 @@ readonly property int page: index
         var scroll = Math.round(destination.top * pageHeight)
         _listView.contentY += scroll
     }
-
+    
     function search(text)
     {
         if (!poppler.isValid)
             return
-
-        console.log("2 SEARCH FOR ", text)
-
-        if (text.length === 0)
-        {
-            __currentSearchTerm = ''
-            __currentSearchResultIndex = -1
-            __currentSearchResults = []
-        } else if (text === __currentSearchTerm)
-        {
-            if (__currentSearchResultIndex < __currentSearchResults.length - 1)
+            
+            console.log("2 SEARCH FOR ", text)
+            
+            if (text.length === 0)
             {
-                __currentSearchResultIndex++
-                __scrollTo(__currentSearchResult)
-            } else
-            {
-                var page = __currentSearchResult.page
+                __currentSearchTerm = ''
                 __currentSearchResultIndex = -1
                 __currentSearchResults = []
-                if (page < _listView.count - 1)
+            } else if (text === __currentSearchTerm)
+            {
+                if (__currentSearchResultIndex < __currentSearchResults.length - 1)
                 {
-                    __search(page + 1, __currentSearchTerm)
+                    __currentSearchResultIndex++
+                    __scrollTo(__currentSearchResult)
                 } else
                 {
-                    control.searchRestartedFromTheBeginning()
-                    __search(0, __currentSearchTerm)
+                    var page = __currentSearchResult.page
+                    __currentSearchResultIndex = -1
+                    __currentSearchResults = []
+                    if (page < _listView.count - 1)
+                    {
+                        __search(page + 1, __currentSearchTerm)
+                    } else
+                    {
+                        control.searchRestartedFromTheBeginning()
+                        __search(0, __currentSearchTerm)
+                    }
                 }
+            } else
+            {
+                __currentSearchTerm = text
+                __currentSearchResultIndex = -1
+                __currentSearchResults = []
+                __search(currentPage, text)
             }
-        } else
-        {
-            __currentSearchTerm = text
-            __currentSearchResultIndex = -1
-            __currentSearchResults = []
-            __search(currentPage, text)
-        }
     }
-
+    
     signal searchNotFound
     signal searchRestartedFromTheBeginning
-
+    
     property int searchSensitivity: Qt.CaseInsensitive
     property string __currentSearchTerm
     property int __currentSearchResultIndex: -1
     property var __currentSearchResults
     property var __currentSearchResult: __currentSearchResultIndex > -1 ? __currentSearchResults[__currentSearchResultIndex] : { page: -1, rect: Qt.rect(0,0,0,0) }
-
+    
     function __search(startPage, text)
     {
         if (startPage >= _listView.count)
             throw new Error('Start page index is larger than number of pages in document')
-
-        function resultFound(page, result)
-        {
-            var searchResults = []
-            for (var i = 0; i < result.length; ++i)
+            
+            function resultFound(page, result)
             {
-                searchResults.push({ page: page, rect: result[i] })
+                var searchResults = []
+                for (var i = 0; i < result.length; ++i)
+                {
+                    searchResults.push({ page: page, rect: result[i] })
+                }
+                __currentSearchResults = searchResults
+                __currentSearchResultIndex = 0
+                __scrollTo(__currentSearchResult)
             }
-            __currentSearchResults = searchResults
-            __currentSearchResultIndex = 0
-            __scrollTo(__currentSearchResult)
-        }
-
-        var found = false
-        for (var page = startPage; page < _listView.count; ++page)
-        {
-            var result = poppler.search(page, text, searchSensitivity)
-
-            if (result.length > 0)
+            
+            var found = false
+            for (var page = startPage; page < _listView.count; ++page)
             {
-                found = true
-                resultFound(page, result)
-                break
-            }
-        }
-
-        if (!found)
-        {
-            for (page = 0; page < startPage; ++page)
-            {
-                result = poppler.search(page, text, searchSensitivity)
-
+                var result = poppler.search(page, text, searchSensitivity)
+                
                 if (result.length > 0)
                 {
                     found = true
-                    control.searchRestartedFromTheBeginning()
                     resultFound(page, result)
                     break
                 }
             }
-        }
-
-        if (!found)
-        {
-            control.searchNotFound()
-        }
+            
+            if (!found)
+            {
+                for (page = 0; page < startPage; ++page)
+                {
+                    result = poppler.search(page, text, searchSensitivity)
+                    
+                    if (result.length > 0)
+                    {
+                        found = true
+                        control.searchRestartedFromTheBeginning()
+                        resultFound(page, result)
+                        break
+                    }
+                }
+            }
+            
+            if (!found)
+            {
+                control.searchNotFound()
+            }
     }
-
+    
     function __scrollTo(destination)
     {
         if (destination.page !== currentPage)
         {
             _listView.flickable.positionViewAtIndex(destination.page, ListView.Beginning)
         }
-
+        
         var i = _listView.flickable.itemAt(_listView.width / 2, _listView.contentY + _listView.height / 2)
         if (i === null)
             i = _listView.flickable.itemAt(_listView.width / 2, _listView.contentY + _listView.height / 2 + _listView.spacing)
-
-        // var pageHeight = poppler.pages[destination.page].size.height * zoom
-        var pageHeight = control.height
-        var pageY = i.y - _listView.contentY
-
-        var bottomDistance = _listView.height - (pageY + Math.round(destination.rect.bottom * pageHeight))
-        var topDistance = pageY + Math.round(destination.rect.top * pageHeight)
-        if (bottomDistance < 0)
-        {
-            // The found term is lower than the bottom of viewport
-            _listView.contentY -= bottomDistance - _listView.spacing
-        } else if (topDistance < 0)
-        {
-            _listView.contentY += topDistance - _listView.spacing
-        }
+            
+            // var pageHeight = poppler.pages[destination.page].size.height * zoom
+            var pageHeight = control.height
+            var pageY = i.y - _listView.contentY
+            
+            var bottomDistance = _listView.height - (pageY + Math.round(destination.rect.bottom * pageHeight))
+            var topDistance = pageY + Math.round(destination.rect.top * pageHeight)
+            if (bottomDistance < 0)
+            {
+                // The found term is lower than the bottom of viewport
+                _listView.contentY -= bottomDistance - _listView.spacing
+            } else if (topDistance < 0)
+            {
+                _listView.contentY += topDistance - _listView.spacing
+            }
     }
-
+    
 }

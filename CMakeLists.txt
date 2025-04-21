@@ -92,6 +92,8 @@ else()
     add_definitions(-DGIT_BRANCH="Stable")
 endif()
 
+qt_policy(SET QTP0004 NEW)
+
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/MauiKitDocuments${MAUI_MAJOR_VERSION}")
 
 ecm_setup_version(${PROJECT_VERSION}
