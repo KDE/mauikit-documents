@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:56+0000\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
 "PO-Revision-Date: 2024-11-29 00:30+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -50,42 +50,57 @@ msgid ""
 msgstr ""
 "기존 압축 파일을 새 압축 파일로 교체했습니다. 새 압축 파일 불러오는 중..."
 
-#: src/controls.6/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:48
 #, kde-format
 msgid "Document Locked"
 msgstr "문서 잠김"
 
-#: src/controls.6/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "파일의 잠금을 해제하고 열려면 암호를 입력하십시오."
 
-#: src/controls.6/poppler/PDFViewer.qml:52
+#: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
 msgid "Case sensitive"
 msgstr "대소문자 구분"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:221
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:233
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:238
+#, kde-format
+msgid "Search Selected Text on Google..."
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Locked"
 msgstr "잠김"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Error"
 msgstr "오류"
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "This document is password protected."
 msgstr "이 문서는 암호로 보호되어 있습니다."
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "이 문서를 불러오는 중 오류가 발생했습니다."
 
-#: src/controls.6/poppler/PDFViewer.qml:194
+#: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
 msgid "UnLock"
 msgstr "잠금 해제"

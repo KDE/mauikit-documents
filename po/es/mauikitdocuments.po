@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikitdocuments\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:56+0000\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
 "PO-Revision-Date: 2024-08-29 00:08+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -53,42 +53,57 @@ msgstr ""
 "Se ha sustituido con éxito el archivo antiguo con el nuevo. Cargando el "
 "nuevo archivo..."
 
-#: src/controls.6/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:48
 #, kde-format
 msgid "Document Locked"
 msgstr "Documento bloqueado"
 
-#: src/controls.6/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Introduzca su contraseña para desbloquear y abrir el archivo."
 
-#: src/controls.6/poppler/PDFViewer.qml:52
+#: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
 msgid "Case sensitive"
 msgstr "Distinguir entre mayúsculas y minúsculas"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:221
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:233
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:238
+#, kde-format
+msgid "Search Selected Text on Google..."
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Locked"
 msgstr "Bloqueado"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Error"
 msgstr "Error"
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "This document is password protected."
 msgstr "Este documento está protegido con contraseña."
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Ha ocurrido un error al abrir este documento."
 
-#: src/controls.6/poppler/PDFViewer.qml:194
+#: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
 msgid "UnLock"
 msgstr "Desbloquear"
