@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mauikit-documents package.
 #
-# SPDX-FileCopyrightText: 2022, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-22 00:40+0000\n"
-"PO-Revision-Date: 2024-08-28 11:50+0200\n"
+"PO-Revision-Date: 2025-04-22 12:37+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -70,17 +70,17 @@ msgstr "Hoofdlettergevoelig"
 #: src/controls.6/poppler/PDFViewer.qml:221
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopiëren"
 
 #: src/controls.6/poppler/PDFViewer.qml:233
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 #: src/controls.6/poppler/PDFViewer.qml:238
 #, kde-format
 msgid "Search Selected Text on Google..."
-msgstr ""
+msgstr "Geselecteerde tekst on Google zoeken..."
 
 #: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
