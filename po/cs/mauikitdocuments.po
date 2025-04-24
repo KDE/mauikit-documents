@@ -67,12 +67,12 @@ msgstr "Rozlišovat VELKÁ/malá"
 #: src/controls.6/poppler/PDFViewer.qml:221
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 #: src/controls.6/poppler/PDFViewer.qml:233
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 #: src/controls.6/poppler/PDFViewer.qml:238
 #, kde-format
