@@ -1,0 +1,107 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the mauikit-documents package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mauikit-documents\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
+"PO-Revision-Date: 2025-05-10 17:31+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:568
+#, kde-format
+msgid "Creating archive in %1"
+msgstr "ينشئ أرشف في %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:580
+#, kde-format
+msgid "Writing in ACBF data"
+msgstr "يكتب بيانات ACBF"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:591
+#, kde-format
+msgid "Copying across all files not marked for deletion"
+msgstr "ينسخ جميع الملفات غير المحددة للحذف"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:599
+#, kde-format
+msgid "Copying over %1"
+msgstr "ينسخ إلى %1"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:628
+#, kde-format
+msgid "Copying all content from %1 to %2"
+msgstr "ينسخ كل المحتوى من %1 إلى %2"
+
+#: src/code/cbz/code/ArchiveBookModel.cpp:638
+#, kde-format
+msgid ""
+"Successfully replaced old archive with the new archive - now loading the new "
+"archive..."
+msgstr ""
+"استبدال بالأرشيف القديم الأرشيف الجديد بنجاح - يُحمل الآن الأرشيف الجديد..."
+
+#: src/controls.6/poppler/PDFViewer.qml:48
+#, kde-format
+msgid "Document Locked"
+msgstr "المستند مقفل"
+
+#: src/controls.6/poppler/PDFViewer.qml:49
+#, kde-format
+msgid "Please enter your password to unlock and open the file."
+msgstr "الرجاء إدخال كلمة سرك لإلغاء قفل الملف وفتحه."
+
+#: src/controls.6/poppler/PDFViewer.qml:72
+#, kde-format
+msgid "Case sensitive"
+msgstr "حسّاس لحالة الأحرف"
+
+#: src/controls.6/poppler/PDFViewer.qml:221
+#, kde-format
+msgid "Copy"
+msgstr "انسخ"
+
+#: src/controls.6/poppler/PDFViewer.qml:233
+#, kde-format
+msgid "Search"
+msgstr "ابحث"
+
+#: src/controls.6/poppler/PDFViewer.qml:238
+#, kde-format
+msgid "Search Selected Text on Google..."
+msgstr "ابحث في النص المحدد على غوغل…"
+
+#: src/controls.6/poppler/PDFViewer.qml:451
+#, kde-format
+msgid "Locked"
+msgstr "مقفل"
+
+#: src/controls.6/poppler/PDFViewer.qml:451
+#, kde-format
+msgid "Error"
+msgstr "خطأ"
+
+#: src/controls.6/poppler/PDFViewer.qml:452
+#, kde-format
+msgid "This document is password protected."
+msgstr "هذا المستند محمي بكلمة سر."
+
+#: src/controls.6/poppler/PDFViewer.qml:452
+#, kde-format
+msgid "There has been an error loading this document."
+msgstr "حدث خطأ في تحميل هذا المستند."
+
+#: src/controls.6/poppler/PDFViewer.qml:457
+#, kde-format
+msgid "UnLock"
+msgstr "فك القفل"
