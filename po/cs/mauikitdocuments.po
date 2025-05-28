@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:56+0000\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
 "PO-Revision-Date: 2023-01-30 16:34+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -49,42 +49,57 @@ msgid ""
 "archive..."
 msgstr ""
 
-#: src/controls.6/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:48
 #, kde-format
 msgid "Document Locked"
 msgstr ""
 
-#: src/controls.6/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr ""
 
-#: src/controls.6/poppler/PDFViewer.qml:52
+#: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
 msgid "Case sensitive"
 msgstr "Rozlišovat VELKÁ/malá"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:221
+#, kde-format
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: src/controls.6/poppler/PDFViewer.qml:233
+#, kde-format
+msgid "Search"
+msgstr "Hledat"
+
+#: src/controls.6/poppler/PDFViewer.qml:238
+#, kde-format
+msgid "Search Selected Text on Google..."
+msgstr ""
+
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Locked"
 msgstr "Uzamčeno"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Error"
 msgstr "Chyba"
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "This document is password protected."
 msgstr ""
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr ""
 
-#: src/controls.6/poppler/PDFViewer.qml:194
+#: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
 msgid "UnLock"
 msgstr "Odemknout"

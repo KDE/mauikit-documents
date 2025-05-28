@@ -1,16 +1,16 @@
 # Translation of mauikitdocuments.po to Catalan
-# Copyright (C) 2022-2024 This_file_is_part_of_KDE
+# Copyright (C) 2022-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2024-08-28 11:03+0200\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
+"PO-Revision-Date: 2025-04-22 09:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -54,97 +54,57 @@ msgstr ""
 "S'ha reemplaçat correctament l'arxiu antic per l'arxiu nou - ara es carrega "
 "l'arxiu nou..."
 
-#: src/controls.6/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:48
 #, kde-format
 msgid "Document Locked"
 msgstr "Document blocat"
 
-#: src/controls.6/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Introduïu la contrasenya per a desblocar i obrir el fitxer."
 
-#: src/controls.6/poppler/PDFViewer.qml:52
+#: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
 msgid "Case sensitive"
 msgstr "Distingeix majúscules i minúscules"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:221
+#, kde-format
+msgid "Copy"
+msgstr "Copia"
+
+#: src/controls.6/poppler/PDFViewer.qml:233
+#, kde-format
+msgid "Search"
+msgstr "Cerca"
+
+#: src/controls.6/poppler/PDFViewer.qml:238
+#, kde-format
+msgid "Search Selected Text on Google..."
+msgstr "Cerca a Google el text seleccionat..."
+
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Locked"
 msgstr "Blocat"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Error"
 msgstr "Error"
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "This document is password protected."
 msgstr "Aquest document està protegit per contrasenya."
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "S'ha produït un error en carregar aquest document."
 
-#: src/controls.6/poppler/PDFViewer.qml:194
+#: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
 msgid "UnLock"
 msgstr "Desbloca"
-
-#~ msgid "Edit"
-#~ msgstr "Edita"
-
-#~ msgctxt "@action:button Undo modification"
-#~ msgid "Undo"
-#~ msgstr "Desfés"
-
-#~ msgctxt "@action:button Save the image as a new image"
-#~ msgid "Save As"
-#~ msgstr "Desa com a"
-
-#~ msgctxt "@action:button Save the image"
-#~ msgid "Save"
-#~ msgstr "Desa"
-
-#~ msgid ""
-#~ "Unable to save file. Check if you have the correct permission to edit "
-#~ "this file."
-#~ msgstr ""
-#~ "No es pot desar el fitxer. Comproveu que teniu el permís correcte per a "
-#~ "editar aquest fitxer."
-
-#~ msgid "Save As"
-#~ msgstr "Desa com a"
-
-#~ msgid "You are now editing a new file."
-#~ msgstr "Ara esteu editant un fitxer nou."
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@action:button Crop an image"
-#~ msgid "Crop"
-#~ msgstr "Escapça"
-
-#~ msgctxt "@action:button Rotate an image to the right"
-#~ msgid "Crop"
-#~ msgstr "Escapça"
-
-#~ msgctxt "@action:button Rotate an image to the left"
-#~ msgid "Rotate left"
-#~ msgstr "Gira a l'esquerra"
-
-#~ msgctxt "@action:button Rotate an image to the right"
-#~ msgid "Rotate right"
-#~ msgstr "Gira a la dreta"
-
-#~ msgctxt "@action:button Mirror an image vertically"
-#~ msgid "Flip"
-#~ msgstr "Inverteix"
-
-#~ msgctxt "@action:button Mirror an image horizontally"
-#~ msgid "Mirror"
-#~ msgstr "Emmiralla"

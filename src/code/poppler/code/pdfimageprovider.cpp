@@ -59,14 +59,14 @@ QImage PdfImageProvider::requestImage(const QString & id, QSize * size, const QS
             // size->setHeight(page->pageSize().height());
             // size->setWidth(page->pageSize().width());
 
-            QSizeF pageSizePhys;
+            // QSizeF pageSizePhys;
             QSizeF pageSize = page->pageSizeF();
 
-            pageSizePhys.setWidth(pageSize.width() / 72);
-            pageSizePhys.setHeight(pageSize.height() / 72);
+            // pageSizePhys.setWidth(pageSize.width() / 72);
+            // pageSizePhys.setHeight(pageSize.height() / 72);
 
-            auto resH = (requestedSize.isValid() ? requestedSize.height() : size->height()) / pageSizePhys.height() ;
-            auto resW = (requestedSize.isValid() ? requestedSize.width() : size->width()) / pageSizePhys.width() ;
+            // auto resH = (requestedSize.isValid() ? requestedSize.height() : size->height()) / pageSizePhys.height() ;
+            // auto resW = (requestedSize.isValid() ? requestedSize.width() : size->width()) / pageSizePhys.width() ;
             // Useful for debugging, keep commented unless you need it.
 
 //            qDebug() << "Requested size :" << requestedSize.width() << ";" << requestedSize.height();

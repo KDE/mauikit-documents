@@ -35,12 +35,12 @@ add_library(PopplerLib
 
 if (ANDROID)
     add_library(poppler STATIC IMPORTED GLOBAL)
-    set_target_properties(poppler PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt/6.7.1/android_arm64_v8a/lib/libpoppler_arm64-v8a.so" )
+    set_target_properties(poppler PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt/6.9.0/android_arm64_v8a/lib/libpoppler_arm64-v8a.so" )
 
     add_library(poppler-qt6 STATIC IMPORTED GLOBAL)
-    set_target_properties(poppler-qt6 PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt/6.7.1/android_arm64_v8a/lib/libpoppler-qt6_arm64-v8a.so" )
+    set_target_properties(poppler-qt6 PROPERTIES IMPORTED_LOCATION "/home/camilo/Qt/6.9.0/android_arm64_v8a/lib/libpoppler-qt6_arm64-v8a.so" )
 
-    target_include_directories(PopplerLib PUBLIC "/home/camilo/Qt/6.7.1/android_arm64_v8a/include/")
+    target_include_directories(PopplerLib PUBLIC "/home/camilo/Qt/6.9.0/android_arm64_v8a/include/")
 
     target_link_libraries(PopplerLib PRIVATE poppler-qt6)
 elseif(UNIX)

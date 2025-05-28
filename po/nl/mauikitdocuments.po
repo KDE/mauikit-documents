@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the mauikit-documents package.
 #
-# SPDX-FileCopyrightText: 2022, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: mauikit-documents\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-28 01:56+0000\n"
-"PO-Revision-Date: 2024-08-28 11:50+0200\n"
+"POT-Creation-Date: 2025-04-22 00:40+0000\n"
+"PO-Revision-Date: 2025-04-22 12:37+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -52,42 +52,57 @@ msgstr ""
 "Oude archief met succes vervangen door het nieuwe archief - het nieuwe "
 "archief wordt geladen..."
 
-#: src/controls.6/poppler/PDFViewer.qml:28
+#: src/controls.6/poppler/PDFViewer.qml:48
 #, kde-format
 msgid "Document Locked"
 msgstr "Document is vergrendeld"
 
-#: src/controls.6/poppler/PDFViewer.qml:29
+#: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
 msgstr "Voer uw wachtwoord in om het bestand te ontgrendelen en te openen."
 
-#: src/controls.6/poppler/PDFViewer.qml:52
+#: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
 msgid "Case sensitive"
 msgstr "Hoofdlettergevoelig"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:221
+#, kde-format
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: src/controls.6/poppler/PDFViewer.qml:233
+#, kde-format
+msgid "Search"
+msgstr "Zoeken"
+
+#: src/controls.6/poppler/PDFViewer.qml:238
+#, kde-format
+msgid "Search Selected Text on Google..."
+msgstr "Geselecteerde tekst on Google zoeken..."
+
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Locked"
 msgstr "Vergrendeld"
 
-#: src/controls.6/poppler/PDFViewer.qml:188
+#: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
 msgid "Error"
 msgstr "Fout"
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "This document is password protected."
 msgstr "Dit document is beveiligd met een wachtwoord."
 
-#: src/controls.6/poppler/PDFViewer.qml:189
+#: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
 msgstr "Er was een fout bij laden van dit document."
 
-#: src/controls.6/poppler/PDFViewer.qml:194
+#: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
 msgid "UnLock"
 msgstr "Ontgrendelen"
