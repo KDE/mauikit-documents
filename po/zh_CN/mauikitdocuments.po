@@ -67,17 +67,17 @@ msgstr ""
 #: src/controls.6/poppler/PDFViewer.qml:221
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: src/controls.6/poppler/PDFViewer.qml:233
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: src/controls.6/poppler/PDFViewer.qml:238
 #, kde-format
 msgid "Search Selected Text on Google..."
-msgstr ""
+msgstr "在 Google 上搜索选定的文本..."
 
 #: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
