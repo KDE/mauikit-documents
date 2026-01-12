@@ -102,7 +102,7 @@ msgstr "Este document està protegit per contrasenya."
 #: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
-msgstr "S'ha produït un error en carregar este document."
+msgstr "S'ha produït un error mentre es carregava este document."
 
 #: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
