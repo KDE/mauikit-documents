@@ -12,6 +12,10 @@ find_package(KF${KF_MAJOR_VERSION} ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS
     GuiAddons
     IconThemes)
 
+if (Qt6Quick_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6QuickPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
+endif()
+
 kde_enable_exceptions()
 
 add_subdirectory(code/acbf)
