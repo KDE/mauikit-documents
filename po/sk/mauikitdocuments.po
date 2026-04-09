@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
@@ -46,31 +46,33 @@ msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
 "archive..."
 msgstr ""
+"Úspešne replaced old archive with the new archive - now loading the new "
+"archive..."
 
 #: src/controls.6/poppler/PDFViewer.qml:48
 #, kde-format
 msgid "Document Locked"
-msgstr ""
+msgstr "Document Locked"
 
 #: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
-msgstr ""
+msgstr "Prosím, enter your password to unlock and open the file."
 
 #: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Rozlišovať veľkosť písmen"
 
 #: src/controls.6/poppler/PDFViewer.qml:221
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovať"
 
 #: src/controls.6/poppler/PDFViewer.qml:233
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "&Hľadať"
 
 #: src/controls.6/poppler/PDFViewer.qml:238
 #, kde-format
