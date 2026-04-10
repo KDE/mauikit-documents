@@ -18,27 +18,27 @@ msgstr ""
 #: src/code/cbz/code/ArchiveBookModel.cpp:568
 #, kde-format
 msgid "Creating archive in %1"
-msgstr ""
+msgstr "Vytváranie archívu v %1"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:580
 #, kde-format
 msgid "Writing in ACBF data"
-msgstr ""
+msgstr "Zápis údajov ACBF"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:591
 #, kde-format
 msgid "Copying across all files not marked for deletion"
-msgstr ""
+msgstr "Kopírovanie všetkých súborov neoznačených na odstránenie"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:599
 #, kde-format
 msgid "Copying over %1"
-msgstr ""
+msgstr "Kopírovanie %1"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:628
 #, kde-format
 msgid "Copying all content from %1 to %2"
-msgstr ""
+msgstr "Kopírovanie všetkého obsahu z %1 do %2"
 
 #: src/code/cbz/code/ArchiveBookModel.cpp:638
 #, kde-format
@@ -77,7 +77,7 @@ msgstr "&Hľadať"
 #: src/controls.6/poppler/PDFViewer.qml:238
 #, kde-format
 msgid "Search Selected Text on Google..."
-msgstr ""
+msgstr "Hľadať vybraný text na Google..."
 
 #: src/controls.6/poppler/PDFViewer.qml:451
 #, kde-format
@@ -92,12 +92,12 @@ msgstr "Chyba"
 #: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "This document is password protected."
-msgstr ""
+msgstr "Tento dokument je chránený heslom."
 
 #: src/controls.6/poppler/PDFViewer.qml:452
 #, kde-format
 msgid "There has been an error loading this document."
-msgstr ""
+msgstr "Pri načítavaní tohto dokumentu sa vyskytla chyba."
 
 #: src/controls.6/poppler/PDFViewer.qml:457
 #, kde-format
