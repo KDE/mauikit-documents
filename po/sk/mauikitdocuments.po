@@ -57,7 +57,7 @@ msgstr "Document Locked"
 #: src/controls.6/poppler/PDFViewer.qml:49
 #, kde-format
 msgid "Please enter your password to unlock and open the file."
-msgstr "Prosím, enter your password to unlock and open the file."
+msgstr "Prosím, zadajte heslo na odomknutie a otvorenie súboru."
 
 #: src/controls.6/poppler/PDFViewer.qml:72
 #, kde-format
