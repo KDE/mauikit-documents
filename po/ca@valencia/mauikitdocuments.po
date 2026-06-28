@@ -51,7 +51,7 @@ msgid ""
 "Successfully replaced old archive with the new archive - now loading the new "
 "archive..."
 msgstr ""
-"S'ha reemplaçat correctament l'arxiu antic per l'arxiu nou - ara es carrega "
+"S'ha reemplaçat correctament l'arxiu antic per l'arxiu nou – ara es carrega "
 "l'arxiu nou…"
 
 #: src/controls.6/poppler/PDFViewer.qml:48
